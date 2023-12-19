@@ -1062,7 +1062,7 @@ See page title for the most recent date of data
                 <div class="bigWhite intNames">
                     <p class="one direcTog">NB</p>
                     <div class="orderBox">
-                        <p class="oneone links"><a href="javascript:CorrToCorr('_25thAve_Fulton_NB_REF', 'NB')">goto 25th Ave</a><a href="javascript:CorrToCorr('ParkPresidioBypass_Crossover_NS_REF', 'NB')">goto Park Presidio</a></p>
+                        <p class="oneone links"><a href="javascript:CorrToCorr('_25thAve_CrossoverFulton_NB_REF', 'NB')">goto 25th Ave</a><a href="javascript:CorrToCorr('ParkPresidioBypass_Crossover_NS_REF', 'NB')">goto Park Presidio</a></p>
                         <p>&nbsp;</p>
                         <div class="intGroup">
                             <p class="twotwo names"><span>Crossover NB@ MLK</span><span>Crossover SB@ MLK</span><span>WB MLK</span><span>EB MLK</span></p>
@@ -1287,8 +1287,8 @@ See page title for the most recent date of data
                         </div>
                         <div class="intGroup">
                             <p class="twoone names"><span>NB@ Fulton</span><span>SB@ Fulton</span><a href='javascript:CorrToCorr("Fulton_ParkPresidio_EW", "EB")'>Fulton</a></p>
-                            <p class="twoone numbers"><span id="_25thAve_Fulton_NB_REF">0</span><span id="_25thAve_Fulton_SB"></span><span id="_25thAve_Fulton_EW"></span></p>
-                            <p class="changes" id="_25thAve_Fulton_change">0</p>
+                            <p class="twoone numbers"><span id="_25thAve_CrossoverFulton_NB_REF">0</span><span id="_25thAve_CrossoverFulton_SB"></span><span id="_25thAve_CrossoverFulton_EW"></span></p>
+                            <p class="changes" id="_25thAve_CrossoverFulton_change">0</p>
                             <p>&nbsp;</p>
                         </div>
                         <div>
@@ -6200,7 +6200,7 @@ See page title for the most recent date of data
                     //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
 
                     //5TH ST @ Harrison
-                    ChangeDisp('_5thSt_Harrison_change', 35, planNum, cl);   //dispChange === 1 && 
+                    ChangeDisp('_5thSt_Harrison_change', 36, planNum, cl);   //dispChange === 1 && 
                     var offset = [25, 25, 25];
                     var LPI = 0, Yel = 4, Red = 2.5, Adj = [0, 0, 0], Split = [31, 31, 31]; //Ø 6
                     TimingCalc('_5thSt_Harrison_WB_REF');
@@ -6224,7 +6224,7 @@ See page title for the most recent date of data
                     //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
 
                     //5TH ST @ Brannan
-                    ChangeDisp('_5thSt_Brannan_change', 27, planNum, cl);   //dispChange === 1 && 
+                    ChangeDisp('_5thSt_Brannan_change', 28, planNum, cl);   //dispChange === 1 && 
                     var offset = [32, 32, 32];
                     var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [36, 36, 36]; //Ø 2 6
                     TimingCalc('_5thSt_Brannan_EW_REF');
@@ -7276,14 +7276,14 @@ See page title for the most recent date of data
                     //                 TSPnDET([], [], [], []);
 
                     //_25thAve @ fulton
-                    ChangeDisp('_25thAve_Fulton_change', 19, planNum, cl);   //dispChange === 1 && 
+                    ChangeDisp('_25thAve_CrossoverFulton_change', 19, planNum, cl);   //dispChange === 1 && 
                     var offset = [46, 54];
                     var LPI = 0, Yel = 4, Red = 1.5, Adj = [14, 14], Split = [31, 31]; //Ø 6  Adj=⌀5
-                    TimingCalc('_25thAve_Fulton_SB');
+                    TimingCalc('_25thAve_CrossoverFulton_SB');
                     var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [45, 45]; //Ø 2
-                    TimingCalc('_25thAve_Fulton_NB_REF');
+                    TimingCalc('_25thAve_CrossoverFulton_NB_REF');
                     var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [45, 45]; //Ø 4 8
-                    TimingCalc('_25thAve_Fulton_EW');
+                    TimingCalc('_25thAve_CrossoverFulton_EW');
                     //                 TSPnDET([], [], [], []);
                 }
 //**************END OF CORRIDOR SPECIFIC JAVASCRIPT**************
@@ -8410,13 +8410,13 @@ See page title for the most recent date of data
                     //                 TSPnDET([], [], [], []);
 
                     //ELLIS @ Mason
-                    ChangeDisp('Ellis_Mason_change', 18, planNum, cl);   //dispChange === 1 && 
-                    var offset = [20, 48, 25];
+                    ChangeDisp('Ellis_Mason_change', 19, planNum, cl);   //dispChange === 1 && 
+                    var offset = [70, 31, 56];
                     var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [36, 32, 35]; //Ø 6
                     TimingCalc('Ellis_Mason_WB_REF');
                     var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [39, 43, 40]; //Ø 4
                     TimingCalc('Ellis_Mason_SB');
-                    TSPnDET(['Ellis_Mason_WB_REF'], [1, 2, 3], [], []);
+                    // TSPnDET(['Ellis_Mason_WB_REF'], [1, 2, 3], [], []);
 
                     //ELLIS @ Taylor
                     ChangeDisp('Ellis_Taylor_change', 24, planNum, cl);   //dispChange === 1 && 
@@ -9534,7 +9534,7 @@ See page title for the most recent date of data
                     TSPnDET(['Geneva_London_EW_REF'], [1], ['Geneva_London_SB'], [1]);
 
                     //GENEVA @ Mission
-                    ChangeDisp('Geneva_Mission_change', 21, planNum, cl);   //dispChange === 1 && 
+                    ChangeDisp('Geneva_Mission_change', 22, planNum, cl);   //dispChange === 1 && 
                     var offset = [40];
                     var LPI = 4, Yel = 4, Red = 2.5, Adj = [0], Split = [39]; //Ø 2 6
                     TimingCalc('Geneva_Mission_NS_REF');
@@ -9854,7 +9854,7 @@ See page title for the most recent date of data
                     //                 TSPnDET([], [], [], []);
 
                     //GOUGH @ Ellis
-                    ChangeDisp('Gough_Ellis_change', 18, planNum, cl);   //dispChange === 1 && 
+                    ChangeDisp('Gough_Ellis_change', 21, planNum, cl);   //dispChange === 1 && 
                     var offset = [12, 7, 12];
                     var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [60, 60, 60]; //Ø 6
                     TimingCalc('Gough_Ellis_SB_REF');
@@ -11378,13 +11378,13 @@ See page title for the most recent date of data
                     //                 TSPnDET([tspDir], [tspPlans], [detDir], [detPlans]);
 
                     //Mason @ Ellis
-                    ChangeDisp('Mason_Ellis_change', 18, planNum, cl);   //dispChange === 1 && 
-                    var offset = [20, 48, 25];
+                    ChangeDisp('Mason_Ellis_change', 19, planNum, cl);   //dispChange === 1 && 
+                    var offset = [70, 31, 56];
                     var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [36, 32, 35]; //Ø 6
                     TimingCalc('Mason_Ellis_WB_REF');
                     var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [39, 43, 40]; //Ø 4
                     TimingCalc('Mason_Ellis_SB');
-                    TSPnDET(['Mason_Ellis_WB_REF'], [1, 2, 3], [], []);
+                    // TSPnDET(['Mason_Ellis_WB_REF'], [1, 2, 3], [], []);
 
                     //Mason @ OFarrell
                     ChangeDisp('Mason_Ofarrell_change', 21, planNum, cl);   //dispChange === 1 && 
@@ -12362,7 +12362,7 @@ See page title for the most recent date of data
                     PlanTimeCalc();
                     GetCycleLength();
                     //Pine @ Polk xcross Polk_Pine_change
-                    ChangeDisp('Pine_Polk_change', 34, planNum, cl);   //dispChange === 1 && 
+                    ChangeDisp('Pine_Polk_change', 35, planNum, cl);   //dispChange === 1 && 
                     var offset = [15, 17, 13];
                     var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [36, 35, 38]; //Ø 6
                     TimingCalc('Pine_Polk_WB_REF');
@@ -12727,7 +12727,7 @@ See page title for the most recent date of data
                     //                 TSPnDET([], [], [], []);
 
                     //POLK ST @ Pine xcross Pine_Polk_change
-                    ChangeDisp('Polk_Pine_change', 34, planNum, cl);   //dispChange === 1 && 
+                    ChangeDisp('Polk_Pine_change', 35, planNum, cl);   //dispChange === 1 && 
                     var offset = [15, 17, 13];
                     var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [36, 35, 38]; //Ø 6
                     TimingCalc('Polk_Pine_WB_REF');
