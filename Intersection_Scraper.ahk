@@ -15,30 +15,39 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 VarList := "", IntList := "", cardList := "", finalList := "Format of this list is that program variables are on first line & timing cards are on 2nd`n`n"
 varVarFile := "Variable from Coord List.txt", varNameFile := "Name from Coord List.txt", cardNameFile := "Name from Card List.txt", finalFile := "Variable to Card tester.txt"
 zeroMatch := "***************ZERO MATCHES***************`n", oneMatch := "***************ONE MATCH***************`n", multMatch := "***************TWO PLUS MATCHES***************`n"
-cardNames := [], coord := {}, card := {}
+cardNames := [], coord := {}, card := {}, FileCount := 0
 
-if FileExist("..\CoordCheck.html")
-	MsgBox, UP ONE FOLDER
-; FileSelectFile, coordFile, , ..\CoordCheck.html, --------------Choose File to Scrape--------------, *.html
+if FileExist("..\CoordCheck.html") ;if scraper is in subfolder of CoordCheck
+	{
+		FileCount++
+		FileSelectFile, coordFile, , ..\CoordCheck.html, --------------Choose File to Scrape--------------, *.html
+	}
 if FileExist("CoordCheck.html")
-	MsgBox, UP ONE FOLDER
-; FileSelectFile, coordFile, , ..\CoordCheck.html, --------------Choose File to Scrape--------------, *.html
+	{
+		FileCount++
+		FileSelectFile, coordFile, , CoordCheck.html, --------------Choose File to Scrape--------------, *.html
+	}
 if (ErrorLevel)
 {
 	MsgBox, 0, Okie Dokie, CANCELED!
 	ExitApp
 }
+if (FileCount = 0)
+	{
+		MsgBox, , File Error, Can't find the file!`nWill exit now, 5
+		ExitApp
+	}
 FileDelete, %varNameFile%
 
-Loop, read, %coordFile%
+Loop, read, %coordFile% ;scrape CoordCheck
 {
 	if RegExMatch(A_LoopReadLine, "^\s+ChangeDisp")
 	{
 		if RegExMatch(A_LoopReadLine, "i)explainer") ;ignore legend/explainer section
 			continue
 		tempLine := RegExReplace(A_LoopReadLine, "^\s+ChangeDisp\('_?(.+)_change\D+(\d+).+", "$1 - $2")
-		IntLine := RegExReplace(tempLine, "([a-z])([A-Z])", "$1 $2")
-		IntLine := RegExReplace(IntLine, "([a-z])(\d)", "$1 $2")
+		IntLine := RegExReplace(tempLine, "([a-z])([A-Z])", "$1 $2") ;separate CamelCase
+		IntLine := RegExReplace(IntLine, "([a-z])(\d)", "$1 $2") ;separate numbers from letters
 		IntLine := RegExReplace(IntLine, "(\d)([A-Z])", "$1 $2")
 		IntLine := RegExReplace(IntLine, "_", " ")
 		IntList .= IntLine . "`n"
@@ -78,13 +87,13 @@ FileDelete, %cardNameFile%
 FileAppend, %cardList%, %cardNameFile%
 
 
-Loop, Read, %varNameFile%
+Loop, Read, %varNameFile% ;parse thru coordCheck results
 {
 	RegExMatch(A_LoopReadLine, "[\w\s]+? - (\d+)", coordChange) ; get change# in coordChange1
 	coordV := RegExReplace(A_LoopReadLine, " - \d+") ; now v is just the name
 	coordV := RegExReplace(coordV, "\s{2,}", " ") ; all spaces single
 	coordNameArray := StrSplit(coordV, A_Space)
-	for k, v in coordNameArray
+	for k, v in coordNameArray ;I had a reason for doing this
 	{
 		coordMidblockTest := 0
 		if (v = "midblock")
@@ -97,11 +106,14 @@ Loop, Read, %varNameFile%
 }
 Loop, Read, %cardNameFile%
 {
-	tempName := RegExReplace(A_LoopReadLine, "i)(.+?_)(Ch[_\s]?)(\d+[a-zA-Z]*)(\.pdf)", "$1 - $3") ; get just "name - #" so it's like list scraped from coord program
-	tempName := RegExReplace(tempName, "_", " ") ; underscore to space
+	; tempName := RegExReplace(A_LoopReadLine, "i)(.+?_)(Ch[_\s]?)(\d+[a-zA-Z]*)(\.pdf)", "$1 - $3") ; get just "name - #" so it's like list scraped from coord program
+	tempName := RegExReplace(A_LoopReadLine, "_|-", " ") ; underscore hyphen to space
+	tempName := RegExReplace(tempName, "i)(\b(on|off)\s-?ramp\b)|exit|fwy|ext\b|I 80|us 101|\.pdf") ; get rid of stuff
 	tempName := RegExReplace(tempName, "\s{2,}", " ") ; all spaces single
+	tempName := RegExReplace(tempName, "i)(.+?)\s(Ch[_\s]?)(\d+[a-zA-Z]*)", "$1 - $3") ; get just "name - #" so it's like list scraped from coord program
 	RegExMatch(tempName, "[\w\s]+? - (\d+[a-zA-Z]*)", cardChange) ; get change# in cardChange1
 	cardV := RegExReplace(tempName, " - \d+") ; now v is just the name
+	cardV := RegExReplace(cardV, "(\b\w+?\b)(.+)$1", "$1$2")
 	cardNameArray := StrSplit(cardV, A_Space)
 	for k, v in cardNameArray
 	{
@@ -111,12 +123,23 @@ Loop, Read, %cardNameFile%
 			cardMidblockTest := 1
 			break
 		}
+		x := cardNameArray.length() - k
+		Loop, x
+			{
+				y := k + x
+				OutputDebug, % cardNameArray[x]
+				if (cardNameArray[x] = cardNameArray[y])
+					{
+						cardNameArray.RemoveAt[y]
+						Break
+					}
+			}
 	}
 	card.push({full: tempName, names: cardNameArray, change: cardChange1, midblockTest: cardMidblockTest})
 }
 
 
-for coordK in coord ; each intersection in coordination
+for coordK in coord ; each intersection in coordCheck
 {
 	p := coordK/coord.length()*100 ; get progress %
 	Progress, %p%,,, WORKING.................STATUS ; display progress
@@ -127,7 +150,6 @@ for coordK in coord ; each intersection in coordination
 		; check each word from coord against each word from card
 		for coordkey, coordval in coord[coordK].names ; each word in current coordination intersection
 		{
-			;~ cardCheck := ""
 			if (coordval = "Ofarrell") ; special case
 				coordval := "o'farrell"
 			for cardkey, cardval in card[cardK].names ; each word in current timing card intersection
