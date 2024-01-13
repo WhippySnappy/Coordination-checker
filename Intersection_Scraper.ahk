@@ -64,7 +64,9 @@ if (ErrorLevel)
 }
 Loop, files, %TimingCards% ; go thru all the pdf filenames
 {
-	RegExMatch(A_LoopFileName, "i)(.+?_)(Ch[_\s]*)(\d+)\s*(\.pdf)", tempName) ; current filename
+	tempName := RegExReplace(A_LoopFileName, "__|-", " ")
+	tempName := RegExReplace(A_LoopFileName, "\s{2,}", " ")
+	RegExMatch(tempName, "i)(.+?_)(Ch[_\s]*)(\d+)\s*(\.pdf)", tempName) ; current filename
 	RegExMatch(cardNames[cardNames.length()], "i)(.+?_)(Ch[_\s]*)(\d+)\s*(\.pdf)", lastName) ;last name that's already in array
 	if (tempName1 = lastName1 && tempName3 > lastName3) ; same name later change#
 	{
