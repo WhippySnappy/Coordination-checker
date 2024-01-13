@@ -1,4 +1,4 @@
-#Requires Autohotkey v1.1+
+#Requires Autohotkey v1.1.20+
 #SingleInstance Force
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ;~ #Warn  ; Enable warnings to assist with detecting common errors.
@@ -37,7 +37,6 @@ if (FileCount = 0)
 		MsgBox, , File Error, Can't find the file!`nWill exit now, 5
 		ExitApp
 	}
-FileDelete, %varNameFile%
 
 Loop, read, %coordFile% ;scrape CoordCheck
 {
@@ -53,21 +52,20 @@ Loop, read, %coordFile% ;scrape CoordCheck
 		IntList .= IntLine . "`n"
 	}
 }
-FileAppend, %IntList%, %varNameFile% ; this file is for comparing to timing cards & see if change #s match
 
-EnvGet, OutputVar, OneDriveCommercial ;get work folder location
-OutputVar := OutputVar . "\Paperless\Timing Cards TSS\Intersection Timing Cards"
-FileSelectFolder, TimingCards, *%OutputVar%, 0, Select Timing Card Folder ;should be at correct spot
+EnvGet, TimeCardFolder, OneDriveCommercial ;get work folder location
+TimeCardFolder := TimeCardFolder . "\Paperless\Timing Cards TSS\Intersection Timing Cards"
+FileSelectFolder, TimingCards, *%TimeCardFolder%, 0, Select Timing Card Folder ;should be at correct spot
 TimingCards := TimingCards . "\*.pdf"
 if (ErrorLevel)
 {
 	MsgBox, 0, Okie Dokie, CANCELED!
 	ExitApp
 }
-Loop, files, %TimingCards%
+Loop, files, %TimingCards% ; go thru all the pdf filenames
 {
-	RegExMatch(A_LoopFileName, "i)(.+?_)(Ch[_\s]*)(\d+)\s*(\.pdf)", tempName)
-	RegExMatch(cardNames[cardNames.length()], "i)(.+?_)(Ch[_\s]*)(\d+)\s*(\.pdf)", lastName)
+	RegExMatch(A_LoopFileName, "i)(.+?_)(Ch[_\s]*)(\d+)\s*(\.pdf)", tempName) ; current filename
+	RegExMatch(cardNames[cardNames.length()], "i)(.+?_)(Ch[_\s]*)(\d+)\s*(\.pdf)", lastName) ;last name that's already in array
 	if (tempName1 = lastName1 && tempName3 > lastName3) ; same name later change#
 	{
 		cardNames.pop() ; get rid of earlier change#
@@ -81,16 +79,13 @@ Loop, files, %TimingCards%
 	}
 
 }
-for key in cardNames ; put array in variable so file is written once
+for key in cardNames ; put array in variable
 	cardList .= cardNames[key] . "`n"
-FileDelete, %cardNameFile%
-FileAppend, %cardList%, %cardNameFile%
 
-
-Loop, Read, %varNameFile% ;parse thru coordCheck results
+Loop, Parse, IntList, `n, `r ;parse thru coordCheck results
 {
-	RegExMatch(A_LoopReadLine, "[\w\s]+? - (\d+)", coordChange) ; get change# in coordChange1
-	coordV := RegExReplace(A_LoopReadLine, " - \d+") ; now v is just the name
+	RegExMatch(A_LoopField, "[\w\s]+? - (\d+)", coordChange) ; get change# in coordChange1
+	coordV := RegExReplace(A_LoopField, " - \d+") ; now v is just the name
 	coordV := RegExReplace(coordV, "\s{2,}", " ") ; all spaces single
 	coordNameArray := StrSplit(coordV, A_Space)
 	for k, v in coordNameArray ;I had a reason for doing this
@@ -102,20 +97,22 @@ Loop, Read, %varNameFile% ;parse thru coordCheck results
 			break
 		}
 	}
-	coord.push({full: A_LoopReadLine, names: coordNameArray, change: coordChange1, midblockTest: coordMidblockTest})
+	coord.push({full: A_LoopField, names: coordNameArray, change: coordChange1, midblockTest: coordMidblockTest})
 }
-Loop, Read, %cardNameFile%
+
+Loop, Parse, cardList, `n, `r ;parse thru timing card names
 {
-	; tempName := RegExReplace(A_LoopReadLine, "i)(.+?_)(Ch[_\s]?)(\d+[a-zA-Z]*)(\.pdf)", "$1 - $3") ; get just "name - #" so it's like list scraped from coord program
-	tempName := RegExReplace(A_LoopReadLine, "_|-", " ") ; underscore hyphen to space
-	tempName := RegExReplace(tempName, "i)(\b(on|off)\s-?ramp\b)|exit|fwy|ext\b|I 80|us 101|\.pdf") ; get rid of stuff
+	if InStr(A_LoopField, "berry", False)
+		Continue
+	tempName := RegExReplace(A_LoopField, "_|-", " ") ; underscore hyphen to space
+	tempName := RegExReplace(tempName, "i)(\b(on|off)\s-?ramp\b)|exit|fwy|ext\b|\bI\b|\bus\b|\.pdf") ; get rid of stuff
 	tempName := RegExReplace(tempName, "\s{2,}", " ") ; all spaces single
 	tempName := RegExReplace(tempName, "i)(.+?)\s(Ch[_\s]?)(\d+[a-zA-Z]*)", "$1 - $3") ; get just "name - #" so it's like list scraped from coord program
 	RegExMatch(tempName, "[\w\s]+? - (\d+[a-zA-Z]*)", cardChange) ; get change# in cardChange1
 	cardV := RegExReplace(tempName, " - \d+") ; now v is just the name
 	cardV := RegExReplace(cardV, "(\b\w+?\b)(.+)$1", "$1$2")
 	cardNameArray := StrSplit(cardV, A_Space)
-	for k, v in cardNameArray
+	for k, v in cardNameArray ;loop thru each word
 	{
 		cardMidblockTest := 0
 		if (v = "midblock")
@@ -123,11 +120,11 @@ Loop, Read, %cardNameFile%
 			cardMidblockTest := 1
 			break
 		}
+
 		x := cardNameArray.length() - k
-		Loop, x
+		Loop, %x%
 			{
 				y := k + x
-				OutputDebug, % cardNameArray[x]
 				if (cardNameArray[x] = cardNameArray[y])
 					{
 						cardNameArray.RemoveAt[y]
@@ -137,7 +134,7 @@ Loop, Read, %cardNameFile%
 	}
 	card.push({full: tempName, names: cardNameArray, change: cardChange1, midblockTest: cardMidblockTest})
 }
-
+coord.Pop()
 
 for coordK in coord ; each intersection in coordCheck
 {
@@ -161,7 +158,6 @@ for coordK in coord ; each intersection in coordCheck
 				}
 			}
 		}
-
 		if (counter >= coord[coordK].names.length() && coord[coordK].midblockTest = 0 && card[cardK].midblockTest = 1) ; if variable doesn't contains "midblock" AND timing card does...put in unmatched list
 		{
 			zeroList := coord[coordK].full . "`n`n"
@@ -195,8 +191,6 @@ for coordK in coord ; each intersection in coordCheck
 }
 
 Progress, off
-FileDelete, %cardNameFile%
-FileDelete, %varNameFile%
 FileDelete, %finalFile%
 finalList .= zeroMatch . "`n`n" . oneMatch . "`n`n" . multMatch
 FileAppend, %finalList%, %finalFile%
@@ -206,10 +200,15 @@ WinWaitActive, ahk_exe notepad++.exe, , 2
 Sleep, 200
 IfWinActive, , This file has been modified by another program.
 	Send, y
+Sleep, 200
+Send, ^{Home}
+Sleep, 100
 Send, ^f
 Sleep, 100
 Control, Check, , Button18, ahk_exe notepad++.exe
 ; MsgBox, WASSUP
 Sleep, 200
 Send, {text}---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R
+Sleep, 200
+Send, {Enter}
 ExitApp
