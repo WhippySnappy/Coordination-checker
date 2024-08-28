@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html>
 
 <head>
-    <title>Corridors 8-13-24</title>
+    <title>Corridors 8-27-24</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=contain">
     <style type="text/css">
@@ -10829,15 +10829,15 @@ See page title for the most recent date of data
                 GetCycleLength();
 
                 //GENEVA @ Mission
-                ChangeDisp('Geneva_Mission_change', 23, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Geneva_Mission_change', 24, planNum, cl);   //dispChange === 1 && 
                 var offset = [33, 17, 19];
-                var LPI = 4, Yel = 4, Red = 3, Adj = [0, 0, 0], Split = [37, 40, 44]; //Ø 2 6
+                var LPI = 4, Yel = 4, Red = 3, Adj = [0, 0, 0], Split = [36, 38, 42]; //Ø 2 6
                 TimingCalc('Geneva_Mission_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [12, 13, 13]; //Ø 4 8
-                TimingCalc('Geneva_Mission_LTs');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = SplitAdd(Adj, Split), Split = [31, 37, 33]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [30, 36, 32]; //Ø 4 8
                 TimingCalc('Geneva_Mission_EW');
-                                TSPnDET([], [], ['Geneva_Mission_LTs'], [1, 2, 3]);
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = SplitAdd(Adj, Split), Split = [14, 16, 16]; //Ø 1 5
+                TimingCalc('Geneva_Mission_LTs');
+                TSPnDET([], [], ['Geneva_Mission_LTs'], [1, 2, 3]);
 
                 var flashFree1time = [0, 2400, 'free'], flashFree1day = [1, 2, 3, 4, 5, 6, 7],
                     flashFree2time = [], flashFree2day = [];
