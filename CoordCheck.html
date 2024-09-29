@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html>
 
 <head>
-    <title>Corridors 8-27-24</title>
+    <title>Corridors 9-15-24</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=contain">
     <style type="text/css">
@@ -10713,7 +10713,7 @@ See page title for the most recent date of data
                 TimingCalc('Geneva_Stoneridge_PED');
                 TSPnDET(['Geneva_Stoneridge_EW_REF'], [1, 2, 3], ['Geneva_Stoneridge_PED'], [1, 2, 3]);
 
-                //Geneva & Prague-Cayuga always remains in plan 1
+                //Geneva & Prague always remains in plan 1
                 var plan2time = [], plan2day = [],
                     plan3time = [], plan3day = [],
                     plan4time = [], plan4day = [],
@@ -10769,53 +10769,41 @@ See page title for the most recent date of data
                 TimingCalc('Geneva_Athens_SB');
                 TSPnDET(['Geneva_Athens_EW_REF'], [1], ['Geneva_Athens_SB'], [1]);
 
-                //NEED TO VERIFY PLANS & LENGTHS FOR NAPLES TO MISSION
-                var plan2time = [], plan2day = [],
-                    plan3time = [], plan3day = [],
-                    plan4time = [], plan4day = [],
-                    flashFree1time = [], flashFree1day = [],
-                    flashFree2time = [], flashFree2day = [],
-                    cycleLength = [70];
-                transTimeCalc();
-                FlashFreeTimeCalc();
-                PlanTimeCalc();
-                GetCycleLength();
-
                 //GENEVA @ Naples
-                ChangeDisp('Geneva_Naples_change', 23, planNum, cl);   //dispChange === 1 && 
-                var offset = [31];
-                var LPI = 0, Yel = 4, Red = 2.5, Adj = [0], Split = [38]; //Ø 2 6
+                ChangeDisp('Geneva_Naples_change', 24, planNum, cl);   //dispChange === 1 && 
+                var offset = [9, 82, 19];
+                var LPI = 0, Yel = 4, Red = 3, Adj = [0, 0, 0], Split = [47, 57, 57]; //Ø 2 6
                 TimingCalc('Geneva_Naples_EW_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [32]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 3, Adj = Split, Split = [33, 33, 33]; //Ø 4 8
                 TimingCalc('Geneva_Naples_NS');
-                TSPnDET([], [], ['Geneva_Naples_NS'], [1]);
+                TSPnDET([], [], ['Geneva_Naples_NS'], [1, 2, 3]);
 
                 //GENEVA @ Madrid
-                ChangeDisp('Geneva_Madrid_change', 5, planNum, cl);   //dispChange === 1 && 
-                var offset = [35];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [39]; //Ø 2 6
+                ChangeDisp('Geneva_Madrid_change', 6, planNum, cl);   //dispChange === 1 && 
+                var offset = [1, 82, 19];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [48, 58, 58]; //Ø 2 6
                 TimingCalc('Geneva_Madrid_EW_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [31]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 3, Adj = Split, Split = [32, 32, 32]; //Ø 4 8
                 TimingCalc('Geneva_Madrid_NS');
-                TSPnDET(['Geneva_Madrid_EW_REF'], [1], ['Geneva_Madrid_NS'], [1]);
+                TSPnDET(['Geneva_Madrid_EW_REF'], [1, 2, 3], ['Geneva_Madrid_NS'], [1, 2, 3]);
 
                 //GENEVA @ Paris
-                ChangeDisp('Geneva_Paris_change', 10, planNum, cl);   //dispChange === 1 && 
-                var offset = [8];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [39]; //Ø 2 6
+                ChangeDisp('Geneva_Paris_change', 11, planNum, cl);   //dispChange === 1 && 
+                var offset = [65, 56, 44];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [48, 58, 58]; //Ø 2 6
                 TimingCalc('Geneva_Paris_EW_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [31]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 3, Adj = Split, Split = [32, 32, 32]; //Ø 4 8
                 TimingCalc('Geneva_Paris_NS');
-                TSPnDET(['Geneva_Paris_EW_REF'], [1], ['Geneva_Paris_NS'], [1]);
+                TSPnDET(['Geneva_Paris_EW_REF'], [1, 2, 3], ['Geneva_Paris_NS'], [1, 2, 3]);
 
                 //GENEVA @ London
-                ChangeDisp('Geneva_London_change', 0, planNum, cl);   //dispChange === 1 && 
-                var offset = [9];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [38]; //Ø 2 6
+                ChangeDisp('Geneva_London_change', 1, planNum, cl);   //dispChange === 1 && 
+                var offset = [65, 58, 44];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [48, 58, 58]; //Ø 2 6
                 TimingCalc('Geneva_London_EW_REF');
-                var LPI = 5, Yel = 4, Red = 2, Adj = Split, Split = [32]; //Ø 4
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [32, 32, 32]; //Ø 4
                 TimingCalc('Geneva_London_SB');
-                TSPnDET(['Geneva_London_EW_REF'], [1], ['Geneva_London_SB'], [1]);
+                TSPnDET(['Geneva_London_EW_REF'], [1, 2, 3], ['Geneva_London_SB'], [1, 2, 3]);
 
                 var plan2time = [600, 1000], plan2day = [2, 3, 4, 5, 6],
                     plan3time = [1400, 2000], plan3day = [2, 3, 4, 5, 6],
