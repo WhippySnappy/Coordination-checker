@@ -62,7 +62,7 @@ if (ErrorLevel)
 	MsgBox, 0, Okie Dokie, CANCELED!
 	ExitApp
 }
-Loop, files, %TimingCards% ; go thru all the pdf filenames
+Loop, files, %TimingCards%, R ; go thru all the pdf filenames
 {
 	tempName := RegExReplace(A_LoopFileName, "__|-", " ")
 	tempName := RegExReplace(A_LoopFileName, "\s{2,}", " ")
@@ -207,7 +207,7 @@ Send, ^{Home}
 Sleep, 100
 Send, ^f
 Sleep, 100
-Control, Check, , Button18, ahk_exe notepad++.exe
+Control, Check, , Button19, ahk_exe notepad++.exe ;regular expression radio button
 ; MsgBox, WASSUP
 Sleep, 200
 Send, {text}---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R
