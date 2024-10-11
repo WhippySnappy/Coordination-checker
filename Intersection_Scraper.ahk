@@ -64,6 +64,10 @@ if (ErrorLevel)
 }
 Loop, files, %TimingCards%, R ; go thru all the pdf filenames
 {
+	TestFile := 0
+	TestFile := RegExMatch(A_LoopFileName, "\d{1,2}-\d{1,2}-\d{1,2}")
+if (TestFile > 0)
+	continue
 	tempName := RegExReplace(A_LoopFileName, "__|-", " ")
 	tempName := RegExReplace(A_LoopFileName, "\s{2,}", " ")
 	RegExMatch(tempName, "i)(.+?_)(Ch[_\s]*)(\d+)\s*(\.pdf)", tempName) ; current filename
@@ -207,10 +211,11 @@ Send, ^{Home}
 Sleep, 100
 Send, ^f
 Sleep, 100
-Control, Check, , Button19, ahk_exe notepad++.exe ;regular expression radio button
-; MsgBox, WASSUP
-Sleep, 200
 Send, {text}---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R
+Sleep, 200
+Control, Check, , Button18, ahk_exe notepad++.exe ;regular expression radio button
+;~ ControlGet, IsNewlineChecked, Checked,, Button19, ahk_exe notepad++.exe
+Control, Uncheck,, Button19, ahk_exe notepad++.exe ; dot matches newline
 Sleep, 200
 Send, {Enter}
 ExitApp
