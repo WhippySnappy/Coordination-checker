@@ -27,7 +27,7 @@ if FileExist("CoordCheck.html")
 		FileCount++
 		coordFile := FileSelect("", "CoordCheck.html", "--------------Choose File to Scrape--------------", "*.html")
 	}
-if (ErrorLevel)
+if coordFile = ""
 {
 	MsgBox("CANCELED!", "Okie Dokie", 0)
 	ExitApp()
@@ -57,27 +57,42 @@ TimeCardFolder := EnvGet("OneDriveCommercial") ;get work folder location
 TimeCardFolder := TimeCardFolder . "\Paperless\Timing Cards TSS\Intersection Timing Cards"
 TimingCards := DirSelect("*" TimeCardFolder, 0, "Select Timing Card Folder") ;should be at correct spot
 TimingCards := TimingCards . "\*.pdf"
-if (ErrorLevel)
+if TimingCards = "\*.pdf"
 {
 	MsgBox("CANCELED!", "Okie Dokie", 0)
 	ExitApp()
 }
+if FileExist("TEMPSTORAGE.txt") ;DEBUG
+{
+	FileDelete "TEMPSTORAGE.txt"
+}
 Loop Files, TimingCards, "R" ; go thru all the pdf filenames
 {
-	tempName := RegExReplace(A_LoopFileName, "__|-", " ")
-	tempName := RegExReplace(A_LoopFileName, "\s{2,}", " ")
-	RegExMatch((tempName&&tempName[0]), "i)(.+?_)(Ch[_\s]*)(\d+)\s*(\.pdf)", &tempName) ; current filename
-	RegExMatch(cardNames[cardNames.Length], "i)(.+?_)(Ch[_\s]*)(\d+)\s*(\.pdf)", &lastName) ;last name that's already in array
+	tempName := RegExReplace(A_LoopFileName, "[_\s\-]", " ")
+	tempName := RegExReplace(tempName, "\s{2,}", " ")
+	if RegExMatch(tempName, "i) ch ") = 0 ;if there isn't a change# just move on
+		continue
+	RegExMatch(tempName, "i)(.+?[_\s])(Ch[_\s]*)(\d+).*(\.pdf)", &tempName) ; current filename
+	if cardNames.Length = 0
+	{
+		cardNames.push(tempName[]) ; AHK v2 needs [] or [0] as the entire match. could pick individual matches if wanted
+		FileAppend tempName[] "`n", "TEMPSTORAGE.txt" ;DEBUG
+		continue
+	}
+	RegExMatch(cardNames[cardNames.Length], "i)(.+?[_\s])(Ch[_\s]*)(\d+).*(\.pdf)", &lastName) ;last name that's already in array 
+	;had to use .* instead of \s* after "ch ##" because of non-standard naming in files
 	if (tempName[1] = lastName[1] && tempName[3] > lastName[3]) ; same name later change#
 	{
 		cardNames.pop() ; get rid of earlier change#
-		cardNames.push(A_LoopFileName) ; put in later change#
+		cardNames.push(tempName[]) ; put in later change#
+		FileAppend tempName[] "`n", "TEMPSTORAGE.txt" ;DEBUG
 	}
 	else if (tempName[1] = lastName[1] && tempName[3] < lastName[3]) ; same name earlier change#...ignore
 		continue
 	else ; must not have the same name as the last one
 	{
-		cardNames.push(A_LoopFileName)
+		cardNames.push(tempName[])
+		FileAppend tempName[] "`n", "TEMPSTORAGE.txt" ;DEBUG
 	}
 
 }
