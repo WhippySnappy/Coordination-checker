@@ -96,8 +96,10 @@ Loop Files, TimingCards, "R" ; go thru all the pdf filenames
 	}
 
 }
-for key in cardNames ; put array in variable
-	cardList .= cardNames[key] . "`n"
+for key, value in cardNames ; put array in variable
+{
+	cardList .= cardNames[key] "`n"
+}
 
 Loop Parse, IntList, "`n", "`r" ;parse thru coordCheck results
 {
