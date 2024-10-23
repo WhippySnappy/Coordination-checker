@@ -15,7 +15,7 @@ SetWorkingDir(A_ScriptDir)  ; Ensures a consistent starting directory.
 VarList := "", IntList := "", cardList := "", finalList := "Format of this list is that program variables are on first line & timing cards are on 2nd`n`n"
 varVarFile := "Variable from Coord List.txt", varNameFile := "Name from Coord List.txt", cardNameFile := "Name from Card List.txt", finalFile := "Variable to Card tester.txt"
 zeroMatch := "***************ZERO MATCHES***************`n", oneMatch := "***************ONE MATCH***************`n", multMatch := "***************TWO PLUS MATCHES***************`n"
-cardNames := [], coord := {}, card := {}, FileCount := 0
+cardNames := [], coord := [], card := [], FileCount := 0
 
 if FileExist("..\CoordCheck.html") ;if scraper is in subfolder of CoordCheck
 	{
@@ -62,10 +62,6 @@ if TimingCards = "\*.pdf"
 	MsgBox("CANCELED!", "Okie Dokie", 0)
 	ExitApp()
 }
-if FileExist("TEMPSTORAGE.txt") ;DEBUG
-{
-	FileDelete "TEMPSTORAGE.txt"
-}
 Loop Files, TimingCards, "R" ; go thru all the pdf filenames
 {
 	tempName := RegExReplace(A_LoopFileName, "[_\s\-]", " ")
@@ -76,7 +72,6 @@ Loop Files, TimingCards, "R" ; go thru all the pdf filenames
 	if cardNames.Length = 0
 	{
 		cardNames.push(tempName[]) ; AHK v2 needs [] or [0] as the entire match. could pick individual matches if wanted
-		FileAppend tempName[] "`n", "TEMPSTORAGE.txt" ;DEBUG
 		continue
 	}
 	RegExMatch(cardNames[cardNames.Length], "i)(.+?[_\s])(Ch[_\s]*)(\d+).*(\.pdf)", &lastName) ;last name that's already in array 
@@ -116,7 +111,8 @@ Loop Parse, IntList, "`n", "`r" ;parse thru coordCheck results
 			break
 		}
 	}
-	coord.push({full: A_LoopField, names: coordNameArray, change: coordChange[1], midblockTest: coordMidblockTest})
+	if coordV != ""
+		coord.push("full", A_LoopField, "names", coordNameArray, "change", coordChange[1], "midblockTest", coordMidblockTest) ;AHK v2 changed associative array structure	
 }
 
 Loop Parse, cardList, "`n", "`r" ;parse thru timing card names
@@ -124,11 +120,11 @@ Loop Parse, cardList, "`n", "`r" ;parse thru timing card names
 	if InStr(A_LoopField, "berry", False)
 		Continue
 	tempName := RegExReplace(A_LoopField, "_|-", " ") ; underscore hyphen to space
-	tempName := RegExReplace((tempName&&tempName[0]), "i)(\b(on|off)\s-?ramp\b)|exit|fwy|ext\b|\bI\b|\bus\b|\.pdf") ; get rid of stuff
-	tempName := RegExReplace((tempName&&tempName[0]), "\s{2,}", " ") ; all spaces single
-	tempName := RegExReplace((tempName&&tempName[0]), "i)(.+?)\s(Ch[_\s]?)(\d+[a-zA-Z]*)", "$1 - $3") ; get just "name - #" so it's like list scraped from coord program
-	RegExMatch((tempName&&tempName[0]), "[\w\s]+? - (\d+[a-zA-Z]*)", &cardChange) ; get change# in cardChange1
-	cardV := RegExReplace((tempName&&tempName[0]), " - \d+") ; now v is just the name
+	tempName := RegExReplace(tempName, "i)(\b(on|off)\s?-?ramp\b)|exit|fwy|ext\b|\bI\b|\bus\b|\.pdf|\(|\)") ; get rid of stuff
+	tempName := RegExReplace(tempName, "\s{2,}", " ") ; all spaces single
+	tempName := RegExReplace(tempName, "i)(.+?)\s(Ch[_\s]?)(\d+[a-zA-Z]*)", "$1 - $3") ; get just "name - #" so it's like list scraped from coord program
+	RegExMatch(tempName, "[\w\s]+? - (\d+[a-zA-Z]*)", &cardChange) ; get change# in cardChange1
+	cardV := RegExReplace(tempName, " - \d+") ; now v is just the name
 	cardV := RegExReplace(cardV, "(\b\w+?\b)(.+)$1", "$1$2")
 	cardNameArray := StrSplit(cardV, A_Space)
 	for k, v in cardNameArray ;loop thru each word
@@ -151,11 +147,12 @@ Loop Parse, cardList, "`n", "`r" ;parse thru timing card names
 					}
 			}
 	}
-	card.push({full: (tempName&&tempName[0]), names: cardNameArray, change: cardChange[1], midblockTest: cardMidblockTest})
+	if cardV != ""
+	card.push("full", tempName, "names", cardNameArray, "change", cardChange[1], "midblockTest", cardMidblockTest)
 }
 coord.Pop()
 
-for coordK in coord ; each intersection in coordCheck
+for coordK, value in coord ; each intersection in coordCheck
 {
 	p := coordK/coord.Length*100 ; get progress %
 	ProgressGui := Gui("ToolWindow -Sysmenu Disabled"), ProgressGui.Title := "WORKING.................STATUS" , ProgressGui.MarginY := 5, ProgressGui.MarginX := 5, gocProgress := ProgressGui.AddProgress("x10 w180 h20"), ProgressGui.Show("") ; display progress
