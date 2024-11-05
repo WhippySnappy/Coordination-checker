@@ -62,6 +62,9 @@ if (ErrorLevel)
 	MsgBox, 0, Okie Dokie, CANCELED!
 	ExitApp
 }
+
+StartTime := A_TickCount
+
 Loop, files, %TimingCards%, R ; go thru all the pdf filenames
 {
 	TestFile := 0
@@ -218,4 +221,9 @@ Control, Check, , Button18, ahk_exe notepad++.exe ;regular expression radio butt
 Control, Uncheck,, Button19, ahk_exe notepad++.exe ; dot matches newline
 Sleep, 200
 Send, {Enter}
+
+ElapsedTime := (A_TickCount - StartTime)
+ElapsedTimeSec := Round(ElapsedTime / 1000, 2)
+MsgBox, %ElapsedTime% milliseconds have elapsed.`n %ElapsedTimeSec%  seconds.
+
 ExitApp
