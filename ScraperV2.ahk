@@ -282,7 +282,7 @@ Sleep(200)
 Send("{Enter}")
 
 ElapsedTime := (A_TickCount - StartTime)
-MsgBox ElapsedTime " milliseconds have elapsed.`n" Round(ElapsedTime / 1000, 2) " seconds."
+MsgBox ElapsedTime " milliseconds have elapsed.`n" Round(ElapsedTime / 1000, 2) " seconds.",,"T5"
 
 ExitApp()
 
