@@ -11,32 +11,31 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; NOTE... might want to try Sift search to see if there are better results...although, this one is pretty decent
 ; ******************************************************************************************************************
 
-
 VarList := "", IntList := "", cardList := "", finalList := "Format of this list is that program variables are on first line & timing cards are on 2nd`n`n"
 varVarFile := "Variable from Coord List.txt", varNameFile := "Name from Coord List.txt", cardNameFile := "Name from Card List.txt", finalFile := "Variable to Card tester.txt"
 zeroMatch := "***************ZERO MATCHES***************`n", oneMatch := "***************ONE MATCH***************`n", multMatch := "***************TWO PLUS MATCHES***************`n"
 cardNames := [], coord := {}, card := {}, FileCount := 0
 
 if FileExist("..\CoordCheck.html") ;if scraper is in subfolder of CoordCheck
-	{
-		FileCount++
-		FileSelectFile, coordFile, , ..\CoordCheck.html, --------------Choose File to Scrape--------------, *.html
-	}
+{
+	FileCount++
+	FileSelectFile, coordFile, , ..\CoordCheck.html, --------------Choose File to Scrape--------------, *.html
+}
 if FileExist("CoordCheck.html")
-	{
-		FileCount++
-		FileSelectFile, coordFile, , CoordCheck.html, --------------Choose File to Scrape--------------, *.html
-	}
+{
+	FileCount++
+	FileSelectFile, coordFile, , CoordCheck.html, --------------Choose File to Scrape--------------, *.html
+}
 if (ErrorLevel)
 {
 	MsgBox, 0, Okie Dokie, CANCELED!
 	ExitApp
 }
 if (FileCount = 0)
-	{
-		MsgBox, , File Error, Can't find the file!`nWill exit now, 5
-		ExitApp
-	}
+{
+	MsgBox, , File Error, Can't find the file!`nWill exit now, 5
+	ExitApp
+}
 
 Loop, read, %coordFile% ;scrape CoordCheck
 {
@@ -69,8 +68,8 @@ Loop, files, %TimingCards%, R ; go thru all the pdf filenames
 {
 	TestFile := 0
 	TestFile := RegExMatch(A_LoopFileName, "\d{1,2}-\d{1,2}-\d{1,2}")
-if (TestFile > 0)
-	continue
+	if (TestFile > 0)
+		continue
 	tempName := RegExReplace(A_LoopFileName, "__|-", " ")
 	tempName := RegExReplace(A_LoopFileName, "\s{2,}", " ")
 	RegExMatch(tempName, "i)(.+?_)(Ch[_\s]*)(\d+)\s*(\.pdf)", tempName) ; current filename
@@ -132,14 +131,14 @@ Loop, Parse, cardList, `n, `r ;parse thru timing card names
 
 		x := cardNameArray.length() - k
 		Loop, %x%
+		{
+			y := k + x
+			if (cardNameArray[x] = cardNameArray[y])
 			{
-				y := k + x
-				if (cardNameArray[x] = cardNameArray[y])
-					{
-						cardNameArray.RemoveAt[y]
-						Break
-					}
+				cardNameArray.RemoveAt[y]
+				Break
 			}
+		}
 	}
 	card.push({full: tempName, names: cardNameArray, change: cardChange1, midblockTest: cardMidblockTest})
 }
