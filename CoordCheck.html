@@ -707,7 +707,8 @@ See page title for the most recent date of data
                             things are, scroll down to see more.</p>
                         <p class="one numbers">Normally when you open a corridor it goes to the "bottom" intersection.
                             <br />This is so the layout on the screen visually matches what you see in the field. You
-                            can then scroll up as you proceed along the corridor.</p>
+                            can then scroll up as you proceed along the corridor.
+                        </p>
                         <p>&nbsp;</p>
                     </div>
                     <div class="intGroup">
@@ -1458,7 +1459,8 @@ See page title for the most recent date of data
                                 href="javascript:CorrToCorr('Portola_14thAveSanAnselmoSantaAna_EW_REF', 'EB')">EB
                                 Sloat</a><span>WB Sloat</span></p>
                         <p class="twotwo numbers"><span id="_19thAve_Sloat_NB">0</span><span
-                                id="_19thAve_Sloat_SB_REF"></span><span id="_19thAve_Sloat_EB"></span><span id="_19thAve_Sloat_WB"></span></p>
+                                id="_19thAve_Sloat_SB_REF"></span><span id="_19thAve_Sloat_EB"></span><span
+                                id="_19thAve_Sloat_WB"></span></p>
                         <p class="changes" id="_19thAve_Sloat_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -2611,9 +2613,10 @@ See page title for the most recent date of data
                     </div>
                     <div class="intGroup">
                         <p class="onetwo names"><span>@ Webster</span><a
-                                href="javascript:CorrToCorr('Webster_Hayes_NS', 'NB')">NB Webster</a><span>SB Webster</span></p>
-                        <p class="onetwo numbers"><span id="Fell_Webster_WB_REF">0</span><span id="Fell_Webster_NB"></span><span
-                                id="Fell_Webster_SB"></span></p>
+                                href="javascript:CorrToCorr('Webster_Hayes_NS', 'NB')">NB Webster</a><span>SB
+                                Webster</span></p>
+                        <p class="onetwo numbers"><span id="Fell_Webster_WB_REF">0</span><span
+                                id="Fell_Webster_NB"></span><span id="Fell_Webster_SB"></span></p>
                         <p class="changes" id="Fell_Webster_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -3194,8 +3197,7 @@ See page title for the most recent date of data
                     <div class="intGroup">
                         <p class="onetwo names"><span>@ Moscow</span><span>NB Bike</span><span>Moscow</span></p>
                         <p class="onetwo numbers"><span id="Geneva_Moscow_EW_REF">0</span><span
-                                id="Geneva_Moscow_NB"></span><span
-                                id="Geneva_Moscow_SB"></span></p>
+                                id="Geneva_Moscow_NB"></span><span id="Geneva_Moscow_SB"></span></p>
                         <p class="changes" id="Geneva_Moscow_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -3255,8 +3257,7 @@ See page title for the most recent date of data
                     <div class="intGroup">
                         <p class="onetwo names"><span>@ Mission</span><span>Mission LTs</span><span>Mission</span></p>
                         <p class="onetwo numbers"><span id="Geneva_Mission_EW">0</span><span
-                                id="Geneva_Mission_LTs"></span><span
-                                id="Geneva_Mission_NS_REF"></span></p>
+                                id="Geneva_Mission_LTs"></span><span id="Geneva_Mission_NS_REF"></span></p>
                         <p class="changes" id="Geneva_Mission_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -4930,7 +4931,7 @@ See page title for the most recent date of data
                     </div>
                     <div class="intGroup">
                         <p class="twotwo names"><span>@ Octavia</span><span>EBRT<font color="#654321">(Ped)</font>
-                                </span><span>NB Octavia</span><a
+                            </span><span>NB Octavia</span><a
                                 href="javascript:CorrToCorr('Octavia_Oak_SB_REF', 'SB', 'mid')">SB Octavia</a></p>
                         <p class="twotwo numbers"><span id="Oak_Octavia_EB"></span><span
                                 id="Oak_Octavia_EBRT">0</span><span id="Oak_Octavia_NB_REF"></span><span
@@ -7720,11 +7721,11 @@ See page title for the most recent date of data
                 //                 TSPnDET([tspDir], [tspPlanNum], [detDir], [detPlans]);
 
                 //7TH ST @ Folsom
-                ChangeDisp('_7thSt_Folsom_change', 30, planNum, cl);   //dispChange === 1 && 
-                var offset = [1, 1, 1];
-                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [50, 50, 50]; //Ø 2
+                ChangeDisp('_7thSt_Folsom_change', 31, planNum, cl);   //dispChange === 1 && 
+                var offset = [9, 9, 9];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [45, 45, 45]; //Ø 2
                 TimingCalc('_7thSt_Folsom_EB');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [40, 40, 40]; //Ø 8
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [45, 45, 45]; //Ø 8
                 TimingCalc('_7thSt_Folsom_NB');
                 TSPnDET(['_7thSt_Folsom_EB', '_7thSt_Folsom_NB'], [1, 2, 3], [], []);
 
@@ -7940,9 +7941,9 @@ See page title for the most recent date of data
                 //                    TSPnDET([], [], [], []);
 
                 //9th @ Market
-                ChangeDisp('_9thSt_HayesLarkinMarket_change', 36, planNum, cl);   //dispChange === 1 && 
-                var offset = [40, 1, 57];
-                var LPI = 0, Yel = 4, Red = 3, Adj = [3, 3, 3], Split = [28, 31, 37]; //Ø 9
+                ChangeDisp('_9thSt_HayesLarkinMarket_change', 37, planNum, cl);   //dispChange === 1 && 
+                var offset = [55, 22, 22];
+                var LPI = 0, Yel = 4, Red = 3, Adj = [3, 3, 3], Split = [28, 31, 37]; //Ø 9 splits account for late start
                 TimingCalc('_9thSt_HayesLarkinMarket_Hayes');
                 var LPI = 0, Yel = 4, Red = 3, Adj = [0, 0, 0], Split = [31, 34, 40]; //Ø 2 6
                 TimingCalc('_9thSt_HayesLarkinMarket_EW_REF');
@@ -8328,9 +8329,9 @@ See page title for the most recent date of data
                 TSPnDET(['_19thAve_Santiago_NS_REF'], [1, 2, 3, 4]);//, ['_19thAve_Santiago_EW'], [1, 2, 3, 4]);
 
                 //19th Ave @ Taraval
-                ChangeDisp('_19thAve_Taraval_change', 18, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('_19thAve_Taraval_change', 19, planNum, cl);   //dispChange === 1 && 
                 var offset = [70, 85, 85, 85];
-                var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0, 0], Split = [71, 71, 71, 71]; //Ø 2 6
+                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0, 0, 0, 0], Split = [71, 71, 71, 71]; //Ø 2 6
                 TimingCalc('_19thAve_Taraval_NS_REF');
                 var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [38, 38, 38, 38]; //Ø 4 8
                 TimingCalc('_19thAve_Taraval_EW');
@@ -9976,7 +9977,7 @@ See page title for the most recent date of data
                 //TSPnDET([], [], ['Fell_Octavia_WPed'], [1, 2, 3]);
 
                 //GOUGH @ Fell xcross Gough_Fell_change
-                ChangeDisp('Fell_Gough_change', 32, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Fell_Gough_change', 33, planNum, cl);   //dispChange === 1 && 
                 var offset = [83, 85, 83];
                 var LPI = 5, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [64, 63, 64]; //Ø 6
                 TimingCalc('Fell_Gough_SB_REF');
@@ -10501,22 +10502,22 @@ See page title for the most recent date of data
                 GetCycleLength();
 
                 //Fulton @ 6th
-                ChangeDisp('Fulton_6thAve_change', 19, planNum, cl);   //dispChange === 1 && 
-                var offset = [27, 35, 35, 27];
+                ChangeDisp('Fulton_6thAve_change', 20, planNum, cl);   //dispChange === 1 && 
+                var offset = [27, 38, 35, 27];
                 var LPI = 0, Yel = 4.5, Red = 1, Adj = [0, 0, 0, 0], Split = [39, 47, 47, 39]; //Ø 2 6
                 TimingCalc('Fulton_6thAve_EW_REF');
                 var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [33, 33, 33, 33]; //Ø 4
                 TimingCalc('Fulton_6thAve_SB');
-                //                 TSPnDET([], [], [], []);
+                TSPnDET(['Fulton_6thAve_EW_REF'], [1, 2, 3, 4], [], []);
 
                 //Fulton @ 8th
-                ChangeDisp('Fulton_8thAve_change', 18, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Fulton_8thAve_change', 19, planNum, cl);   //dispChange === 1 && 
                 var offset = [41, 49, 49, 41];
                 var LPI = 0, Yel = 4.5, Red = 1, Adj = [0, 0, 0, 0], Split = [45, 53, 53, 45]; //Ø 2 6
                 TimingCalc('Fulton_8thAve_EW_REF');
                 var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [27, 27, 27, 27]; //Ø 4 8
                 TimingCalc('Fulton_8thAve_NS');
-                //                 TSPnDET([], [], [], []);
+                TSPnDET(['Fulton_8thAve_EW_REF'], [1, 2, 3, 4], [], []);
 
                 //Fulton @ 10th
                 ChangeDisp('Fulton_10thAve_change', 20, planNum, cl);   //dispChange === 1 && 
@@ -11067,7 +11068,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //GOUGH @ Fell xcross Fell_Gough_change
-                ChangeDisp('Gough_Fell_change', 32, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Gough_Fell_change', 33, planNum, cl);   //dispChange === 1 && 
                 var offset = [83, 85, 83];
                 var LPI = 5, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [64, 63, 64]; //Ø 6
                 TimingCalc('Gough_Fell_SB_REF');
@@ -13008,7 +13009,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Oak @ Octavia xcross Octavia_Oak_change
-                ChangeDisp('Oak_Octavia_change', 43, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Oak_Octavia_change', 44, planNum, cl);   //dispChange === 1 && 
                 var offset = [4, 4, 28];
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [48, 41, 48]; //Ø 2
                 TimingCalc('Oak_Octavia_NB_REF');
@@ -13021,7 +13022,7 @@ See page title for the most recent date of data
                 //                    TSPnDET([], [], [], []);
 
                 //Oak @ Laguna
-                ChangeDisp('Oak_Laguna_change', 28, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Oak_Laguna_change', 29, planNum, cl);   //dispChange === 1 && 
                 var offset = [11, 54, 51];
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [53, 58, 58]; //Ø 2
                 TimingCalc('Oak_Laguna_EB_REF');
@@ -13030,7 +13031,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Oak @ Buchanan
-                ChangeDisp('Oak_Buchanan_change', 28, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Oak_Buchanan_change', 29, planNum, cl);   //dispChange === 1 && 
                 var offset = [84, 39, 34];
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [53, 58, 58]; //Ø 2
                 TimingCalc('Oak_Buchanan_EB_REF');
@@ -13371,7 +13372,7 @@ See page title for the most recent date of data
                 TSPnDET([], [], ['Octavia_Fell_WPed'], [1, 2, 3]);
 
                 // Octavia @ Oak xcross Oak_Octavia_change
-                ChangeDisp('Octavia_Oak_change', 43, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Octavia_Oak_change', 44, planNum, cl);   //dispChange === 1 && 
                 var offset = [4, 4, 28];
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [48, 41, 48]; //Ø 2
                 TimingCalc('Octavia_Oak_NB_REF');
@@ -14116,8 +14117,8 @@ See page title for the most recent date of data
                 //                    TSPnDET(['Polk_Mcallister_EW_REF'], [], []);
 
                 //POLK ST @ City Hall - Intersection name is Goodlett midblock McAllister & Grove
-                ChangeDisp('Goodlett_midblock_Grove_Mcallister_change', 3, planNum, cl);   //dispChange === 1 && 
-                var offset = [69, 27, 48];
+                ChangeDisp('Goodlett_midblock_Grove_Mcallister_change', 4, planNum, cl);   //dispChange === 1 && 
+                var offset = [69, 23, 48];
                 var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [42, 42, 42]; //Ø 2 6
                 TimingCalc('Goodlett_midblock_Grove_Mcallister_NS_REF');
                 var LPI = 0, Yel = 21, Red = 4, Adj = Split, Split = [33, 33, 33]; //Ø 4P
@@ -14125,8 +14126,8 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //POLK ST @ Grove
-                ChangeDisp('Polk_Grove_change', 26, planNum, cl);   //dispChange === 1 && 
-                var offset = [8, 35, 53];
+                ChangeDisp('Polk_Grove_change', 27, planNum, cl);   //dispChange === 1 && 
+                var offset = [8, 31, 53];
                 var LPI = 4, Yel = 4, Red = 2.5, Adj = [0, 0, 0], Split = [45, 45, 44]; //Ø 2 6
                 TimingCalc('Polk_Grove_NS_REF');
                 var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [30, 30, 31]; //Ø 4 8
@@ -14225,7 +14226,7 @@ See page title for the most recent date of data
                 TSPnDET([], [], ['Portola_SantaClaraVicente_LTs'], [1, 2, 3]);
 
                 //Portola @ 14th
-                ChangeDisp('Portola_14thAveSanAnselmoSantaAna_change', 22, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Portola_14thAveSanAnselmoSantaAna_change', 23, planNum, cl);   //dispChange === 1 && 
                 var offset = [34, 36, 60];
                 var LPI = 0, Yel = 4.5, Red = 1.5, Adj = [0, 0, 0], Split = [38, 43, 43]; //Ø 2 6
                 TimingCalc('Portola_14thAveSanAnselmoSantaAna_EW_REF');
@@ -14512,7 +14513,7 @@ See page title for the most recent date of data
                 //Stanyan @ Page
                 ChangeDisp('Stanyan_Page_change', 1, planNum, cl);   //dispChange === 1 && 
                 var offset = [2, 17, 28];
-                var LPI = 0, Yel = 4, Red = 1.5   , Adj = [0, 0, 0], Split = [63, 63, 63]; //Ø 2 6
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [63, 63, 63]; //Ø 2 6
                 TimingCalc('Stanyan_Page_N2S6');
                 var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [27, 27, 27]; //Ø 4 8
                 TimingCalc('Stanyan_Page_E4W8');
@@ -16018,13 +16019,13 @@ See page title for the most recent date of data
                 //                 TSPnDET([tspDir], [tspPlans], [detDir], [detPlans]);
 
                 //webster @ mcallister
-                ChangeDisp('Webster_Mcallister_change', 15, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Webster_Mcallister_change', 16, planNum, cl);   //dispChange === 1 && 
                 var offset = [21, 64, 62]; //61,36,32
                 var LPI = 4, Yel = 4, Red = 2.5, Adj = [0, 0, 0], Split = [40, 40, 40]; //Ø 2 6
                 TimingCalc('Webster_Mcallister_EW_REF');
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [30, 30, 30]; //Ø 4 8
                 TimingCalc('Webster_Mcallister_NS');
-                //                 TSPnDET([tspDir], [tspPlans], [detDir], [detPlans]);
+                TSPnDET(['Webster_Mcallister_EW_REF'], [1, 2, 3], [], []);
 
                 //webster @ fulton
                 ChangeDisp('Webster_Fulton_change', 18, planNum, cl);   //dispChange === 1 && 
