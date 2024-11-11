@@ -51,7 +51,7 @@ loop read, coordFile ;scrape CoordCheck
     {
         if RegExMatch(A_LoopReadLine, "i)explainer") ;ignore legend/explainer section
             continue
-        tempLine := RegExReplace(A_LoopReadLine, "^\s+ChangeDisp\('_?(.+)_change\D+(\d+).+", "$1 - $2")
+        tempLine := RegExReplace(A_LoopReadLine, "^\s+ChangeDisp\('_?(.+)_change\D+(\d+).+", "$1 -- $2")
         IntLine := RegExReplace(tempLine, "([a-z])([A-Z])", "$1 $2") ;separate CamelCase
         IntLine := RegExReplace(IntLine, "([a-z])(\d)", "$1 $2") ;separate numbers from letters
         IntLine := RegExReplace(IntLine, "(\d)([A-Z])", "$1 $2")
@@ -84,9 +84,9 @@ StartTime := A_TickCount
 loop files, TimingCards, "R" ; go thru all the pdf filenames
 {
     tempName := RegExReplace(A_LoopFileName, "[_\s\-]|\.(?!pdf)", " ")
-    ; tempName := RegExReplace(tempName, "\.(?!pdf)", " ")
+    tempName := RegExReplace(tempName, "i)(ch)(\d+)(\.pdf)", "$1 $2$3") ; CH##.pdf to CH ##.pdf
     tempName := RegExReplace(tempName, "\s{2,}", " ")
-    if RegExMatch(tempName, "i) ch ") = 0 ;if there isn't a change# just move on
+    if RegExMatch(tempName, "i) ch[\s_]?\d+") = 0 ;if there isn't a change# just move on
         continue
     RegExMatch(tempName, "i)(.+?[_\s])(Ch[_\s]*)(\d+).*(\.?pdf)", &tempName) ; current filename
     if cardNames.Length = 0
@@ -118,8 +118,8 @@ for key, value in cardNames ; put array in variable
 
 loop parse, IntList, "`n", "`r" ;parse thru coordCheck results
 {
-    RegExMatch(A_LoopField, "[\w\s]+? - (\d+)", &coordChange) ; get change# in coordChange1
-    coordV := RegExReplace(A_LoopField, " - \d+") ; now v is just the name
+    RegExMatch(A_LoopField, "[\w\s]+? -- (\d+)", &coordChange) ; get change# in coordChange1
+    coordV := RegExReplace(A_LoopField, " -- \d+") ; now v is just the name
     coordV := RegExReplace(coordV, "\s{2,}", " ") ; all spaces single
     coordNameArray := StrSplit(coordV, A_Space)
     for k, v in coordNameArray ;I had a reason for doing this???
@@ -259,7 +259,8 @@ for coordK, value in coord.names ; each intersection in coordCheck
 }
 
 MyGui.Destroy
-FileDelete(finalFile)
+if (FileExist(finalFile))
+    FileDelete(finalFile)
 finalList .= zeroMatch . "`n`n" . oneMatch . "`n`n" . multMatch
 FileAppend(finalList, finalFile)
 
