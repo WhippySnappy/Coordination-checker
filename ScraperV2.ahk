@@ -264,6 +264,8 @@ if (FileExist(finalFile))
 finalList .= zeroMatch . "`n`n" . oneMatch . "`n`n" . multMatch
 FileAppend(finalList, finalFile)
 
+ElapsedTime := (A_TickCount - StartTime)
+
 Run(finalFile)
 ErrorLevel := !WinWaitActive("ahk_exe notepad++.exe", , 2)
 Sleep(200)
@@ -275,15 +277,15 @@ Sleep(100)
 Send("^f")
 Sleep(100)
 WinWait("Find", , 1.5)
-ControlSetChecked(1, "Button19", "ahk_exe notepad++.exe") ;regular expression radio button
-; MsgBox, WASSUP
-Sleep(200)
 Send("{text}---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R")
 Sleep(200)
-Send("{Enter}")
+ControlSetChecked(1, "Button19", "Find") ;regular expression radio button
+Sleep(200)
+ControlClick("Button23", "Find") ;Find Next button
+Sleep(200)
+ControlClick("Button26", "Find") ;Count button
 
-ElapsedTime := (A_TickCount - StartTime)
-MsgBox ElapsedTime " milliseconds have elapsed.`n" Round(ElapsedTime / 1000, 2) " seconds.",,"T5"
+MsgBox "Comparison took...`n`n" ElapsedTime " milliseconds.`n" Round(ElapsedTime / 1000, 2) " seconds.",,"T5"
 
 ExitApp()
 
