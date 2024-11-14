@@ -16503,13 +16503,13 @@ See page title for the most recent date of data
                     planNum = 4, transition = 1;
                 } else if (plan4day.includes(d) && tx >= plan4time[0] + transTime[3] && tx < plan4time[1]) { //plan4
                     planNum = 4, transition = 0;
-                } else if (plan5day.includes(d) && tx >= plan5time[0] && tx < plan5time[0] + transTime[3]) { //beginning of plan5
+                } else if (plan5day.includes(d) && tx >= plan5time[0] && tx < plan5time[0] + transTime[4]) { //beginning of plan5
                     planNum = 5, transition = 1;
-                } else if (plan5day.includes(d) && tx >= plan5time[0] + transTime[3] && tx < plan5time[1]) { //plan5
+                } else if (plan5day.includes(d) && tx >= plan5time[0] + transTime[4] && tx < plan5time[1]) { //plan5
                     planNum = 5, transition = 0;
-                } else if (plan6day.includes(d) && tx >= plan6time[0] && tx < plan6time[0] + transTime[3]) { //beginning of plan6
+                } else if (plan6day.includes(d) && tx >= plan6time[0] && tx < plan6time[0] + transTime[5]) { //beginning of plan6
                     planNum = 6, transition = 1;
-                } else if (plan6day.includes(d) && tx >= plan6time[0] + transTime[3] && tx < plan6time[1]) { //plan6
+                } else if (plan6day.includes(d) && tx >= plan6time[0] + transTime[5] && tx < plan6time[1]) { //plan6
                     planNum = 6, transition = 0;
                 } else if (plan2day.includes(d) && tx >= plan2time[1] && tx < plan2time[1] + transTime[0]) { //end of plan2
                     planNum = 1, transition = 1;
