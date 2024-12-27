@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 12-10-24</title>
+    <title>Corridors 12-25-24</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -13125,59 +13125,81 @@ See page title for the most recent date of data
                 TimingCalc('Ocean_Capitol_NS');
                 //                 TSPnDET([], [], [], []);
 
+                //Plan, flash times & cycle lengths
+                var plan2time = [700, 1400], plan2day = [2, 3, 4, 5, 6],
+                    plan3time = [1400, 1900], plan3day = [2, 3, 4, 5, 6],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [80, 90, 90];
+                PlanTimeCalc();
+
                 //OCEAN @ Faxon
-                ChangeDisp('Ocean_Faxon_change', 16, planNum, cl);   //dispChange === 1 && 
-                var offset = [45, 45, 45];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [41, 49, 49]; //Ø 2 6
+                ChangeDisp('Ocean_Faxon_change', 17, planNum, cl);   //dispChange === 1 && 
+                var offset = [10, 38, 89];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [52, 62, 62]; //Ø 2 6
                 TimingCalc('Ocean_Faxon_EW_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [29, 31, 31]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [28, 28, 28]; //Ø 4 8
                 TimingCalc('Ocean_Faxon_NS');
                 TSPnDET(['Ocean_Faxon_EW_REF'], [1, 2, 3], [], []);
 
                 //OCEAN @ Dorado/Jules
-                ChangeDisp('Ocean_Dorado_Jules_change', 7, planNum, cl);   //dispChange === 1 && 
-                var offset = [35, 40, 41];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [42, 51, 51]; //Ø 2 6
+                ChangeDisp('Ocean_Dorado_Jules_change', 8, planNum, cl);   //dispChange === 1 && 
+                var offset = [74, 21, 72];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [53, 63, 63]; //Ø 2 6
                 TimingCalc('Ocean_Dorado_Jules_EW_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [28, 29, 29]; //Ø
+                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [27, 27, 27]; //Ø
                 TimingCalc('Ocean_Dorado_Jules_NS');
                 //                 TSPnDET([], [], [], []);
 
                 //OCEAN @ Ashton
-                ChangeDisp('Ocean_Ashton_change', 1, planNum, cl);   //dispChange === 1 && 
-                var offset = [35, 31, 31];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [43, 52, 52]; //Ø 2 6
+                ChangeDisp('Ocean_Ashton_change', 2, planNum, cl);   //dispChange === 1 && 
+                var offset = [74, 33, 84];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [48, 58, 58]; //Ø 2 6
                 TimingCalc('Ocean_Ashton_EW_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [27, 28, 28]; //Ø 8
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [32, 32, 32]; //Ø 8
                 TimingCalc('Ocean_Ashton_NB');
                 //                 TSPnDET([], [], [], []);
 
                 //OCEAN @ Victoria
-                ChangeDisp('Ocean_Victoria_change', 14, planNum, cl);   //dispChange === 1 && 
-                var offset = [8, 11, 11];
-                var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0], Split = [39, 49, 49]; //Ø 2 6
+                ChangeDisp('Ocean_Victoria_change', 15, planNum, cl);   //dispChange === 1 && 
+                var offset = [50, 1, 52];
+                var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0], Split = [52, 62, 62]; //Ø 2 6
                 TimingCalc('Ocean_Victoria_EW_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [31, 31, 31]; //Ø 8
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [28, 28, 28]; //Ø 8
                 TimingCalc('Ocean_Victoria_NB');
                 //                 TSPnDET([], [], [], []);
 
                 //OCEAN @ Cerritos/Westgate
-                ChangeDisp('Ocean_Cerritos_WestGate_change', 6, planNum, cl);   //dispChange === 1 && 
-                var offset = [35, 40, 40];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [42, 51, 51]; //Ø 2 6
+                ChangeDisp('Ocean_Cerritos_WestGate_change', 7, planNum, cl);   //dispChange === 1 && 
+                var offset = [74, 26, 77];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [52, 61, 61]; //Ø 2 6
                 TimingCalc('Ocean_Cerritos_WestGate_EW_REF');
                 var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [28, 29, 29]; //Ø 4 8
                 TimingCalc('Ocean_Cerritos_WestGate_NS');
                 //                 TSPnDET([], [], [], []);
 
                 //OCEAN @ Aptos
-                ChangeDisp('Ocean_Aptos_change', 11, planNum, cl);   //dispChange === 1 && 
-                var offset = [35, 40, 40];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [43, 52, 52]; //Ø 2 6
+                ChangeDisp('Ocean_Aptos_change', 12, planNum, cl);   //dispChange === 1 && 
+                var offset = [58, 16, 67];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [46, 56, 56]; //Ø 2 6
                 TimingCalc('Ocean_Aptos_EW_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [27, 28, 28]; //Ø 4
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [34, 34, 34]; //Ø 4
                 TimingCalc('Ocean_Aptos_SB');
                 //                 TSPnDET([], [], [], []);
+
+                //Plan, flash times & cycle lengths
+                var plan2time = [700, 930], plan2day = [2, 3, 4, 5, 6],
+                    plan3time = [1530, 1800], plan3day = [2, 3, 4, 5, 6],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [70, 80, 80];
+                PlanTimeCalc();
 
                 //OCEAN @ San Leandro
                 ChangeDisp('Ocean_SanLeandro_change', 5, planNum, cl);   //dispChange === 1 && 

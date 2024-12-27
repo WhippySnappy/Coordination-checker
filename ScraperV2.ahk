@@ -285,7 +285,7 @@ ControlClick("Button23", "Find") ;Find Next button
 Sleep(200)
 ControlClick("Button26", "Find") ;Count button
 
-MsgBox "Comparison took...`n`n" ElapsedTime " milliseconds.`n" Round(ElapsedTime / 1000, 2) " seconds.",,"T5"
+MsgBox "********************`nComparison took...`n" ElapsedTime " milliseconds.`n********************`n" Round(ElapsedTime / 1000, 2) " seconds.`n********************",,"T5"
 
 ExitApp()
 
