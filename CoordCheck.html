@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 12-25-24</title>
+    <title>Corridors 12-30-24</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -13191,31 +13191,31 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Plan, flash times & cycle lengths
-                var plan2time = [700, 930], plan2day = [2, 3, 4, 5, 6],
-                    plan3time = [1530, 1800], plan3day = [2, 3, 4, 5, 6],
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
                     plan4time = [], plan4day = [],
                     plan5time = [], plan5day = [],
                     plan6time = [], plan6day = [],
                     flashFree1time = [], flashFree1day = [],
                     flashFree2time = [], flashFree2day = [],
-                    cycleLength = [70, 80, 80];
+                    cycleLength = [55];
                 PlanTimeCalc();
 
                 //OCEAN @ San Leandro
-                ChangeDisp('Ocean_SanLeandro_change', 5, planNum, cl);   //dispChange === 1 && 
-                var offset = [2, 2, 2];
-                var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0], Split = [42, 49, 49]; //Ø 2 6
+                ChangeDisp('Ocean_SanLeandro_change', 6, planNum, cl);   //dispChange === 1 && 
+                var offset = [52];
+                var LPI = 0, Yel = 4, Red = 1, Adj = [0], Split = [28]; //Ø 2 6
                 TimingCalc('Ocean_SanLeandro_EW_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [28, 31, 31]; //Ø 4
+                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [27]; //Ø 4
                 TimingCalc('Ocean_SanLeandro_SB');
                 //                 TSPnDET([], [], [], []);
 
                 //OCEAN @ San Fernando
-                ChangeDisp('Ocean_SanFernando_change', 6, planNum, cl);   //dispChange === 1 && 
-                var offset = [2, 2, 2];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [42, 50, 50]; //Ø 2 6
+                ChangeDisp('Ocean_SanFernando_change', 7, planNum, cl);   //dispChange === 1 && 
+                var offset = [45];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [28]; //Ø 2 6
                 TimingCalc('Ocean_SanFernando_EW_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [28, 30, 30]; //Ø 4
+                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [27]; //Ø 4
                 TimingCalc('Ocean_SanFernando_SB');
                 //                 TSPnDET([], [], [], []);
             }
