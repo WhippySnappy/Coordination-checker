@@ -13078,53 +13078,6 @@ See page title for the most recent date of data
                 TimingCalc('Ocean_FridaKahlo_SB');
                 //                 TSPnDET([], [], [], []);
 
-                //OCEAN @ Lee
-                ChangeDisp('Ocean_Lee_change', 8, planNum, cl);   //dispChange === 1 && 
-                var offset = [0, 0, 0];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [42, 51, 51]; //Ø 2 6
-                TimingCalc('Ocean_Lee_EW_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [28, 29, 29]; //Ø 4 8
-                TimingCalc('Ocean_Lee_NS');
-                //                 TSPnDET([], [], [], []);
-
-                //OCEAN @ Brighton
-                ChangeDisp('Ocean_Brighton_change', 6, planNum, cl);   //dispChange === 1 && 
-                var offset = [5, 5, 5];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [40, 50, 50]; //Ø 2 6
-                TimingCalc('Ocean_Brighton_EW_REF');
-                var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [12, 12, 12]; //Ø 4
-                TimingCalc('Ocean_Brighton_SB');
-                var LPI = 0, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [18, 18, 18]; //Ø 8
-                TimingCalc('Ocean_Brighton_NB');
-                TSPnDET([], [], ['Ocean_Brighton_NB', 'Ocean_Brighton_SB'], [1, 2, 3]);
-
-                //OCEAN @ Plymouth
-                ChangeDisp('Ocean_Plymouth_change', 14, planNum, cl);   //dispChange === 1 && 
-                var offset = [0, 0, 0];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [42, 51, 51]; //Ø 2 6
-                TimingCalc('Ocean_Plymouth_EW_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [28, 29, 29]; //Ø 4 8
-                TimingCalc('Ocean_Plymouth_NS');
-                TSPnDET(['Ocean_Plymouth_EW_REF'], [1, 2, 3], [], []);
-
-                //OCEAN @ Miramar
-                ChangeDisp('Ocean_Miramar_change', 13, planNum, cl);   //dispChange === 1 && 
-                var offset = [35, 40, 40];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [39, 49, 49]; //Ø 2 6
-                TimingCalc('Ocean_Miramar_EW_REF');
-                var LPI = 7, Yel = 4, Red = 2, Adj = Split, Split = [31, 31, 31]; //Ø 4 8
-                TimingCalc('Ocean_Miramar_NS');
-                //                 TSPnDET([], [], [], []);
-
-                //OCEAN @ Capitol
-                ChangeDisp('Ocean_Capitol_change', 2, planNum, cl);   //dispChange === 1 && 
-                var offset = [39, 48, 48];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [40, 50, 50]; //Ø 2 6
-                TimingCalc('Ocean_Capitol_EW_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [30, 30, 30]; //Ø 4 8
-                TimingCalc('Ocean_Capitol_NS');
-                //                 TSPnDET([], [], [], []);
-
                 //Plan, flash times & cycle lengths
                 var plan2time = [700, 1400], plan2day = [2, 3, 4, 5, 6],
                     plan3time = [1400, 1900], plan3day = [2, 3, 4, 5, 6],
@@ -13135,6 +13088,53 @@ See page title for the most recent date of data
                     flashFree2time = [], flashFree2day = [],
                     cycleLength = [80, 90, 90];
                 PlanTimeCalc();
+
+                //OCEAN @ Lee
+                ChangeDisp('Ocean_Lee_change', 9, planNum, cl);   //dispChange === 1 && 
+                var offset = [7, 46, 7];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [52, 62, 62]; //Ø 2 6
+                TimingCalc('Ocean_Lee_EW_REF');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [28, 28, 28]; //Ø 4 8
+                TimingCalc('Ocean_Lee_NS');
+                //                 TSPnDET([], [], [], []);
+
+                //OCEAN @ Brighton
+                ChangeDisp('Ocean_Brighton_change', 7, planNum, cl);   //dispChange === 1 && 
+                var offset = [22, 57, 18];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [47, 57, 57]; //Ø 2 6
+                TimingCalc('Ocean_Brighton_EW_REF');
+                var LPI = 0, Yel = 4, Red = 1, Adj = Split, Split = [15, 15, 15]; //Ø 4
+                TimingCalc('Ocean_Brighton_SB');
+                var LPI = 0, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [18, 18, 18]; //Ø 8
+                TimingCalc('Ocean_Brighton_NB');
+                TSPnDET([], [], ['Ocean_Brighton_NB', 'Ocean_Brighton_SB'], [1, 2, 3]);
+
+                //OCEAN @ Plymouth
+                ChangeDisp('Ocean_Plymouth_change', 15, planNum, cl);   //dispChange === 1 && 
+                var offset = [27, 51, 12];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [52, 61, 61]; //Ø 2 6
+                TimingCalc('Ocean_Plymouth_EW_REF');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [28, 29, 29]; //Ø 4 8
+                TimingCalc('Ocean_Plymouth_NS');
+                TSPnDET(['Ocean_Plymouth_EW_REF'], [1, 2, 3], [], []);
+
+                //OCEAN @ Miramar
+                ChangeDisp('Ocean_Miramar_change', 14, planNum, cl);   //dispChange === 1 && 
+                var offset = [78, 22, 73];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [51, 61, 61]; //Ø 2 6
+                TimingCalc('Ocean_Miramar_EW_REF');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [29, 29, 29]; //Ø 4 8
+                TimingCalc('Ocean_Miramar_NS');
+                //                 TSPnDET([], [], [], []);
+
+                //OCEAN @ Capitol
+                ChangeDisp('Ocean_Capitol_change', 3, planNum, cl);   //dispChange === 1 && 
+                var offset = [13, 36, 87];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [52, 62, 62]; //Ø 2 6
+                TimingCalc('Ocean_Capitol_EW_REF');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [28, 28, 28]; //Ø 4 8
+                TimingCalc('Ocean_Capitol_NS');
+                //                 TSPnDET([], [], [], []);
 
                 //OCEAN @ Faxon
                 ChangeDisp('Ocean_Faxon_change', 17, planNum, cl);   //dispChange === 1 && 
