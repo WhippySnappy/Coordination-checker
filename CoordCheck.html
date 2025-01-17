@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 12-30-24</title>
+    <title>Corridors 01-15-25</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -13048,37 +13048,6 @@ See page title for the most recent date of data
             if (window.openCorr === "corr_Ocean") {
 
                 //Plan, flash times & cycle lengths
-                var plan2time = [700, 930], plan2day = [2, 3, 4, 5, 6],
-                    plan3time = [1530, 1800], plan3day = [2, 3, 4, 5, 6],
-                    plan4time = [], plan4day = [],
-                    plan5time = [], plan5day = [],
-                    plan6time = [], plan6day = [],
-                    flashFree1time = [], flashFree1day = [],
-                    flashFree2time = [], flashFree2day = [],
-                    cycleLength = [70, 80, 80];
-                PlanTimeCalc();
-
-                //OCEAN @ Geneva
-                ChangeDisp('Ocean_Geneva_Phelan_change', 23, planNum, cl);   //dispChange === 1 && 
-                var offset = [47, 57, 45];
-                var LPI = 0, Yel = 4, Red = 7, Adj = [0, 0, 0], Split = [38, 48, 48]; //WB Ø 1
-                TimingCalc('Ocean_Geneva_Phelan_WB');
-                var LPI = 3, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [38, 48, 48]; //EB Ø 13
-                TimingCalc('Ocean_Geneva_Phelan_EB');
-                var LPI = 0, Yel = 4, Red = 3, Adj = Split, Split = [32, 32, 32]; //NB Ø 8
-                TimingCalc('Ocean_Geneva_Phelan_NB');
-                //                 TSPnDET([], [], [], []);
-                //OCEAN @ F. Kahlo(formerly Phelan) change same as Geneva
-                var offset = [47, 57, 45];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [12, 17, 16]; //EBLT Ø 5
-                TimingCalc('Ocean_FridaKahlo_EBLT');
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [26, 31, 32]; //WB Ø 6
-                TimingCalc('Ocean_FridaKahlo_WB');
-                var LPI = 0, Yel = 4, Red = 3, Adj = SplitAdd(Adj, Split), Split = [32, 32, 32]; //SB Ø 4
-                TimingCalc('Ocean_FridaKahlo_SB');
-                //                 TSPnDET([], [], [], []);
-
-                //Plan, flash times & cycle lengths
                 var plan2time = [700, 1400], plan2day = [2, 3, 4, 5, 6],
                     plan3time = [1400, 1900], plan3day = [2, 3, 4, 5, 6],
                     plan4time = [], plan4day = [],
@@ -13088,6 +13057,26 @@ See page title for the most recent date of data
                     flashFree2time = [], flashFree2day = [],
                     cycleLength = [80, 90, 90];
                 PlanTimeCalc();
+
+                //OCEAN @ Geneva
+                ChangeDisp('Ocean_Geneva_Phelan_change', 24, planNum, cl);   //dispChange === 1 && 
+                var offset = [29, 69, 30];
+                var LPI = 4, Yel = 4, Red = 7, Adj = [0, 0, 0], Split = [45, 55, 55]; //WB Ø 1
+                TimingCalc('Ocean_Geneva_Phelan_WB');
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [45, 55, 55]; //EB Ø 13
+                TimingCalc('Ocean_Geneva_Phelan_EB');
+                var LPI = 0, Yel = 4, Red = 4, Adj = Split, Split = [35, 35, 35]; //NB Ø 8
+                TimingCalc('Ocean_Geneva_Phelan_NB');
+                //                 TSPnDET([], [], [], []);
+                //OCEAN @ F. Kahlo(formerly Phelan) change same as Geneva
+                var offset = [29, 69, 30];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [15, 20, 18]; //EBLT Ø 5
+                TimingCalc('Ocean_FridaKahlo_EBLT');
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [30, 35, 37]; //WB Ø 6
+                TimingCalc('Ocean_FridaKahlo_WB');
+                var LPI = 0, Yel = 4, Red = 4, Adj = SplitAdd(Adj, Split), Split = [35, 35, 35]; //SB Ø 4
+                TimingCalc('Ocean_FridaKahlo_SB');
+                //                 TSPnDET([], [], [], []);
 
                 //OCEAN @ Lee
                 ChangeDisp('Ocean_Lee_change', 9, planNum, cl);   //dispChange === 1 && 
