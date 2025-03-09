@@ -14,7 +14,7 @@ SetWorkingDir(A_ScriptDir)  ; Ensures a consistent starting directory.
 VarList := "", IntList := "", cardList := "", finalList := "Format of this list is that program variables are on first line & timing cards are on 2nd`n`n"
 varVarFile := "Variable from Coord List.txt", varNameFile := "Name from Coord List.txt", cardNameFile := "Name from Card List.txt", finalFile := "Variable to Card tester.txt"
 zeroMatch := "***************ZERO MATCHES***************`n", oneMatch := "***************ONE MATCH***************`n", multMatch := "***************TWO PLUS MATCHES***************`n"
-cardNames := [], coord := [], card := [], FileCount := 0, progression := 0, coordFileLength := 0, cardFileLength := 0
+cardNames := [], coord := [], card := [], FileCount := 0, progression := 0, coordFileLength := 0, cardFileLength := 0, coordFile := ""
 coord.full := []
 coord.names := []
 coord.change := []
@@ -24,15 +24,15 @@ card.names := []
 card.change := []
 card.midblockTest := []
 
-if FileExist("..\CoordCheck.html") ;if scraper is in subfolder of CoordCheck
+if FileExist(A_ScriptDir "..\CoordCheck.html") ;if scraper is in subfolder of CoordCheck
 {
     FileCount++
-    coordFile := FileSelect("", "..\CoordCheck.html", "--------------Choose File to Scrape--------------", "*.html")
+    coordFile := FileSelect("", A_ScriptDir "..\CoordCheck.html", "--------------Choose File to Scrape--------------", "*.html")
 }
-if FileExist("CoordCheck.html")
+ else if FileExist(A_ScriptDir "\CoordCheck.html")
 {
     FileCount++
-    coordFile := FileSelect("", "CoordCheck.html", "--------------Choose File to Scrape--------------", "*.html")
+    coordFile := FileSelect("", A_ScriptDir "\CoordCheck.html", "--------------Choose File to Scrape--------------", "*.html")
 }
 if coordFile = ""
 {
