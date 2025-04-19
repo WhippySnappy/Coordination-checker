@@ -62,10 +62,9 @@ loop read, coordFile ;scrape CoordCheck
 }
 
 TimeCardFolder := EnvGet("OneDriveCommercial") ;get work folder location
-TimeCardFolder := TimeCardFolder . "\Paperless\Timing Cards TSS\Intersection Timing Cards"
+TimeCardFolder := TimeCardFolder . "\Archives\"
 TimingCards := DirSelect("*" TimeCardFolder, 0, "Select Timing Card Folder") ;should be at correct spot
-TimingCards := TimingCards . "\*.pdf"
-if TimingCards = "\*.pdf"
+if TimingCards = ""
 {
     MsgBox("CANCELED!", "Okie Dokie", 0)
     ExitApp()
@@ -81,8 +80,10 @@ MyGui.Move(, 10)
 
 StartTime := A_TickCount
 
-loop files, TimingCards, "R" ; go thru all the pdf filenames
+loop files, TimingCards "\*.pdf", "R" ; go thru all the pdf filenames
 {
+    if !(RegExMatch(A_LoopFileDir, "Time Card")) ; only look at Time Card files
+        continue
     tempName := RegExReplace(A_LoopFileName, "[_\s\-]|\.(?!pdf)", " ")
     tempName := RegExReplace(tempName, "i)(ch)(\d+)(\.pdf)", "$1 $2$3") ; CH##.pdf to CH ##.pdf
     tempName := RegExReplace(tempName, "\s{2,}", " ")
