@@ -36,7 +36,7 @@ if FileExist(A_ScriptDir "..\CoordCheck.html") ;if scraper is in subfolder of Co
 }
 if coordFile = ""
 {
-    MsgBox("CANCELED!", "Okie Dokie", 0)
+    MsgBox("CANCELED!", "Okie Dokie", "T5")
     ExitApp()
 }
 if (FileCount = 0)
@@ -66,7 +66,7 @@ TimeCardFolder := TimeCardFolder . "\Archives\"
 TimingCards := DirSelect("*" TimeCardFolder, 0, "Select Timing Card Folder") ;should be at correct spot
 if TimingCards = ""
 {
-    MsgBox("CANCELED!", "Okie Dokie", 0)
+    MsgBox("CANCELED!", "Okie Dokie", "T5")
     ExitApp()
 }
 
