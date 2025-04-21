@@ -638,7 +638,7 @@ See page title for the most recent date of data
                     Laguna</a>
                 <a href="javascript:CorridorDisplay('corr_GoughN')">GOUGH (N)<br />&duarr; Sac - Broadway</a>
                 <a href="javascript:CorridorDisplay('corr_GoughS')">GOUGH (S)<br />&darr; California - Page</a>
-                <a href="javascript:CorridorDisplay('corr_GreatHighway')">GREAT HIGHWAY<br />&duarr; Vicente - Judah</a>
+                <!-- <a href="javascript:CorridorDisplay('corr_GreatHighway')">GREAT HIGHWAY<br />&duarr; Vicente - Judah</a> -->
                 <a href="javascript:CorridorDisplay('corr_Guerrero')">GUERRERO<br />&duarr; 25th - 14th</a>
                 <a href="javascript:CorridorDisplay('corr_HaightEast')">HAIGHT (E)<br />&lrarr; Scott - Buchanan</a>
                 <a href="javascript:CorridorDisplay('corr_HaightWest')">HAIGHT (W)<br />&lrarr; Shrader - Broderick</a>
@@ -3282,7 +3282,7 @@ See page title for the most recent date of data
                         <p class="changes" id="Geneva_Delano_change">0</p>
                         <p>&nbsp;</p>
                     </div>
-                    <p class="one links"><a href="javascript:CorrToCorr('Ocean_Geneva_Frida_Kahlo_WB', 'WB')">goto Ocean</a>
+                    <p class="one links"><a href="javascript:CorrToCorr('Ocean_Geneva_FridaKahlo_WB', 'WB')">goto Ocean</a>
                     </p>
                     <p>&nbsp;</p>
                 </div>
@@ -3608,7 +3608,7 @@ See page title for the most recent date of data
         <!--***************END OF CORRIDOR SPECIFIC HTML*****************-->
 
         <!--***************START OF CORRIDOR SPECIFIC HTML*****************-->
-        <div id="corr_GreatHighway" class="hider">
+        <!-- <div id="corr_GreatHighway" class="hider">
             <div class="corridorName">&lrarr; GREAT HWY</div>
             <div class="bigWhite intNames">
                 <p class="one direcTog">NB</p>
@@ -3664,7 +3664,7 @@ See page title for the most recent date of data
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!--***************END OF CORRIDOR SPECIFIC HTML*****************-->
 
         <!--***************START OF CORRIDOR SPECIFIC HTML*****************-->
@@ -5082,9 +5082,9 @@ See page title for the most recent date of data
                     <div class="intGroup">
                         <p class="twoone names"><span>EB@ Geneva</span><span>WB@ Geneva</span><a
                                 href="javascript:CorrToCorr('Geneva_Delano_EW_REF', 'EB')">Geneva</a></p>
-                        <p class="twoone numbers"><span id="Ocean_Geneva_Frida_Kahlo_EB">0</span><span
-                                id="Ocean_Geneva_Frida_Kahlo_WB"></span><span id="Ocean_Geneva_Frida_Kahlo_NB"></span></p>
-                        <p class="changes" id="Ocean_Geneva_Frida_Kahlo_change">0</p>
+                        <p class="twoone numbers"><span id="Ocean_Geneva_FridaKahlo_EB">0</span><span
+                                id="Ocean_Geneva_FridaKahlo_WB"></span><span id="Ocean_Geneva_FridaKahlo_NB"></span></p>
+                        <p class="changes" id="Ocean_Geneva_FridaKahlo_change">0</p>
                         <p>&nbsp;</p>
                     </div>
                     <div class="intGroup">
@@ -11206,82 +11206,82 @@ See page title for the most recent date of data
             //**************END OF CORRIDOR SPECIFIC JAVASCRIPT**************
 
             //**************START OF CORRIDOR SPECIFIC JAVASCRIPT**************VERIFIED
-            if (window.openCorr === "corr_GreatHighway") {
+            // if (window.openCorr === "corr_GreatHighway") {
 
-                //Plan, flash times & cycle lengths
-                var plan2time = [], plan2day = [],
-                    plan3time = [], plan3day = [],
-                    plan4time = [], plan4day = [],
-                    plan5time = [], plan5day = [],
-                    plan6time = [], plan6day = [],
-                    flashFree1time = [], flashFree1day = [],
-                    flashFree2time = [], flashFree2day = [],
-                    cycleLength = [64];
-                PlanTimeCalc();
-                //greatHwy @ judah
-                ChangeDisp('GreatHighway_Judah_change', 6, planNum, cl);   //dispChange === 1 && 
-                var offset = [32];
-                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
-                TimingCalc('GreatHighway_Judah_NS_REF');
-                var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
-                TimingCalc('GreatHighway_Judah_PED');
-                //                 TSPnDET([], [], [], []);
+            //     //Plan, flash times & cycle lengths
+            //     var plan2time = [], plan2day = [],
+            //         plan3time = [], plan3day = [],
+            //         plan4time = [], plan4day = [],
+            //         plan5time = [], plan5day = [],
+            //         plan6time = [], plan6day = [],
+            //         flashFree1time = [], flashFree1day = [],
+            //         flashFree2time = [], flashFree2day = [],
+            //         cycleLength = [64];
+            //     PlanTimeCalc();
+            //     //greatHwy @ judah
+            //     ChangeDisp('GreatHighway_Judah_change', 6, planNum, cl);   //dispChange === 1 && 
+            //     var offset = [32];
+            //     var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
+            //     TimingCalc('GreatHighway_Judah_NS_REF');
+            //     var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
+            //     TimingCalc('GreatHighway_Judah_PED');
+            //     //                 TSPnDET([], [], [], []);
 
-                //greatHwy @ lawton
-                ChangeDisp('GreatHighway_Lawton_change', 5, planNum, cl);   //dispChange === 1 && 
-                var offset = [0];
-                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
-                TimingCalc('GreatHighway_Lawton_NS_REF');
-                var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
-                TimingCalc('GreatHighway_Lawton_PED');
-                //                 TSPnDET([], [], [], []);
+            //     //greatHwy @ lawton
+            //     ChangeDisp('GreatHighway_Lawton_change', 5, planNum, cl);   //dispChange === 1 && 
+            //     var offset = [0];
+            //     var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
+            //     TimingCalc('GreatHighway_Lawton_NS_REF');
+            //     var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
+            //     TimingCalc('GreatHighway_Lawton_PED');
+            //     //                 TSPnDET([], [], [], []);
 
-                //greatHwy @ noriega
-                ChangeDisp('GreatHighway_Noriega_change', 5, planNum, cl);   //dispChange === 1 && 
-                var offset = [32];
-                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
-                TimingCalc('GreatHighway_Noriega_NS_REF');
-                var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
-                TimingCalc('GreatHighway_Noriega_PED');
-                //                 TSPnDET([], [], [], []);
+            //     //greatHwy @ noriega
+            //     ChangeDisp('GreatHighway_Noriega_change', 5, planNum, cl);   //dispChange === 1 && 
+            //     var offset = [32];
+            //     var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
+            //     TimingCalc('GreatHighway_Noriega_NS_REF');
+            //     var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
+            //     TimingCalc('GreatHighway_Noriega_PED');
+            //     //                 TSPnDET([], [], [], []);
 
-                //greatHwy @ pacheco
-                ChangeDisp('GreatHighway_Pacheco_change', 6, planNum, cl);   //dispChange === 1 && 
-                var offset = [0];
-                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
-                TimingCalc('GreatHighway_Pacheco_NS_REF');
-                var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
-                TimingCalc('GreatHighway_Pacheco_PED');
-                //                 TSPnDET([], [], [], []);
+            //     //greatHwy @ pacheco
+            //     ChangeDisp('GreatHighway_Pacheco_change', 6, planNum, cl);   //dispChange === 1 && 
+            //     var offset = [0];
+            //     var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
+            //     TimingCalc('GreatHighway_Pacheco_NS_REF');
+            //     var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
+            //     TimingCalc('GreatHighway_Pacheco_PED');
+            //     //                 TSPnDET([], [], [], []);
 
-                //greatHwy @ rivera
-                ChangeDisp('GreatHighway_Rivera_change', 5, planNum, cl);   //dispChange === 1 && 
-                var offset = [32];
-                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
-                TimingCalc('GreatHighway_Rivera_NS_REF');
-                var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
-                TimingCalc('GreatHighway_Rivera_PED');
-                //                 TSPnDET([], [], [], []);
+            //     //greatHwy @ rivera
+            //     ChangeDisp('GreatHighway_Rivera_change', 5, planNum, cl);   //dispChange === 1 && 
+            //     var offset = [32];
+            //     var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
+            //     TimingCalc('GreatHighway_Rivera_NS_REF');
+            //     var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
+            //     TimingCalc('GreatHighway_Rivera_PED');
+            //     //                 TSPnDET([], [], [], []);
 
-                //greatHwy @ taraval
-                ChangeDisp('GreatHighway_Taraval_change', 6, planNum, cl);   //dispChange === 1 && 
-                var offset = [0];
-                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
-                TimingCalc('GreatHighway_Taraval_NS_REF');
-                var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
-                TimingCalc('GreatHighway_Taraval_PED');
-                //                 TSPnDET([], [], [], []);
+            //     //greatHwy @ taraval
+            //     ChangeDisp('GreatHighway_Taraval_change', 6, planNum, cl);   //dispChange === 1 && 
+            //     var offset = [0];
+            //     var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
+            //     TimingCalc('GreatHighway_Taraval_NS_REF');
+            //     var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
+            //     TimingCalc('GreatHighway_Taraval_PED');
+            //     //                 TSPnDET([], [], [], []);
 
-                //greatHwy @ vicente
-                ChangeDisp('GreatHighway_Vicente_change', 7, planNum, cl);   //dispChange === 1 && 
-                var offset = [32];
-                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
-                TimingCalc('GreatHighway_Vicente_NS_REF');
-                var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
-                TimingCalc('GreatHighway_Vicente_PED');
-                //                 TSPnDET([], [], [], []);
+            //     //greatHwy @ vicente
+            //     ChangeDisp('GreatHighway_Vicente_change', 7, planNum, cl);   //dispChange === 1 && 
+            //     var offset = [32];
+            //     var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [37]; //Ø 2 6
+            //     TimingCalc('GreatHighway_Vicente_NS_REF');
+            //     var LPI = 0, Yel = 19, Red = 3, Adj = Split, Split = [27]; //Ø 4P
+            //     TimingCalc('GreatHighway_Vicente_PED');
+            //     //                 TSPnDET([], [], [], []);
 
-            }
+            // }
             //**************END OF CORRIDOR SPECIFIC JAVASCRIPT**************
 
             //**************START OF CORRIDOR SPECIFIC JAVASCRIPT**************VERIFIED
@@ -13059,14 +13059,14 @@ See page title for the most recent date of data
                 PlanTimeCalc();
 
                 //OCEAN @ Geneva
-                ChangeDisp('Ocean_Geneva_Frida_Kahlo_change', 24, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Ocean_Geneva_FridaKahlo_change', 24, planNum, cl);   //dispChange === 1 && 
                 var offset = [29, 69, 30];
                 var LPI = 4, Yel = 4, Red = 7, Adj = [0, 0, 0], Split = [45, 55, 55]; //WB Ø 1
-                TimingCalc('Ocean_Geneva_Frida_Kahlo_WB');
+                TimingCalc('Ocean_Geneva_FridaKahlo_WB');
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [45, 55, 55]; //EB Ø 13
-                TimingCalc('Ocean_Geneva_Frida_Kahlo_EB');
+                TimingCalc('Ocean_Geneva_FridaKahlo_EB');
                 var LPI = 0, Yel = 4, Red = 4, Adj = Split, Split = [35, 35, 35]; //NB Ø 8
-                TimingCalc('Ocean_Geneva_Frida_Kahlo_NB');
+                TimingCalc('Ocean_Geneva_FridaKahlo_NB');
                 //                 TSPnDET([], [], [], []);
                 //OCEAN @ F. Kahlo(formerly Phelan) change same as Geneva
                 var offset = [29, 69, 30];
