@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 4-17-25</title>
+    <title>Corridors 4-26-25</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -3504,7 +3504,7 @@ See page title for the most recent date of data
                     </div>
                     <div class="intGroup">
                         <p class="oneone names"><span>@ Post</span><a
-                                href="javascript:CorrToCorr('Post_Laguna_EW_REF', 'WB', 'bottom')">Post</a></p>
+                                href="javascript:CorrToCorr('Post_Laguna_EW', 'WB', 'bottom')">Post</a></p>
                         <p class="oneone numbers"><span id="Gough_Post_SB_REF">0</span><span id="Gough_Post_EW"></span>
                         </p>
                         <p class="changes" id="Gough_Post_change">0</p>
@@ -5972,7 +5972,7 @@ See page title for the most recent date of data
                         <p class="changes" id="Post_Polk_change">0</p>
                         <p>&nbsp;</p>
                     </div>
-                    <p class="one links"><a href="javascript:CorrToCorr('Post_Laguna_EW_REF', 'WB', 'bottom')">goto Post
+                    <p class="one links"><a href="javascript:CorrToCorr('Post_Laguna_EW', 'WB', 'bottom')">goto Post
                             (W)</a></p>
                     <p>&nbsp;</p>
                 </div>
@@ -5992,8 +5992,7 @@ See page title for the most recent date of data
                     <p>&nbsp;</p>
                     <div class="intGroup">
                         <p class="oneone names"><span>@ Laguna</span><span>Laguna</span></p>
-                        <p class="oneone numbers"><span id="Post_Laguna_EW_REF">0</span><span
-                                id="Post_Laguna_NS"></span></p>
+                        <p class="oneone numbers"><span id="Post_Laguna_EW">0</span><span id="Post_Laguna_NS_REF"></span></p>
                         <p class="changes" id="Post_Laguna_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -10348,7 +10347,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Franklin @ Hayes
-                ChangeDisp('Franklin_Hayes_change', 27, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Franklin_Hayes_change', 28, planNum, cl);   //dispChange === 1 && 
                 var offset = [64, 64, 64];
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [45, 45, 45]; //Ø 2
                 TimingCalc('Franklin_Hayes_NB_REF');
@@ -11159,7 +11158,7 @@ See page title for the most recent date of data
                 PlanTimeCalc();
 
                 //gough @ broadway
-                ChangeDisp('Gough_Broadway_change', 19, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Gough_Broadway_change', 20, planNum, cl);   //dispChange === 1 && 
                 var offset = [87, 56, 87, 0];
                 var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0, 0], Split = [55, 55, 55, 36]; //Ø 2 6
                 TimingCalc('Gough_Broadway_NS_REF');
@@ -14232,6 +14231,24 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Plan, flash times & cycle lengths
+                var plan2time = [600, 1400], plan2day = [2, 3, 4, 5, 6],
+                    plan3time = [1400, 2100], plan3day = [2, 3, 4, 5, 6],
+                    plan4time = [800, 2100], plan4day = [1, 7],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [200, 600], flashFree1day = [2, 3, 4, 5, 6],
+                    flashFree2time = [300, 600], flashFree2day = [1, 7],
+                    cycleLength = [54, 54, 54, 54];
+                PlanTimeCalc();
+                //Post @ Laguna
+                ChangeDisp('Post_Laguna_change', 19, planNum, cl);   //dispChange === 1 && 
+                var offset = [14, 37, 53, 34];
+                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [29, 29, 29, 29]; //Ø 4 8
+                TimingCalc('Post_Laguna_NS_REF');
+                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [25, 25, 25, 25]; //Ø 2 6
+                TimingCalc('Post_Laguna_EW');
+                TSPnDET(['Post_Laguna_NS_REF'], [1, 2, 3, 4], [], []);
+
                 var plan2time = [600, 1300], plan2day = [2, 3, 4, 5, 6],
                     plan3time = [1300, 2100], plan3day = [2, 3, 4, 5, 6],
                     plan4time = [], plan4day = [],
@@ -14241,15 +14258,6 @@ See page title for the most recent date of data
                     flashFree2time = [], flashFree2day = [],
                     cycleLength = [70, 70, 70];
                 PlanTimeCalc();
-                //Post @ Laguna
-                ChangeDisp('Post_Laguna_change', 18, planNum, cl);   //dispChange === 1 && 
-                var offset = [0, 22, 38];
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [33, 33, 33]; //Ø 2 6
-                TimingCalc('Post_Laguna_EW_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [37, 37, 37]; //Ø 4 8
-                TimingCalc('Post_Laguna_NS');
-                TSPnDET(['Post_Laguna_NS'], [1, 2, 3], [], []);
-
                 //Post @ Buchanan
                 ChangeDisp('Post_Buchanan_change', 13, planNum, cl);   //dispChange === 1 && 
                 var offset = [45, 7, 62];
