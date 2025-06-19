@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 5-23-25</title>
+    <title>Corridors 6-15-25</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -6653,9 +6653,8 @@ See page title for the most recent date of data
                         <p>&nbsp;</p>
                     </div>
                     <div class="intGroup">
-                        <p class="oneone names"><span>@ 17th</span><span>17th</span></p>
-                        <p class="oneone numbers"><span id="Valencia_17thSt_NS_REF">0</span><span
-                                id="Valencia_17thSt_EW"></span></p>
+                        <p class="twoone names"><span>NB@ 17th</span><span>SB@ 17th</span><span>17th</span></p>
+                        <p class="twoone numbers"><span id="Valencia_17thSt_NB_REF">0</span><span id="Valencia_17thSt_SB"></span><span id="Valencia_17thSt_EW"></span></p>
                         <p class="changes" id="Valencia_17thSt_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -6681,9 +6680,8 @@ See page title for the most recent date of data
                         <p>&nbsp;</p>
                     </div>
                     <div class="intGroup">
-                        <p class="oneone names"><span>@ 21st</span><span>21st</span></p>
-                        <p class="oneone numbers"><span id="Valencia_21stSt_NS_REF">0</span><span
-                                id="Valencia_21stSt_EW"></span></p>
+                        <p class="twoone names"><span>NB@ 21st</span><span>SB@ 21st</span><span>21st</span></p>
+                        <p class="twoone numbers"><span id="Valencia_21stSt_NB_REF">0</span><span id="Valencia_21stSt_SB"></span><span id="Valencia_21stSt_EW"></span></p>
                         <p class="changes" id="Valencia_21stSt_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -6695,8 +6693,8 @@ See page title for the most recent date of data
                         <p>&nbsp;</p>
                     </div>
                     <div class="intGroup">
-                        <p class="oneone names"><span>@ 23rd</span><span>23rd</span></p>
-                        <p class="oneone numbers"><span id="Valencia_23rdSt_NS_REF">0</span><span id="Valencia_23rdSt_EW"></span></p>
+                        <p class="twoone names"><span>NB@ 23rd</span><span>SB@ 23rd</span><span>23rd</span></p>
+                        <p class="twoone numbers"><span id="Valencia_23rdSt_NB_REF">0</span><span id="Valencia_23rdSt_SB"></span><span id="Valencia_23rdSt_EW"></span></p>
                         <p class="changes" id="Valencia_23rdSt_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -10709,7 +10707,7 @@ See page title for the most recent date of data
                 TSPnDET([], [], ['Geneva_Naples_NS'], [1, 2, 3]);
 
                 //GENEVA @ Madrid
-                ChangeDisp('Geneva_Madrid_change', 6, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Geneva_Madrid_change', 7, planNum, cl);   //dispChange === 1 && 
                 var offset = [1, 82, 19];
                 var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [48, 58, 58]; //Ø 2 6
                 TimingCalc('Geneva_Madrid_EW_REF');
@@ -13636,13 +13634,24 @@ See page title for the most recent date of data
                 var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [27, 39, 31]; //Ø 4 8
                 TimingCalc('Pine_Sansome_NS');
                 //                 TSPnDET([], [], [], []);
-
+                
+                
+                //Plan, flash times & cycle lengths
+                var plan2time = [615, 1000], plan2day = [2, 3, 4, 5, 6],
+                plan3time = [1500, 1900], plan3day = [2, 3, 4, 5, 6],
+                plan4time = [], plan4day = [],
+                plan5time = [], plan5day = [],
+                plan6time = [], plan6day = [],
+                flashFree1time = [], flashFree1day = [],
+                flashFree2time = [], flashFree2day = [],
+                cycleLength = [75, 90, 90];
+                PlanTimeCalc();
                 //Pine @ Battery
-                ChangeDisp('Pine_Battery_change', 27, planNum, cl);   //dispChange === 1 && 
-                var offset = [0, 8, 1];
-                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [39, 35, 34]; //Ø 6
+                ChangeDisp('Pine_Battery_change', 28, planNum, cl);   //dispChange === 1 && 
+                var offset = [0, 25, 86];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [39, 47, 44]; //Ø 6
                 TimingCalc('Pine_Battery_WB_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [36, 40, 41]; //Ø 4
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [36, 49, 46]; //Ø 4
                 TimingCalc('Pine_Battery_SB');
                 //                 TSPnDET([], [], [], []);
 
@@ -15126,103 +15135,109 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //valencia @ 16th
-                ChangeDisp('Valencia_16thSt_change', 24, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Valencia_16thSt_change', 25, planNum, cl);   //dispChange === 1 && 
                 var offset = [19, 19, 19];
-                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [37, 37, 37]; //Ø 2 6
+                var LPI = 3, Yel = 4, Red = 2.5, Adj = [0, 0, 0], Split = [37, 37, 37]; //Ø 2 6
                 TimingCalc('Valencia_16thSt_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [38, 38, 38]; //Ø 4 8
+                var LPI = 3, Yel = 4, Red = 2.5, Adj = Split, Split = [38, 38, 38]; //Ø 4 8
                 TimingCalc('Valencia_16thSt_EW');
                 //                 TSPnDET([], [], [], []);
 
                 //Plan, flash times & cycle lengths
-                var plan2time = [], plan2day = [],
-                    plan3time = [], plan3day = [],
+                var plan2time = [700, 1000], plan2day = [2, 3, 4, 5, 6],
+                    plan3time = [1600, 1900], plan3day = [2, 3, 4, 5, 6],
                     plan4time = [], plan4day = [],
                     plan5time = [], plan5day = [],
                     plan6time = [], plan6day = [],
                     flashFree1time = [], flashFree1day = [],
                     flashFree2time = [], flashFree2day = [],
-                    cycleLength = [60];
+                    cycleLength = [75, 75, 75];
                 PlanTimeCalc();
 
                 //valencia @ 17th
-                ChangeDisp('Valencia_17thSt_change', 23, planNum, cl);   //dispChange === 1 && 
-                var offset = [19];
-                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [30]; //Ø 2 6
-                TimingCalc('Valencia_17thSt_NS_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [30]; //Ø 4 8
+                ChangeDisp('Valencia_17thSt_change', 24, planNum, cl);   //dispChange === 1 && 
+                var offset = [57, 60, 57];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [26, 26, 26]; //Ø 2
+                TimingCalc('Valencia_17thSt_NB_REF');
+                var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [26, 26, 26]; //Ø 6
+                TimingCalc('Valencia_17thSt_SB');
+                var LPI = 0, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [23, 23, 23]; //Ø 4 8
                 TimingCalc('Valencia_17thSt_EW');
                 //                 TSPnDET([], [], [], []);
 
                 //valencia @ 18th
-                ChangeDisp('Valencia_18thSt_change', 22, planNum, cl);   //dispChange === 1 && 
-                var offset = [49];
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0], Split = [30]; //Ø 2 6
+                ChangeDisp('Valencia_18thSt_change', 23, planNum, cl);   //dispChange === 1 && 
+                var offset = [19, 19, 19];
+                var LPI = 3, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [41, 41, 41]; //Ø 2 6
                 TimingCalc('Valencia_18thSt_NS_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [30]; //Ø 4 8
+                var LPI = 3, Yel = 4, Red = 2, Adj = Split, Split = [34, 34, 34]; //Ø 4 8
                 TimingCalc('Valencia_18thSt_EW');
                 //                 TSPnDET([], [], [], []);
 
                 //valencia @ 19th
-                ChangeDisp('Valencia_19thSt_change', 14, planNum, cl);   //dispChange === 1 && 
-                var offset = [19];
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0], Split = [30]; //Ø 2 6
+                ChangeDisp('Valencia_19thSt_change', 15, planNum, cl);   //dispChange === 1 && 
+                var offset = [57, 57, 57];
+                var LPI = 3, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [44, 44, 44]; //Ø 2 6
                 TimingCalc('Valencia_19thSt_NS_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [30]; //Ø 4 8
+                var LPI = 3, Yel = 4, Red = 2, Adj = Split, Split = [31, 31, 31]; //Ø 4 8
                 TimingCalc('Valencia_19thSt_EW');
                 //                 TSPnDET([], [], [], []);
 
                 //valencia @ 20th
-                ChangeDisp('Valencia_20thSt_change', 19, planNum, cl);   //dispChange === 1 && 
-                var offset = [49];
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0], Split = [30]; //Ø 2 6
+                ChangeDisp('Valencia_20thSt_change', 20, planNum, cl);   //dispChange === 1 && 
+                var offset = [19, 19, 19];
+                var LPI = 3, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [44, 44, 44]; //Ø 2 6
                 TimingCalc('Valencia_20thSt_NS_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [30]; //Ø 4 8
+                var LPI = 3, Yel = 4, Red = 2, Adj = Split, Split = [31, 31, 31]; //Ø 4 8
                 TimingCalc('Valencia_20thSt_EW');
                 //                 TSPnDET([], [], [], []);
 
                 //valencia @ 21st
-                ChangeDisp('Valencia_21stSt_change', 17, planNum, cl);   //dispChange === 1 && 
-                var offset = [19];
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0], Split = [30]; //Ø 2 6
-                TimingCalc('Valencia_21stSt_NS_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [30]; //Ø 4 8
+                ChangeDisp('Valencia_21stSt_change', 18, planNum, cl);   //dispChange === 1 && 
+                var offset = [57, 60, 57];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [24, 24, 24]; //Ø 2
+                TimingCalc('Valencia_21stSt_NB_REF');
+                var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [24, 24, 24]; //Ø 6
+                TimingCalc('Valencia_21stSt_SB');
+                var LPI = 0, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [27, 27, 27]; //Ø 4 8
                 TimingCalc('Valencia_21stSt_EW');
                 //                 TSPnDET([], [], [], []);
 
                 //valencia @ 22nd
-                ChangeDisp('Valencia_22ndSt_change', 25, planNum, cl);   //dispChange === 1 && 
-                var offset = [49];
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0], Split = [30]; //Ø 2 6
+                ChangeDisp('Valencia_22ndSt_change', 26, planNum, cl);   //dispChange === 1 && 
+                var offset = [19, 19, 19];
+                var LPI = 3, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [44, 44, 44]; //Ø 2 6
                 TimingCalc('Valencia_22ndSt_NS_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [30]; //Ø 4 8
+                var LPI = 3, Yel = 4, Red = 2, Adj = Split, Split = [31, 31, 31]; //Ø 4 8
                 TimingCalc('Valencia_22ndSt_EW');
                 //                 TSPnDET([], [], [], []);
 
                 //valencia @ 23rd
-                ChangeDisp('Valencia_23rdSt_change', 21, planNum, cl);   //dispChange === 1 && 
-                var offset = [23];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0], Split = [30]; //Ø 2 6
-                TimingCalc('Valencia_23rdSt_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [30]; //Ø 4 8
+                ChangeDisp('Valencia_23rdSt_change', 22, planNum, cl);   //dispChange === 1 && 
+                var offset = [57, 60, 57];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [25, 25, 25]; //Ø 2
+                TimingCalc('Valencia_23rdSt_NB_REF');
+                var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [24, 24, 24]; //Ø 6
+                TimingCalc('Valencia_23rdSt_SB');
+                var LPI = 0, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [26, 26, 26]; //Ø 4 8
                 TimingCalc('Valencia_23rdSt_EW');
                 //                 TSPnDET([], [], [], []);
 
                 //valencia @ 24th
-                ChangeDisp('Valencia_24thSt_change', 21, planNum, cl);   //dispChange === 1 && 
-                var offset = [49];
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0], Split = [30]; //Ø 2 6
+                ChangeDisp('Valencia_24thSt_change', 22, planNum, cl);   //dispChange === 1 && 
+                var offset = [19, 19, 19];
+                var LPI = 3, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [41, 41, 41]; //Ø 2 6
                 TimingCalc('Valencia_24thSt_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [30]; //Ø 4 8
+                var LPI = 3, Yel = 4, Red = 2, Adj = Split, Split = [34, 34, 34]; //Ø 4 8
                 TimingCalc('Valencia_24thSt_EW');
                 //                 TSPnDET([], [], [], []);
 
                 //valencia @ 25th
-                ChangeDisp('Valencia_25thSt_change', 15, planNum, cl);   //dispChange === 1 && 
-                var offset = [19];
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0], Split = [30]; //Ø 2 6
+                ChangeDisp('Valencia_25thSt_change', 16, planNum, cl);   //dispChange === 1 && 
+                var offset = [57, 57, 57];
+                var LPI = 3, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [44, 44, 44]; //Ø 2 6
                 TimingCalc('Valencia_25thSt_NS_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [30]; //Ø 4 8
+                var LPI = 3, Yel = 4, Red = 2, Adj = Split, Split = [31, 31, 31]; //Ø 4 8
                 TimingCalc('Valencia_25thSt_EW');
                 //                 TSPnDET([], [], [], []);
             }
@@ -15436,13 +15451,13 @@ See page title for the most recent date of data
                 TSPnDET(['VanNess_Post_NS_REF'], [1, 2, 3], [], []);
 
                 //Van Ness @ Geary
-                ChangeDisp('VanNess_Geary_change', 28, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('VanNess_Geary_change', 29, planNum, cl);   //dispChange === 1 && 
                 var offset = [35, 60, 70];
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [50, 50, 50]; //Ø 2 6
                 TimingCalc('VanNess_Geary_NS_REF');
                 var LPI = 0, Yel = 4, Red = 2.5, Adj = Split, Split = [40, 40, 40]; //Ø 8
                 TimingCalc('VanNess_Geary_WB');
-                TSPnDET(['VanNess_Geary_WB'], [1, 2, 3], [], []);
+                TSPnDET(['VanNess_Geary_NS_REF', 'VanNess_Geary_WB'], [1, 2, 3], [], []);
 
                 //Van Ness @ O'Farrell
                 ChangeDisp('VanNess_Ofarrell_change', 25, planNum, cl);   //dispChange === 1 && 
@@ -15550,7 +15565,7 @@ See page title for the most recent date of data
                     cycleLength = [0];
                 PlanTimeCalc();
                 //SouthVanNess @ Mission
-                ChangeDisp('SouthVanNess_12thStMissionOtis_change', 41, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('SouthVanNess_12thStMissionOtis_change', 42, planNum, cl);   //dispChange === 1 && 
                 var offset = ['free'];
                 var LPI = 3, Yel = 4, Red = 3, Adj = [0], Split = [55]; //Ø 2 6
                 TimingCalc('SouthVanNess_12thStMissionOtis_NS_REF');
