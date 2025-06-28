@@ -86,6 +86,7 @@ loop files, TimingCards "\*.pdf", "R" ; go thru all the pdf filenames
         continue
     tempName := RegExReplace(A_LoopFileName, "[_\s\-]|\.(?!pdf)", " ")
     tempName := RegExReplace(tempName, "i)(ch)(\d+)(\.pdf)", "$1 $2$3") ; CH##.pdf to CH ##.pdf
+    tempName := RegExReplace(tempName, "\s*&\s*", " ")
     tempName := RegExReplace(tempName, "\s{2,}", " ")
     if RegExMatch(tempName, "i) ch[\s_]?\d+") = 0 ;if there isn't a change# just move on
         continue
