@@ -10,7 +10,7 @@ SetWorkingDir(A_ScriptDir)  ; Ensures a consistent starting directory.
 ; SCRAPES CoordCheck FOR VARIABLES & CHANGE #s and SCRAPES INTERSECTION TIMING CARDS FOR NAMES & CHANGE #s THEN COMPARES
 ; NOTE... might want to try Sift search to see if there are better results...although, this one is pretty decent
 ; ******************************************************************************************************************
-
+#Include <UIA> ; UI Automation library for AHK v2
 VarList := "", IntList := "", cardList := "", finalList := "Format of this list is that program variables are on first line & timing cards are on 2nd`n`n"
 varVarFile := "Variable from Coord List.txt", varNameFile := "Name from Coord List.txt", cardNameFile := "Name from Card List.txt", finalFile := "Variable to Card tester.txt"
 zeroMatch := "***************ZERO MATCHES***************`n", oneMatch := "***************ONE MATCH***************`n", multMatch := "***************TWO PLUS MATCHES***************`n"
@@ -29,7 +29,7 @@ if FileExist(A_ScriptDir "..\CoordCheck.html") ;if scraper is in subfolder of Co
     FileCount++
     coordFile := FileSelect("", A_ScriptDir "..\CoordCheck.html", "--------------Choose File to Scrape--------------", "*.html")
 }
- else if FileExist(A_ScriptDir "\CoordCheck.html")
+else if FileExist(A_ScriptDir "\CoordCheck.html")
 {
     FileCount++
     coordFile := FileSelect("", A_ScriptDir "\CoordCheck.html", "--------------Choose File to Scrape--------------", "*.html")
@@ -279,15 +279,29 @@ Sleep(100)
 Send("^f")
 Sleep(100)
 WinWait("Find", , 1.5)
-Send("{text}---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R")
-Sleep(200)
-ControlSetChecked(1, "Button19", "Find") ;regular expression radio button
-Sleep(200)
-ControlClick("Button23", "Find") ;Find Next button
-Sleep(200)
-ControlClick("Button26", "Find") ;Count button
+notepadEl := UIA.ElementFromHandle("Find ahk_exe notepad++.exe")
+; Send("{text}---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R")
+notepadEl.WaitElement({ AutomationId: "1001" }, 5000).Value := "---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R" ; wait for the Find what: edit box
+;Type: 50004 (Edit) Name: "Find what:" Value: "---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R" LocalizedType: "edit" AutomationId: "1001" ClassName: "Edit"
+; Sleep(200)
+; ControlSetChecked(1, "Button19", "Find") ;regular expression radio button
+notepadEl.WaitElement({ AutomationId: "1605" }, 5000).Select() ; Regular expression radio button
+;Type: 50013 (RadioButton) Name: "Regular expression" LocalizedType: "radio button" AutomationId: "1605" ClassName: "Button"
+;can Invoke() or Select()
+; Sleep(200)
+; ControlClick("Button23", "Find") ;Find Next button
+; notepadEl.WaitElement({AutomationId: "1723"}, 5000).Invoke() ; Find Next button
+;Type: 50000 (Button) Name: "▼ Find Next" LocalizedType: "button" AutomationId: "1723" ClassName: "Button"
+;Invoke()
+; Sleep(200)
+; ControlClick("Button26", "Find") ;Count button
+notepadEl.WaitElement({ AutomationId: "1641" }, 5000).Invoke() ; Find All in Current Document
+;Type: 50000 (Button) Name: "Find All in Current Document" LocalizedType: "button" AutomationId: "1641" ClassName: "Button"
+notepadEl.WaitElement({ AutomationId: "1614" }, 5000).Invoke() ; Count button
+;Type: 50000 (Button) Name: "Count" LocalizedType: "button" AutomationId: "1614" ClassName: "Button"
+;Invoke()
 
-MsgBox "********************`nComparison took...`n" ElapsedTime " milliseconds.`n********************`n" Round(ElapsedTime / 1000, 2) " seconds.`n********************",,"T5"
+MsgBox "********************`nComparison took...`n" ElapsedTime " milliseconds.`n********************`n" Round(ElapsedTime / 1000, 2) " seconds.`n********************", , "T5"
 
 ExitApp()
 
