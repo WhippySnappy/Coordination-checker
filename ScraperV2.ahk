@@ -295,10 +295,10 @@ notepadEl.WaitElement({ AutomationId: "1605" }, 5000).Select() ; Regular express
 ;Invoke()
 ; Sleep(200)
 ; ControlClick("Button26", "Find") ;Count button
-notepadEl.WaitElement({ AutomationId: "1641" }, 5000).Invoke() ; Find All in Current Document
-;Type: 50000 (Button) Name: "Find All in Current Document" LocalizedType: "button" AutomationId: "1641" ClassName: "Button"
 notepadEl.WaitElement({ AutomationId: "1614" }, 5000).Invoke() ; Count button
 ;Type: 50000 (Button) Name: "Count" LocalizedType: "button" AutomationId: "1614" ClassName: "Button"
+; notepadEl.WaitElement({ AutomationId: "1641" }, 5000).Invoke() ; Find All in Current Document
+;Type: 50000 (Button) Name: "Find All in Current Document" LocalizedType: "button" AutomationId: "1641" ClassName: "Button"
 ;Invoke()
 
 MsgBox "********************`nComparison took...`n" ElapsedTime " milliseconds.`n********************`n" Round(ElapsedTime / 1000, 2) " seconds.`n********************", , "T5"

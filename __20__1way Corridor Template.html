@@ -5,9 +5,10 @@ Wholly conceived, developed & programmed by Dennis Verhalen.
 Last modified 5/13/2021
 -->
 <html lang="en-US">
-    <head>
-        <title>-->STREET-THERE to HERE</title>
-        <meta charset="UTF-8">
+
+<head>
+    <title>-->STREET-THERE to HERE</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
         /*            html {
@@ -564,7 +565,7 @@ Last modified 5/13/2021
 
         /*empty classes used to reference certain elements*/
     </style>
-    </head>
+</head>
 
 <body oncontextmenu="ToggleFullScreen(); return false">
     <!--<body>-->
@@ -576,9 +577,9 @@ Last modified 5/13/2021
         <p class="oneone noShow" id="planCycleBoxLegend"><span>Plan#(s) >Next Transition</span><span>Cycle Length(s)</span></p>
     </div>
     <div id="adjustContainer">
-        +/- Hrs:<input type="number" min="-99" max="99" step="1" value="0" class="adjuster" id="clkAdjHr" onClick="this.select()" onChange="Timing(this.value)">
-        Min:<input type="number" min="-99" max="99" step="1" value="0" class="adjuster" id="clkAdjMin" onClick="this.select()" onChange="Timing(this.value)">
-        Sec:<input type="number" min="-99" max="99" step="0.5" value="0" class="adjuster" id="clkAdjSec" onClick="this.select()" onChange="Timing(this.value)">
+        +/- Hrs:<input type="number" title="Hour" min="-99" max="99" step="1" value="0" class="adjuster" id="clkAdjHr" onClick="this.select()" onChange="Timing(this.value)">
+        Min:<input type="number" title="Minutes" min="-99" max="99" step="1" value="0" class="adjuster" id="clkAdjMin" onClick="this.select()" onChange="Timing(this.value)">
+        Sec:<input type="number" title="Seconds" min="-99" max="99" step="0.5" value="0" class="adjuster" id="clkAdjSec" onClick="this.select()" onChange="Timing(this.value)">
     </div>
     <span id="adjLegend"></span>
     <div id="clockBox">
@@ -588,829 +589,878 @@ Last modified 5/13/2021
     </div>
     <p id="directionDisplay"></p>
 
-        <div class="flexi">
-            <div class="dropdown one">
-                <button onclick="DropFunction()" class="dropbtn" id="DropdownButton">Choose a Corridor</button><!---->
-                <div id="myDropdown" class="dropdown-content">
-                    <input type="text" inputmode="search" placeholder="Filter List..." id="myInput" onkeyup="filterFunction()">
-                    <a href="javascript:CorridorDisplay('corr_xxx')">STREET<br/>&uarr; THERE - HERE</a> <!--    &uarr;  &larr;  &darr;  &larr;  -->
-                </div>
+    <div class="flexi">
+        <div class="dropdown one">
+            <button onclick="DropFunction()" class="dropbtn" id="DropdownButton">Choose a Corridor</button><!---->
+            <div id="myDropdown" class="dropdown-content">
+                <input type="text" inputmode="search" placeholder="Filter List..." id="myInput" onkeyup="filterFunction()">
+                <a href="javascript:CorridorDisplay('corr_xxx')">STREET<br />&uarr; THERE - HERE</a> <!--    &uarr;  &larr;  &darr;  &larr;  -->
             </div>
         </div>
-        <div id="navBar">
-            <ul>
-                <li><a class="noline" id="closeCorr" href="javascript:NavBarCloser()">X</a></li> <!--default = X-->
-                <li><a class="noline" id="pageUp" href="javascript:UpPageFunction()">&#8896;</a></li> <!--UP-->
-                <li><a class="noline" id="pageDown" href="javascript:DownPageFunction()">&#8897;</a></li> <!--DOWN-->
-            </ul>
-        </div>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+    </div>
+    <div id="navBar">
+        <ul>
+            <li><a class="noline" id="closeCorr" href="javascript:NavBarCloser()">X</a></li> <!--default = X-->
+            <li><a class="noline" id="pageUp" href="javascript:UpPageFunction()">&#8896;</a></li> <!--UP-->
+            <li><a class="noline" id="pageDown" href="javascript:DownPageFunction()">&#8897;</a></li> <!--DOWN-->
+        </ul>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
 
-        <div class="wrapper">
+    <div class="wrapper">
 
-            <!--***************START OF CORRIDOR SPECIFIC HTML*****************-->
-            <div id="corr_xxx" class="hider">
-                <div class="corridorName">STREET</div>
-                <div class="bigWhite intNames">
-                    <p class="one direcNoTog">EB WB SB NB</p>
-                    <div class="orderBox ignoreOrderFlip">
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet01</span><span>xStreet01</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet01_OS">0</span><span id="STREET_xStreet01_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet01_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet02</span><span>xStreet02</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet02_OS">0</span><span id="STREET_xStreet02_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet02_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet03</span><span>xStreet03</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet03_OS">0</span><span id="STREET_xStreet03_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet03_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet04</span><span>xStreet04</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet04_OS">0</span><span id="STREET_xStreet04_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet04_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet05</span><span>xStreet05</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet05_OS">0</span><span id="STREET_xStreet05_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet05_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet06</span><span>xStreet06</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet06_OS">0</span><span id="STREET_xStreet06_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet06_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet07</span><span>xStreet07</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet07_OS">0</span><span id="STREET_xStreet07_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet07_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet08</span><span>xStreet08</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet08_OS">0</span><span id="STREET_xStreet08_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet08_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet09</span><span>xStreet09</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet09_OS">0</span><span id="STREET_xStreet09_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet09_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet10</span><span>xStreet10</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet10_OS">0</span><span id="STREET_xStreet10_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet10_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet11</span><span>xStreet11</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet11_OS">0</span><span id="STREET_xStreet11_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet11_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet12</span><span>xStreet12</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet12_OS">0</span><span id="STREET_xStreet12_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet12_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet13</span><span>xStreet13</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet13_OS">0</span><span id="STREET_xStreet13_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet13_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet14</span><span>xStreet14</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet14_OS">0</span><span id="STREET_xStreet14_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet14_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="oneone names"><span>@ xStreet15</span><span>xStreet15</span></p>
-                            <p class="oneone numbers"><span id="STREET_xStreet15_OS">0</span><span id="STREET_xStreet15_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet15_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="onetwo names"><span>@ xStreet16</span><span>xStreet16</span><span>xStreet16</span></p>
-                            <p class="onetwo numbers"><span id="STREET_xStreet16_OS">0</span><span id="STREET_xStreet16_UP"></span><span id="STREET_xStreet16_OUP"></span></p>
-                            <p class='changes' id="STREET_xStreet16_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="twoone names"><span>@ xStreet17</span><span>@ xStreet17</span><span>xStreet17</span></p>
-                            <p class="twoone numbers"><span id="STREET_xStreet17_OS">0</span><span id="STREET_xStreet17_OOS"></span><span id="STREET_xStreet17_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet17_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="onetwo names"><span>@ xStreet18</span><span>xStreet18</span><span>xStreet18</span></p>
-                            <p class="onetwo numbers"><span id="STREET_xStreet18_OS">0</span><span id="STREET_xStreet18_UP"></span><span id="STREET_xStreet18_OUP"></span></p>
-                            <p class='changes' id="STREET_xStreet18_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="twoone names"><span>@ xStreet19</span><span>@ xStreet19</span><span>xStreet19</span></p>
-                            <p class="twoone numbers"><span id="STREET_xStreet19_OS">0</span><span id="STREET_xStreet19_OOS"></span><span id="STREET_xStreet19_UP"></span></p>
-                            <p class='changes' id="STREET_xStreet19_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="intGroup">
-                            <p class="twotwo names"><span>@ xStreet20</span><span>@ xStreet20</span><span>xStreet20</span><span>xStreet20</span></p>
-                            <p class="twotwo numbers"><span id="STREET_xStreet20_OS">0</span><span id="STREET_xStreet20_OOS"></span><span id="STREET_xStreet20_UP"></span><span id="STREET_xStreet20_OUP"></span></p>
-                            <p class='changes' id="STREET_xStreet20_change">0</p>
-                            <p>&nbsp;</p>
-                        </div>
+        <!--***************START OF CORRIDOR SPECIFIC HTML*****************-->
+        <div id="corr_xxx" class="hider">
+            <div class="corridorName">STREET</div>
+            <div class="bigWhite intNames">
+                <p class="one direcNoTog">EB WB SB NB</p>
+                <div class="orderBox ignoreOrderFlip">
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet01</span><span>xStreet01</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet01_OS">0</span><span id="STREET_xStreet01_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet01_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet02</span><span>xStreet02</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet02_OS">0</span><span id="STREET_xStreet02_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet02_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet03</span><span>xStreet03</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet03_OS">0</span><span id="STREET_xStreet03_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet03_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet04</span><span>xStreet04</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet04_OS">0</span><span id="STREET_xStreet04_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet04_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet05</span><span>xStreet05</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet05_OS">0</span><span id="STREET_xStreet05_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet05_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet06</span><span>xStreet06</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet06_OS">0</span><span id="STREET_xStreet06_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet06_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet07</span><span>xStreet07</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet07_OS">0</span><span id="STREET_xStreet07_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet07_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet08</span><span>xStreet08</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet08_OS">0</span><span id="STREET_xStreet08_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet08_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet09</span><span>xStreet09</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet09_OS">0</span><span id="STREET_xStreet09_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet09_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet10</span><span>xStreet10</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet10_OS">0</span><span id="STREET_xStreet10_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet10_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet11</span><span>xStreet11</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet11_OS">0</span><span id="STREET_xStreet11_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet11_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet12</span><span>xStreet12</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet12_OS">0</span><span id="STREET_xStreet12_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet12_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet13</span><span>xStreet13</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet13_OS">0</span><span id="STREET_xStreet13_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet13_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet14</span><span>xStreet14</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet14_OS">0</span><span id="STREET_xStreet14_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet14_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ xStreet15</span><span>xStreet15</span></p>
+                        <p class="oneone numbers"><span id="STREET_xStreet15_OS">0</span><span id="STREET_xStreet15_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet15_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="onetwo names"><span>@ xStreet16</span><span>xStreet16</span><span>xStreet16</span></p>
+                        <p class="onetwo numbers"><span id="STREET_xStreet16_OS">0</span><span id="STREET_xStreet16_UP"></span><span id="STREET_xStreet16_OUP"></span></p>
+                        <p class='changes' id="STREET_xStreet16_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="twoone names"><span>@ xStreet17</span><span>@ xStreet17</span><span>xStreet17</span></p>
+                        <p class="twoone numbers"><span id="STREET_xStreet17_OS">0</span><span id="STREET_xStreet17_OOS"></span><span id="STREET_xStreet17_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet17_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="onetwo names"><span>@ xStreet18</span><span>xStreet18</span><span>xStreet18</span></p>
+                        <p class="onetwo numbers"><span id="STREET_xStreet18_OS">0</span><span id="STREET_xStreet18_UP"></span><span id="STREET_xStreet18_OUP"></span></p>
+                        <p class='changes' id="STREET_xStreet18_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="twoone names"><span>@ xStreet19</span><span>@ xStreet19</span><span>xStreet19</span></p>
+                        <p class="twoone numbers"><span id="STREET_xStreet19_OS">0</span><span id="STREET_xStreet19_OOS"></span><span id="STREET_xStreet19_UP"></span></p>
+                        <p class='changes' id="STREET_xStreet19_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="twotwo names"><span>@ xStreet20</span><span>@ xStreet20</span><span>xStreet20</span><span>xStreet20</span></p>
+                        <p class="twotwo numbers"><span id="STREET_xStreet20_OS">0</span><span id="STREET_xStreet20_OOS"></span><span id="STREET_xStreet20_UP"></span><span id="STREET_xStreet20_OUP"></span></p>
+                        <p class='changes' id="STREET_xStreet20_change">0</p>
+                        <p>&nbsp;</p>
                     </div>
                 </div>
             </div>
-            <!--***************END OF CORRIDOR SPECIFIC HTML*****************-->
-
         </div>
+        <!--***************END OF CORRIDOR SPECIFIC HTML*****************-->
 
-        <script>
-            var openCorr, dispChange;
-            document.addEventListener("keydown", keydown);
-            window.onload = function () {
-                document.getElementById("DropdownButton").focus();
-                Timing();
-            };
+    </div>
 
-            function Timing() {
-                // set Clock Adjustment variablevalue);
-                let clkAdjHr = parseInt(document.getElementById("clkAdjHr").value),
-                        clkAdjMin = parseInt(document.getElementById("clkAdjMin").value),
-                        clkAdjSec = parseFloat(document.getElementById("clkAdjSec").value);
-                //make sure clock adj is in range
-                if (isNaN(clkAdjHr)) {
-                    clkAdjHr = 0;
-                } else if (clkAdjHr < -99) {
-                    document.getElementById("clkAdjHr").value = "-99";
-                } else if (clkAdjHr > 99) {
-                    document.getElementById("clkAdjHr").value = "99";
+    <script>
+        var openCorr, dispChange;
+        document.addEventListener("keydown", keydown);
+        window.onload = function () {
+            document.getElementById("DropdownButton").focus();
+            Timing();
+        };
+
+        function Timing() {
+            // set Clock Adjustment variablevalue);
+            let clkAdjHr = parseInt(document.getElementById("clkAdjHr").value),
+                clkAdjMin = parseInt(document.getElementById("clkAdjMin").value),
+                clkAdjSec = parseFloat(document.getElementById("clkAdjSec").value);
+            //make sure clock adj is in range
+            if (isNaN(clkAdjHr)) {
+                clkAdjHr = 0;
+            } else if (clkAdjHr < -99) {
+                document.getElementById("clkAdjHr").value = "-99";
+            } else if (clkAdjHr > 99) {
+                document.getElementById("clkAdjHr").value = "99";
+            }
+            if (isNaN(clkAdjMin)) {
+                clkAdjMin = 0;
+            } else if (clkAdjMin < -99) {
+                document.getElementById("clkAdjMin").value = "-99";
+            } else if (clkAdjMin > 99) {
+                document.getElementById("clkAdjMin").value = "99";
+            }
+            if (isNaN(clkAdjSec)) {
+                clkAdjSec = 0;
+            } else if (clkAdjSec < -99) {
+                document.getElementById("clkAdjSec").value = "-99";
+            } else if (clkAdjSec > 99) {
+                document.getElementById("clkAdjSec").value = "99";
+            }
+            // get current time & day. Add or subtract clock adjustment time
+            let today = new Date();
+            today.setMilliseconds((clkAdjSec * 1000) + today.getMilliseconds()); //seconds adjust
+            today.setMinutes(clkAdjMin + today.getMinutes()); //minute adjust
+            today.setHours(clkAdjHr + today.getHours()); //hour adjust
+            let DoW = today.toLocaleDateString('en-US', { weekday: 'short' });
+            let todaysDate = today.getMonth() + 1 + "-" + today.getDate(); //use for intersection/corridor with holiday schedules
+            let ms = today.getMilliseconds();
+            let tenths = (ms / 100);
+            let s = today.getSeconds() - 0.25;
+            let sx = today.getSeconds();
+            let m = today.getMinutes();
+            let mx = today.getMinutes();
+            let h = today.getHours();
+            let hx = today.getHours();
+            let d = today.getDay() + 1;
+            // use PadTime function to add leading zero
+            hx = PadTime(hx),
+                mx = PadTime(mx),
+                sx = PadTime(sx);
+            let tx = Number(h + "" + mx + "." + sx); //need .sx(seconds) to compare plan start + transition to current time. Otherwise can't use fractions of a minute.
+
+            //Variable declarations that need to be global
+            var cl, planNum, planNumAll = [], nextPlanTime, nextPlanTimeStr, todayPlanTime = [], tomorrowPlanTime = [], clAll = [], flashTime, freeTime, transition, transTime;
+            /*
+             Plan Times and Program Flash/Free time.
+             Use 24 hour time without leading zeros.
+             PlanTime format is HourMinutes as [StartTime, EndTime].
+             Days: Sun=1...Wed=4...Sat=7    ie. [2, 3, 4, 5, 6] for weekdays
+             Flash & Free times are entered in 'flashFree(1/2)time' - enter 'flash' or 'free' as 3rd array element to differentiate
+             Flash & Free days are entered in 'flashFree(1/2)day'.
+             Use an empty array if plan disabled. If no plan time/days are defined it assumes plan 1
+             Cycle length is in whole seconds
+             You only need to declare plan, flash & cycle length once per corridor unless mixing different values. Comment out unneeded plan declarations or delete. This reduces computational load.
+             But if you are changing plan values, it is best to use the entire "PLANS" var structure to insure there aren't any missed changes.
+             */
+            /*
+             * OFFSETS, SPLITS, YELLOWS, REDS
+             Enter a per plan value for arrayed items...Adj & Split
+             For individual phases enter the amount of Adj time(in seconds) after the cycle starts on a per plan basis. ie The cooordinated reference would be 0,0,0. Another phase might be 25,30,33...
+             ...An easy way is have the coord ph be 0,0,0 and the next phase's Adj = Split. Just make sure to do them in chronological order. Use SplitAdd() if more than 2. It adds the last Adj & Split
+             Enter Split times for each phase on a per plan basis. i.e. 20,25,23
+             */
+            /*
+             SAMPLE TSP FORMAT - ONLY use to indicate when intersection is in TSP plan and/or there is actuation. Leave commented if none.
+             //                 TSPnDET([], [], [], []); //tspDirections, tspPlans, detDirections, detPlans
+             A string with the DOM ID is sent to function  TimingCalc() so it knows which element to change
+             Use the direction's string that is used for TimingCalc for the TSP & detection.
+             Plan #s for TSP go in 2nd array.
+             Plan #s for detection go in 4th array. This was needed because there are actuated intersections that have recall on some plans.
+             WHAT IT LOOKS LIKE WITH TSP ON PLANS 1,2,3 & NO DETECTION...
+             TSPnDET(['_8thSt_Folsom_EB_REF', '_8thSt_Folsom_SB'], [1,2,3], [], []);
+
+             WITH DETECTION & NO TSP...
+             TSPnDET([], [], ['_8thSt_Folsom_SB'], [1,2,3]);
+
+             TSP on both directions, detection on 1...
+             TSPnDET(['_8thSt_Folsom_EB_REF', '_8thSt_Folsom_SB'], [1,2,3], ['_8thSt_Folsom_SB'], [1,2,3]);
+             */
+
+            //**************START OF CORRIDOR SPECIFIC JAVASCRIPT**************
+            if (window.openCorr === "corr_xxx") {
+
+                //Plan, flash times & cycle lengths
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet01
+                dispChange === 1 && ChangeDisp('STREET_xStreet01_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet01_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet01_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet02
+                dispChange === 1 && ChangeDisp('STREET_xStreet02_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet02_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet02_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet03
+                dispChange === 1 && ChangeDisp('STREET_xStreet03_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet03_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet03_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet04
+                dispChange === 1 && ChangeDisp('STREET_xStreet04_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet04_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet04_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet05
+                dispChange === 1 && ChangeDisp('STREET_xStreet05_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet05_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet05_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet06
+                dispChange === 1 && ChangeDisp('STREET_xStreet06_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet06_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet06_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet07
+                dispChange === 1 && ChangeDisp('STREET_xStreet07_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet07_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet07_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet08
+                dispChange === 1 && ChangeDisp('STREET_xStreet08_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet08_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet08_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet09
+                dispChange === 1 && ChangeDisp('STREET_xStreet09_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet09_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet09_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet10
+                dispChange === 1 && ChangeDisp('STREET_xStreet10_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet10_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet10_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet11
+                dispChange === 1 && ChangeDisp('STREET_xStreet11_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet11_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet11_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet12
+                dispChange === 1 && ChangeDisp('STREET_xStreet12_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet12_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet12_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet13
+                dispChange === 1 && ChangeDisp('STREET_xStreet13_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet13_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet13_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet14
+                dispChange === 1 && ChangeDisp('STREET_xStreet14_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet14_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet14_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet15
+                dispChange === 1 && ChangeDisp('STREET_xStreet15_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet15_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet15_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet16
+                dispChange === 1 && ChangeDisp('STREET_xStreet16_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [40]; //Ø 2 6
+                TimingCalc('STREET_xStreet16_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [40]; //Ø 3 7
+                TimingCalc('STREET_xStreet16_UP');
+                var LPI = 4, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [40]; //Ø 4 8
+                TimingCalc('STREET_xStreet16_OUP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet17
+                dispChange === 1 && ChangeDisp('STREET_xStreet17_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [20]; //Ø 2 6
+                TimingCalc('STREET_xStreet17_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Adj, Split = [60]; //Ø 1 5
+                TimingCalc('STREET_xStreet17_OOS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [100]; //Ø 4 8
+                TimingCalc('STREET_xStreet17_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet18
+                dispChange === 1 && ChangeDisp('STREET_xStreet18_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [40]; //Ø 2 6
+                TimingCalc('STREET_xStreet18_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [40]; //Ø 3 7
+                TimingCalc('STREET_xStreet18_UP');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Adj, Split = [40]; //Ø 4 8
+                TimingCalc('STREET_xStreet18_OUP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet19
+                dispChange === 1 && ChangeDisp('STREET_xStreet19_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [20]; //Ø 2 6
+                TimingCalc('STREET_xStreet19_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 1 5
+                TimingCalc('STREET_xStreet19_OOS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [100]; //Ø 4 8
+                TimingCalc('STREET_xStreet19_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [120];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //STREET @ xStreet20
+                dispChange === 1 && ChangeDisp('STREET_xStreet20_change', 0, planNum, cl);
+                var offset = [0];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet20_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Adj, Split = [60]; //Ø 2 6
+                TimingCalc('STREET_xStreet20_OOS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet20_UP');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Adj, Split = [60]; //Ø 4 8
+                TimingCalc('STREET_xStreet20_OUP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+            }
+            //**************END OF CORRIDOR SPECIFIC JAVASCRIPT**************
+
+            //**************START OF GENERAL JAVASCRIPT**************
+
+            // direction display position
+            let dirHt = document.getElementById('Time').getBoundingClientRect().bottom * 1.15 + "px";
+            document.getElementById("directionDisplay").style.top = dirHt;
+            // Time display elements.
+            document.getElementById('Time').innerHTML = DoW + " " + hx + ":" + mx + ":" + sx;
+
+            // Plan/cycle length display elements.
+            if (planNumAll.length > 0) { //are there plan #s
+                if (isFinite(nextPlanTime)) { //is there a next plan time within 24 hours??
+                    document.getElementById('PlanNum_zzz').innerHTML = "Plan:" + planNumAll.join("/") + " &gt;" + nextPlanTimeStr;
+                } else {
+                    document.getElementById('PlanNum_zzz').innerHTML = "Plan:" + planNumAll.join("/") + " &gt;Day+";
                 }
-                if (isNaN(clkAdjMin)) {
-                    clkAdjMin = 0;
-                } else if (clkAdjMin < -99) {
-                    document.getElementById("clkAdjMin").value = "-99";
-                } else if (clkAdjMin > 99) {
-                    document.getElementById("clkAdjMin").value = "99";
-                }
-                if (isNaN(clkAdjSec)) {
-                    clkAdjSec = 0;
-                } else if (clkAdjSec < -99) {
-                    document.getElementById("clkAdjSec").value = "-99";
-                } else if (clkAdjSec > 99) {
-                    document.getElementById("clkAdjSec").value = "99";
-                }
-                // get current time & day. Add or subtract clock adjustment time
-                let today = new Date();
-                today.setMilliseconds((clkAdjSec * 1000) + today.getMilliseconds()); //seconds adjust
-                today.setMinutes(clkAdjMin + today.getMinutes()); //minute adjust
-                today.setHours(clkAdjHr + today.getHours()); //hour adjust
-                let DoW = today.toLocaleDateString('en-US', {weekday: 'short'});
-                let todaysDate = today.getMonth() + 1 + "-" + today.getDate(); //use for intersection/corridor with holiday schedules
-                let ms = today.getMilliseconds();
-                let tenths = (ms / 100);
-                let s = today.getSeconds() - 0.25;
-                let sx = today.getSeconds();
-                let m = today.getMinutes();
-                let mx = today.getMinutes();
-                let h = today.getHours();
-                let hx = today.getHours();
-                let d = today.getDay() + 1;
-                // use PadTime function to add leading zero
-                hx = PadTime(hx),
-                        mx = PadTime(mx),
-                        sx = PadTime(sx);
-                let tx = Number(h + "" + mx + "." + sx); //need .sx(seconds) to compare plan start + transition to current time. Otherwise can't use fractions of a minute.
+            } else { //there must be no plan#
+                document.getElementById('PlanNum_zzz').innerHTML = "Plan:";
+            }
+            document.getElementById('cl_zzz').innerHTML = "Cycle:" + clAll.join("/"); //display any cycle lengths that have a #
 
-                //Variable declarations that need to be global
-                var cl, planNum, planNumAll = [], nextPlanTime, nextPlanTimeStr, todayPlanTime = [], tomorrowPlanTime = [], clAll = [], flashTime, freeTime, transition, transTime;
-                /*
-                 Plan Times and Program Flash/Free time.
-                 Use 24 hour time without leading zeros.
-                 PlanTime format is HourMinutes as [StartTime, EndTime].
-                 Days: Sun=1...Wed=4...Sat=7    ie. [2, 3, 4, 5, 6] for weekdays
-                 Flash & Free times are entered in 'flashFree(1/2)time' - enter 'flash' or 'free' as 3rd array element to differentiate
-                 Flash & Free days are entered in 'flashFree(1/2)day'.
-                 Use an empty array if plan disabled. If no plan time/days are defined it assumes plan 1
-                 Cycle length is in whole seconds
-                 You only need to declare plan, flash & cycle length once per corridor unless mixing different values. Comment out unneeded plan declarations or delete. This reduces computational load.
-                 But if you are changing plan values, it is best to use the entire "PLANS" var structure to insure there aren't any missed changes.
-                 */
-                /*
-                 * OFFSETS, SPLITS, YELLOWS, REDS
-                 Enter a per plan value for arrayed items...Adj & Split
-                 For individual phases enter the amount of Adj time(in seconds) after the cycle starts on a per plan basis. ie The cooordinated reference would be 0,0,0. Another phase might be 25,30,33...
-                 ...An easy way is have the coord ph be 0,0,0 and the next phase's Adj = Split. Just make sure to do them in chronological order. Use SplitAdd() if more than 2. It adds the last Adj & Split
-                 Enter Split times for each phase on a per plan basis. i.e. 20,25,23
-                 */
-                /*
-                 SAMPLE TSP FORMAT - ONLY use to indicate when intersection is in TSP plan and/or there is actuation. Leave commented if none.
-                 //                 TSPnDET([], [], [], []); //tspDirections, tspPlans, detDirections, detPlans
-                 A string with the DOM ID is sent to function  TimingCalc() so it knows which element to change
-                 Use the direction's string that is used for TimingCalc for the TSP & detection.
-                 Plan #s for TSP go in 2nd array.
-                 Plan #s for detection go in 4th array. This was needed because there are actuated intersections that have recall on some plans.
-                 WHAT IT LOOKS LIKE WITH TSP ON PLANS 1,2,3 & NO DETECTION...
-                 TSPnDET(['_8thSt_Folsom_EB_REF', '_8thSt_Folsom_SB'], [1,2,3], [], []);
-
-                 WITH DETECTION & NO TSP...
-                 TSPnDET([], [], ['_8thSt_Folsom_SB'], [1,2,3]);
-
-                 TSP on both directions, detection on 1...
-                 TSPnDET(['_8thSt_Folsom_EB_REF', '_8thSt_Folsom_SB'], [1,2,3], ['_8thSt_Folsom_SB'], [1,2,3]);
-                 */
-
-//**************START OF CORRIDOR SPECIFIC JAVASCRIPT**************
-                if (window.openCorr === "corr_xxx") {
-
-                    //Plan, flash times & cycle lengths
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet01
-                    dispChange === 1 && ChangeDisp('STREET_xStreet01_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet01_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet01_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet02
-                    dispChange === 1 && ChangeDisp('STREET_xStreet02_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet02_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet02_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet03
-                    dispChange === 1 && ChangeDisp('STREET_xStreet03_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet03_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet03_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet04
-                    dispChange === 1 && ChangeDisp('STREET_xStreet04_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet04_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet04_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet05
-                    dispChange === 1 && ChangeDisp('STREET_xStreet05_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet05_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet05_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet06
-                    dispChange === 1 && ChangeDisp('STREET_xStreet06_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet06_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet06_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet07
-                    dispChange === 1 && ChangeDisp('STREET_xStreet07_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet07_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet07_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet08
-                    dispChange === 1 && ChangeDisp('STREET_xStreet08_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet08_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet08_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet09
-                    dispChange === 1 && ChangeDisp('STREET_xStreet09_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet09_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet09_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet10
-                    dispChange === 1 && ChangeDisp('STREET_xStreet10_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet10_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet10_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet11
-                    dispChange === 1 && ChangeDisp('STREET_xStreet11_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet11_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet11_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet12
-                    dispChange === 1 && ChangeDisp('STREET_xStreet12_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet12_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet12_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet13
-                    dispChange === 1 && ChangeDisp('STREET_xStreet13_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet13_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet13_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet14
-                    dispChange === 1 && ChangeDisp('STREET_xStreet14_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet14_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet14_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet15
-                    dispChange === 1 && ChangeDisp('STREET_xStreet15_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet15_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet15_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet16
-                    dispChange === 1 && ChangeDisp('STREET_xStreet16_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [40]; //Ø 2 6
-                    TimingCalc('STREET_xStreet16_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [40]; //Ø 3 7
-                    TimingCalc('STREET_xStreet16_UP');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [40]; //Ø 4 8
-                    TimingCalc('STREET_xStreet16_OUP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet17
-                    dispChange === 1 && ChangeDisp('STREET_xStreet17_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [20]; //Ø 2 6
-                    TimingCalc('STREET_xStreet17_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Adj, Split = [60]; //Ø 1 5
-                    TimingCalc('STREET_xStreet17_OOS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [100]; //Ø 4 8
-                    TimingCalc('STREET_xStreet17_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet18
-                    dispChange === 1 && ChangeDisp('STREET_xStreet18_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [40]; //Ø 2 6
-                    TimingCalc('STREET_xStreet18_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [40]; //Ø 3 7
-                    TimingCalc('STREET_xStreet18_UP');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Adj, Split = [40]; //Ø 4 8
-                    TimingCalc('STREET_xStreet18_OUP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet19
-                    dispChange === 1 && ChangeDisp('STREET_xStreet19_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [20]; //Ø 2 6
-                    TimingCalc('STREET_xStreet19_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 1 5
-                    TimingCalc('STREET_xStreet19_OOS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [100]; //Ø 4 8
-                    TimingCalc('STREET_xStreet19_UP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                    var plan2time = [], plan2day = [],
-                            plan3time = [], plan3day = [],
-                            plan4time = [], plan4day = [],
-                            flashFree1time = [], flashFree1day = [],
-                            flashFree2time = [], flashFree2day = [],
-                            cycleLength = [120];
-                    transTimeCalc();
-                    FlashFreeTimeCalc();
-                    PlanTimeCalc();
-                    GetCycleLength();
-                    //STREET @ xStreet20
-                    dispChange === 1 && ChangeDisp('STREET_xStreet20_change', 0, planNum, cl);
-                    var offset = [0];
-                    var LPI = 4, Yel = 4, Red = 2, Adj = [0], Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet20_OS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Adj, Split = [60]; //Ø 2 6
-                    TimingCalc('STREET_xStreet20_OOS');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet20_UP');
-                    var LPI = 4, Yel = 4, Red = 2, Adj = Adj, Split = [60]; //Ø 4 8
-                    TimingCalc('STREET_xStreet20_OUP');
-                    //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                }
-//**************END OF CORRIDOR SPECIFIC JAVASCRIPT**************
-
-//**************START OF GENERAL JAVASCRIPT**************
-
-                // direction display position
-                let dirHt = document.getElementById('Time').getBoundingClientRect().bottom * 1.15 + "px";
-                document.getElementById("directionDisplay").style.top = dirHt;
-                // Time display elements.
-                document.getElementById('Time').innerHTML = DoW + " " + hx + ":" + mx + ":" + sx;
-
-                // Plan/cycle length display elements.
-                if (planNumAll.length > 0) { //are there plan #s
-                    if (isFinite(nextPlanTime)) { //is there a next plan time within 24 hours??
-                        document.getElementById('PlanNum_zzz').innerHTML = "Plan:" + planNumAll.join("/") + " &gt;" + nextPlanTimeStr;
-                    } else {
-                        document.getElementById('PlanNum_zzz').innerHTML = "Plan:" + planNumAll.join("/") + " &gt;Day+";
-                    }
-                } else { //there must be no plan#
-                    document.getElementById('PlanNum_zzz').innerHTML = "Plan:";
-                }
-                document.getElementById('cl_zzz').innerHTML = "Cycle:" + clAll.join("/"); //display any cycle lengths that have a #
-
-                //display elements of plan, cycle & change numbers
-                function ChangeDisp(inter, change, plan, cycle) {
-                    if (cycle) {
+            //display elements of plan, cycle & change numbers
+            function ChangeDisp(inter, change, plan, cycle) {
+                if (cycle) {
                     document.getElementById(inter).innerHTML = plan + "/" + cycle + "<span class='moverChange'>Ch." + change + "</span>";
+                } else {
+                    document.getElementById(inter).innerHTML = plan + "<span class='moverChange'>Ch." + change + "</span>";
+                }
+            }
+
+            //Cycle counter color function. Compare time & set color
+            function ColorFunc(planNum, offset, cyclePoint, Split, Yel, Red, LPI, flashTime, freeTime) {
+                if (offset[planNum - 1] > 400) {
+                    return numColor = "numHider";
+                } else if (offset[planNum - 1] === 'free') {
+                    return numColor = "bigGrey";
+                } else if (freeTime === 1) {
+                    return numColor = "bigGrey";
+                } else if (flashTime === 1) {
+                    return numColor = "pulse";
+                } else if (transition === 1) {
+                    return numColor = "bigPurple";
+                } else if (cyclePoint < LPI) {
+                    return numColor = "bigWhite";
+                } else if (cyclePoint >= Split[planNum - 1]) {
+                    return numColor = "bigRed";
+                } else if (cyclePoint >= Split[planNum - 1] - Red) {
+                    return numColor = "bigDarkRed";
+                } else if (cyclePoint >= Split[planNum - 1] - Red - Yel) {
+                    return numColor = "bigYellow";
+                } else {
+                    return numColor = "bigGreen";
+                }
+            }
+
+            //Cycle point function. Find out where in the cycle the phase is in.
+            function CyclePoint(planNum, cl, offset, Adj, h, m, s, tenths) {
+                return (((h * 3600) + (m * 60) + s + (tenths / 10) + (2 * cl) - offset[planNum - 1] - Adj[planNum - 1]) % cl);
+            }
+
+            //Determine whether intersection is in PROGRAM FLASH or a FREE cycle
+            function FlashFreeTimeCalc() {
+                if (flashFree1time.length === 0 && flashFree2time.length === 0) { // no flash or free times...move on
+                    return flashTime = 0, freeTime = 0;
+                }
+                //check for program flash and/or free times
+                //1st set - this will check for flash times if 3rd item in array is missing or set to 'flash' ... otherwise check free
+                if ((!flashFree1time[2] || flashFree1time[2] === 'flash') && tx >= flashFree1time[0] && tx < flashFree1time[1] && flashFree1day.includes(d)) {
+                    flashTime = 1, freeTime = 0, transition = 0;
+                } else if ((!flashFree1time[2] || flashFree1time[2] === 'flash') && tx >= flashFree1time[1] && tx < flashFree1time[1] + transTime[planNum - 1] && flashFree1day.includes(d)) {
+                    flashTime = 0, freeTime = 0, transition = 1;
+                } else if (flashFree1time[2] && flashFree1time[2] === 'free' && tx >= flashFree1time[0] && tx < flashFree1time[1] && flashFree1day.includes(d)) {
+                    flashTime = 0, freeTime = 1, transition = 0;
+                } else if (flashFree1time[2] && flashFree1time[2] === 'free' && tx >= flashFree1time[1] && tx < flashFree1time[1] + transTime[planNum - 1] && flashFree1day.includes(d)) {
+                    flashTime = 0, freeTime = 0, transition = 1;
+                }
+                //2nd set - this will check for flash times if 3rd item in array is missing or set to 'flash' ... otherwise check free
+                if ((!flashFree2time[2] || flashFree2time[2] === 'flash') && tx >= flashFree2time[0] && tx < flashFree2time[1] && flashFree2day.includes(d)) {
+                    flashTime = 1, freeTime = 0, transition = 0;
+                } else if ((!flashFree2time[2] || flashFree2time[2] === 'flash') && tx >= flashFree2time[1] && tx < flashFree2time[1] + transTime[planNum - 1] && flashFree2day.includes(d)) {
+                    flashTime = 0, freeTime = 0, transition = 1;
+                } else if (flashFree2time[2] && flashFree2time[2] === 'free' && tx >= flashFree2time[0] && tx < flashFree2time[1] && flashFree2day.includes(d)) {
+                    flashTime = 0, freeTime = 1, transition = 0;
+                } else if (flashFree2time[2] && flashFree2time[2] === 'free' && tx >= flashFree2time[1] && tx < flashFree2time[1] + transTime[planNum - 1] && flashFree2day.includes(d)) {
+                    flashTime = 0, freeTime = 0, transition = 1;
+                }
+            }
+
+            //Determine cycle length based on plan number
+            function GetCycleLength() {
+                cl = cycleLength[planNum - 1];
+                if (!clAll.includes(cl) && (cl < 400) && cl !== 'free' && cl !== 'flash') {
+                    clAll.push(cl);
+                    clAll.sort((a, b) => a - b);
+                }
+            }
+
+            //Intersection calculations and display function.  Sends variables to related functions.
+            function TimingCalc(PhaseDisp) {
+                // Intersection display elements
+                if (flashTime !== 1 && freeTime !== 1) { //not in flash or free
+                    // call CyclePoint function to get relevant point in cycle
+                    var cyclePoint = CyclePoint(planNum, cl, offset, Adj, h, m, s, tenths);
+                    if ((LPI > 0 && cyclePoint < LPI) || (LPI > 0 && cyclePoint > cl - 5)) {
+                        document.getElementById(PhaseDisp).innerHTML = Math.floor(cyclePoint).toFixed() + "<span class='moverLPIgrey'>LPI&nbsp;&nbsp;" + LPI + "</span>";
                     } else {
-                        document.getElementById(inter).innerHTML = plan + "<span class='moverChange'>Ch." + change + "</span>";
+                        document.getElementById(PhaseDisp).innerHTML = Math.floor(cyclePoint).toFixed() + "<span class='moverLPIgrey'>&nbsp;</span>";
+                    }
+                } else if (freeTime === 1) {
+                    document.getElementById(PhaseDisp).innerHTML = "Free" + "<span class='moverLPIgrey'>&nbsp;</span>";
+                } else if (flashTime === 1) {
+                    document.getElementById(PhaseDisp).innerHTML = "Flash" + "<span class='moverLPIgrey'>&nbsp;</span>";
                 }
-                }
+                // determine Intersection text color with 'ColorFunc' function
+                ColorFunc(planNum, offset, cyclePoint, Split, Yel, Red, LPI, flashTime, freeTime);
+                document.getElementById(PhaseDisp).className = numColor;
+            }
 
-                //Cycle counter color function. Compare time & set color
-                function ColorFunc(planNum, offset, cyclePoint, Split, Yel, Red, LPI, flashTime, freeTime) {
-                    if (offset[planNum - 1] > 400) {
-                        return numColor = "numHider";
-                    } else if (offset[planNum - 1] === 'free') {
-                        return numColor = "bigGrey";
-                    } else if (freeTime === 1) {
-                        return numColor = "bigGrey";
-                    } else if (flashTime === 1) {
-                        return numColor = "pulse";
-                    } else if (transition === 1) {
-                        return numColor = "bigPurple";
-                    } else if (cyclePoint < LPI) {
-                        return numColor = "bigWhite";
-                    } else if (cyclePoint >= Split[planNum - 1]) {
-                        return numColor = "bigRed";
-                    } else if (cyclePoint >= Split[planNum - 1] - Red) {
-                        return numColor = "bigDarkRed";
-                    } else if (cyclePoint >= Split[planNum - 1] - Red - Yel) {
-                        return numColor = "bigYellow";
-                    } else {
-                        return numColor = "bigGreen";
+            function NextPlanCalc() {
+                if (plan2day.includes(d)) {
+                    for (let j = 0; j < 2; j++) {
+                        TodayPlanTimeCheck(plan2time[j]);
                     }
                 }
-
-                //Cycle point function. Find out where in the cycle the phase is in.
-                function CyclePoint(planNum, cl, offset, Adj, h, m, s, tenths) {
-                    return (((h * 3600) + (m * 60) + s + (tenths / 10) + (2 * cl) - offset[planNum - 1] - Adj[planNum - 1]) % cl);
-                }
-
-//Determine whether intersection is in PROGRAM FLASH or a FREE cycle
-                function FlashFreeTimeCalc() {
-                    if (flashFree1time.length === 0 && flashFree2time.length === 0) { // no flash or free times...move on
-                        return flashTime = 0, freeTime = 0;
-                    }
-                    //check for program flash and/or free times
-//1st set - this will check for flash times if 3rd item in array is missing or set to 'flash' ... otherwise check free
-                    if ((!flashFree1time[2] || flashFree1time[2] === 'flash') && tx >= flashFree1time[0] && tx < flashFree1time[1] && flashFree1day.includes(d)) {
-                        flashTime = 1, freeTime = 0, transition = 0;
-                    } else if ((!flashFree1time[2] || flashFree1time[2] === 'flash') && tx >= flashFree1time[1] && tx < flashFree1time[1] + transTime[planNum - 1] && flashFree1day.includes(d)) {
-                        flashTime = 0, freeTime = 0, transition = 1;
-                    } else if (flashFree1time[2] && flashFree1time[2] === 'free' && tx >= flashFree1time[0] && tx < flashFree1time[1] && flashFree1day.includes(d)) {
-                        flashTime = 0, freeTime = 1, transition = 0;
-                    } else if (flashFree1time[2] && flashFree1time[2] === 'free' && tx >= flashFree1time[1] && tx < flashFree1time[1] + transTime[planNum - 1] && flashFree1day.includes(d)) {
-                        flashTime = 0, freeTime = 0, transition = 1;
-                    }
-//2nd set - this will check for flash times if 3rd item in array is missing or set to 'flash' ... otherwise check free
-                    if ((!flashFree2time[2] || flashFree2time[2] === 'flash') && tx >= flashFree2time[0] && tx < flashFree2time[1] && flashFree2day.includes(d)) {
-                        flashTime = 1, freeTime = 0, transition = 0;
-                    } else if ((!flashFree2time[2] || flashFree2time[2] === 'flash') && tx >= flashFree2time[1] && tx < flashFree2time[1] + transTime[planNum - 1] && flashFree2day.includes(d)) {
-                        flashTime = 0, freeTime = 0, transition = 1;
-                    } else if (flashFree2time[2] && flashFree2time[2] === 'free' && tx >= flashFree2time[0] && tx < flashFree2time[1] && flashFree2day.includes(d)) {
-                        flashTime = 0, freeTime = 1, transition = 0;
-                    } else if (flashFree2time[2] && flashFree2time[2] === 'free' && tx >= flashFree2time[1] && tx < flashFree2time[1] + transTime[planNum - 1] && flashFree2day.includes(d)) {
-                        flashTime = 0, freeTime = 0, transition = 1;
-                }
-                    }
-
-                //Determine cycle length based on plan number
-                function GetCycleLength() {
-                    cl = cycleLength[planNum - 1];
-                    if (!clAll.includes(cl) && (cl < 400) && cl !== 'free' && cl !== 'flash') {
-                        clAll.push(cl);
-                        clAll.sort((a, b) => a - b);
+                if (plan3day.includes(d)) {
+                    for (let j = 0; j < 2; j++) {
+                        TodayPlanTimeCheck(plan3time[j]);
                     }
                 }
-
-                //Intersection calculations and display function.  Sends variables to related functions.
-                function TimingCalc(PhaseDisp) {
-                    // Intersection display elements
-                    if (flashTime !== 1 && freeTime !== 1) { //not in flash or free
-                            // call CyclePoint function to get relevant point in cycle
-                            var cyclePoint = CyclePoint(planNum, cl, offset, Adj, h, m, s, tenths);
-                            if ((LPI > 0 && cyclePoint < LPI) || (LPI > 0 && cyclePoint > cl - 5)) {
-                                document.getElementById(PhaseDisp).innerHTML = Math.floor(cyclePoint).toFixed() + "<span class='moverLPIgrey'>LPI&nbsp;&nbsp;" + LPI + "</span>";
-                            } else {
-                                document.getElementById(PhaseDisp).innerHTML = Math.floor(cyclePoint).toFixed() + "<span class='moverLPIgrey'>&nbsp;</span>";
-                            }
-                    } else if (freeTime === 1) {
-                            document.getElementById(PhaseDisp).innerHTML = "Free" + "<span class='moverLPIgrey'>&nbsp;</span>";
-                    } else if (flashTime === 1) {
-                        document.getElementById(PhaseDisp).innerHTML = "Flash" + "<span class='moverLPIgrey'>&nbsp;</span>";
+                if (plan4day.includes(d)) {
+                    for (let j = 0; j < 2; j++) {
+                        TodayPlanTimeCheck(plan4time[j]);
                     }
-                    // determine Intersection text color with 'ColorFunc' function
-                    ColorFunc(planNum, offset, cyclePoint, Split, Yel, Red, LPI, flashTime, freeTime);
-                    document.getElementById(PhaseDisp).className = numColor;
                 }
-
-                function NextPlanCalc() {
-                    if (plan2day.includes(d)) {
-                        for (let j = 0; j < 2; j++) {
-                            TodayPlanTimeCheck(plan2time[j]);
-                        }
+                if (flashFree1day.includes(d)) {
+                    for (let j = 0; j < 2; j++) {
+                        TodayPlanTimeCheck(flashFree1time[j]);
                     }
-                    if (plan3day.includes(d)) {
-                        for (let j = 0; j < 2; j++) {
-                            TodayPlanTimeCheck(plan3time[j]);
-                        }
+                }
+                if (flashFree2day.includes(d)) {
+                    for (let j = 0; j < 2; j++) {
+                        TodayPlanTimeCheck(flashFree2time[j]);
                     }
-                    if (plan4day.includes(d)) {
-                        for (let j = 0; j < 2; j++) {
-                            TodayPlanTimeCheck(plan4time[j]);
-                        }
+                }
+                //check tomorrow, in case there's no more plans left today
+                var nextDay = d + 1;
+                if (nextDay === 8) { // days are 1-7
+                    var nextDay = 1;
+                }
+                if (plan2day.includes(nextDay)) {
+                    for (let j = 0; j < 2; j++) {
+                        TomorrowPlanTimeCheck(plan2time[j]);
                     }
-                    if (flashFree1day.includes(d)) {
-                        for (let j = 0; j < 2; j++) {
-                            TodayPlanTimeCheck(flashFree1time[j]);
-                        }
+                }
+                if (plan3day.includes(nextDay)) {
+                    for (let j = 0; j < 2; j++) {
+                        TomorrowPlanTimeCheck(plan3time[j]);
                     }
-                    if (flashFree2day.includes(d)) {
-                        for (let j = 0; j < 2; j++) {
-                            TodayPlanTimeCheck(flashFree2time[j]);
-                        }
+                }
+                if (plan4day.includes(nextDay)) {
+                    for (let j = 0; j < 2; j++) {
+                        TomorrowPlanTimeCheck(plan4time[j]);
                     }
-                    //check tomorrow, in case there's no more plans left today
-                    var nextDay = d + 1;
-                    if (nextDay === 8) { // days are 1-7
-                        var nextDay = 1;
+                }
+                if (flashFree1day.includes(nextDay)) {
+                    for (let j = 0; j < 2; j++) {
+                        TomorrowPlanTimeCheck(flashFree1time[j]);
                     }
-                    if (plan2day.includes(nextDay)) {
-                        for (let j = 0; j < 2; j++) {
-                            TomorrowPlanTimeCheck(plan2time[j]);
-                        }
+                }
+                if (flashFree2day.includes(nextDay)) {
+                    for (let j = 0; j < 2; j++) {
+                        TomorrowPlanTimeCheck(flashFree2time[j]);
                     }
-                    if (plan3day.includes(nextDay)) {
-                        for (let j = 0; j < 2; j++) {
-                            TomorrowPlanTimeCheck(plan3time[j]);
-                        }
+                }
+                if (todayPlanTime.length) {
+                    nextPlanTime = Math.min(...todayPlanTime); //if there's still plans left today use the next day
+                    // pad plan time for display
+                    nextPlanTimeStr = nextPlanTime.toString();
+                    while (nextPlanTimeStr.length < 4) {
+                        nextPlanTimeStr = '0' + nextPlanTimeStr;
                     }
-                    if (plan4day.includes(nextDay)) {
-                        for (let j = 0; j < 2; j++) {
-                            TomorrowPlanTimeCheck(plan4time[j]);
-                        }
-                    }
-                    if (flashFree1day.includes(nextDay)) {
-                        for (let j = 0; j < 2; j++) {
-                            TomorrowPlanTimeCheck(flashFree1time[j]);
-                        }
-                    }
-                    if (flashFree2day.includes(nextDay)) {
-                        for (let j = 0; j < 2; j++) {
-                            TomorrowPlanTimeCheck(flashFree2time[j]);
-                        }
-                    }
-                    if (todayPlanTime.length) {
-                        nextPlanTime = Math.min(...todayPlanTime); //if there's still plans left today use the next day
+                    return nextPlanTimeStr;
+                } else {
+                    nextPlanTime = Math.min(...tomorrowPlanTime); //if there's no more plans today use tomorrow's earliest
+                    if (tx > nextPlanTime) { // as long as it's later than today's current time
                         // pad plan time for display
                         nextPlanTimeStr = nextPlanTime.toString();
                         while (nextPlanTimeStr.length < 4) {
@@ -1418,554 +1468,546 @@ Last modified 5/13/2021
                         }
                         return nextPlanTimeStr;
                     } else {
-                        nextPlanTime = Math.min(...tomorrowPlanTime); //if there's no more plans today use tomorrow's earliest
-                        if (tx > nextPlanTime) { // as long as it's later than today's current time
-                            // pad plan time for display
-                            nextPlanTimeStr = nextPlanTime.toString();
-                            while (nextPlanTimeStr.length < 4) {
-                                nextPlanTimeStr = '0' + nextPlanTimeStr;
-                    }
-                            return nextPlanTimeStr;
-                        } else {
-                            return nextPlanTimeStr = "Day+";
-                }
-                    }
-                }
-
-                //if today's plan times are greater than current time put into array & sort to use first #
-                function TodayPlanTimeCheck(time) {
-                    if (time > tx && time < 2400 && !todayPlanTime.includes(time)) {
-                        todayPlanTime.push(time);
-                    }
-                }
-
-                //if there's no more plan times today put tomorrow's into array & sort to use first #
-                function TomorrowPlanTimeCheck(time) {
-                    if (time > 0 && time < 2400 && !tomorrowPlanTime.includes(time)) {
-                        tomorrowPlanTime.push(time);
-                    }
-                }
-
-                //Determine plan Number
-                function PlanTimeCalc() {
-                    NextPlanCalc();
-                    if (flashTime === 1) {
-                        planNum = "Flash";
-                    } else if (freeTime === 1) {
-                        planNum = "Free";
-                    } else if (tx >= plan2time[0] && tx < plan2time[0] + transTime[1] && plan2day.includes(d)) { //beginning of plan2
-                        planNum = 2, transition = 1;
-                    } else if (tx >= plan2time[0] + transTime[1] && tx < plan2time[1] && plan2day.includes(d)) { //plan2
-                        planNum = 2, transition = 0;
-                    } else if (tx >= plan3time[0] && tx < plan3time[0] + transTime[2] && plan3day.includes(d)) { //beginning of plan3
-                        planNum = 3, transition = 1;
-                    } else if (tx >= plan3time[0] + transTime[2] && tx < plan3time[1] && plan3day.includes(d)) { //plan3
-                        planNum = 3, transition = 0;
-                    } else if (tx >= plan4time[0] && tx < plan4time[0] + transTime[3] && plan4day.includes(d)) { //beginning of plan4
-                        planNum = 4, transition = 1;
-                    } else if (tx >= plan4time[0] + transTime[3] && tx < plan4time[1] && plan4day.includes(d)) { //plan4
-                        planNum = 4, transition = 0;
-                    } else if (tx >= plan2time[1] && tx < plan2time[1] + transTime[0] && plan2day.includes(d)) { //end of plan2
-                        planNum = 1, transition = 1;
-                    } else if (tx >= plan3time[1] && tx < plan3time[1] + transTime[0] && plan3day.includes(d)) { //end of plan3
-                        planNum = 1, transition = 1;
-                    } else if (tx >= plan4time[1] && tx < plan4time[1] + transTime[0] && plan4day.includes(d)) { //end of plan4
-                        planNum = 1, transition = 1;
-                    } else {
-                        planNum = 1, transition = 0;
-                    }
-                    if (!planNumAll.includes(planNum)) { //puts only unique plan #s into new array
-                        planNumAll.push(planNum);
-                        planNumAll.sort();
-                    }
-                }
-
-                //display TSP &-or detectors. "names #", TSP direction#(s), plan#(s) that have TSP, then detector direction#(s). Double check in debugger for list#
-                // Call function with TSPnDET ([direction of tsp], [plans w/TSP], [directions that have detection])
-                function TSPnDET(tspDir, tspPlans, detDir, detPlans) {
-                    if (tspDir && tspDir.length) {
-                        for (let i = 0, len = tspDir.length; i < len; i++) {
-                                let tspDom = document.getElementById(tspDir[i]),
-                                    tspDomNum = Array.from(tspDom.parentNode.children).indexOf(tspDom),
-                                    tspDisp = tspDom.parentNode.previousElementSibling.children[tspDomNum];
-                            if (tspDisp.classList.contains("tsp") && !tspPlans.includes(planNum)) {
-                                tspDisp.classList.remove("tsp");
-                            } else if (!tspDisp.classList.contains("tsp") && tspPlans.includes(planNum)) {
-                                tspDisp.classList.add("tsp");
-                            }
-                        }
-                    }
-                    if (detDir && detDir.length) {
-                        for (let i = 0, len = detDir.length; i < len; i++) {
-                                let detDom = document.getElementById(detDir[i]),
-                                    detDomNum = Array.from(detDom.parentNode.children).indexOf(detDom),
-                                    detDisp = detDom.parentNode.previousElementSibling.children[detDomNum];
-                            if (detDisp.classList.contains("detect") && !detPlans.includes(planNum)) {
-                                detDisp.classList.remove("detect");
-                            } else if (!detDisp.classList.contains("detect") && detPlans.includes(planNum)) {
-                                detDisp.classList.add("detect");
-                            }
-                            if (detDisp.classList.contains("detect") && detDisp.classList.contains("tsp")) { //if there's both tsp & detector use gradient
-                                detDisp.classList.add("tspGradient");
-                                if (detDisp.childElementCount) {
-                                    detDisp.children[0].classList.add("tspGradient");
-                                }
-                            }
-                            if (detDisp.classList.contains("tspGradient") && !(detDisp.classList.contains("detect") && detDisp.classList.contains("tsp"))) { //if tsp or detector isn't there remove gradient
-                                detDisp.classList.remove("tspGradient");
-                                if (detDisp.childElementCount) {
-                                    detDisp.children[0].classList.remove("tspGradient");
-                                }
-                            }
-                        }
-                    }
-                }
-
-                //get transition length from cycle lengths
-                function transTimeCalc() {
-                    transTime = cycleLength.map(num => transTimeTest(num));
-                }
-
-                function transTimeTest(num) {
-                    if (num > 90) {
-                        return parseFloat(Math.floor(num * 4 / 60) + "." + (num * 4) % 60);
-                    } else {
-                        return parseFloat(Math.floor(num * 3 / 60) + "." + (num * 3) % 60);
-                    }
-                }
-
-                //wait 10 milliseconds and start script over
-                setTimeout(function () {
-                    Timing();
-                }, 200);
-            } //end of Timing
-
-            // When the user clicks on the button, lowest completely visible element goes to top
-            function DownPageFunction() {
-                IsViewport();
-                let viewables = document.getElementsByClassName('viewable');
-                if (!viewables[0]) {
-                    return;
-                }
-                window.scrollBy(0, 200); //make sure time box is scrolled up
-                let timeBox = document.getElementById('Time').getBoundingClientRect().bottom;
-                let firstRect = viewables[0].getBoundingClientRect();
-                let chosenRect = viewables[viewables.length - 1].getBoundingClientRect();
-                if (firstRect.top > chosenRect.top) { //if corridor is reversed the first one in array will be bigger #
-                    chosenRect = firstRect;
-                }
-                //move element under time box
-                let moveY = chosenRect.top - timeBox; //clock box
-                window.scrollBy(0, moveY);
-            }
-
-            //Legend corridor special cases
-            function LegendOpen() {
-                document.getElementById("planCycleBoxLegend").classList.remove('noShow');
-                document.getElementById("togglerLegend").classList.remove('noShow');
-                document.getElementById("pageUp").style.height = "40%";
-                document.getElementById("pageDown").style.height = "40%";
-                document.getElementById("closeCorr").style.height = "20%";
-                document.getElementById("clockBox").style.top = "60px";
-                document.getElementById("clockBox").style.zIndex = "101";
-                document.getElementById("pageUp").innerHTML = "&uarr; PAGE";
-                document.getElementById("pageDown").innerHTML = "PAGE &darr;";
-                document.getElementById("closeCorr").innerHTML = "CLOSE";
-                document.getElementById("adjLegend").innerHTML = "<br/>&uarr; Use to match Atomic Time &uarr;<br/>Max Adj: +/-99 Hrs • 99 Min • 99 Sec";
-                window.scrollTo(0, 0); //make sure everything is visible
-            }
-            function LegendClose() {
-                document.getElementById("planCycleBoxLegend").classList.add('noShow');
-                document.getElementById("togglerLegend").classList.add('noShow');
-                document.getElementById("pageUp").style.height = "45%";
-                document.getElementById("pageDown").style.height = "45%";
-                document.getElementById("closeCorr").style.height = "10%";
-                document.getElementById("clockBox").style.top = "20px";
-                document.getElementById("clockBox").style.zIndex = "98";
-                document.getElementById("pageUp").innerHTML = "&#8896;";
-                document.getElementById("pageDown").innerHTML = "&#8897;";
-                document.getElementById("closeCorr").innerHTML = "X";
-                document.getElementById("adjLegend").innerHTML = "";
-            }
-
-            // Hide & display functions
-            function CorridorDisplay(corrName, TB) {
-                window.openCorr = corrName;
-                document.getElementById("clockBox").style.zIndex = "101"; //clock in front of dropdown button
-                document.getElementById("myDropdown").classList.remove("show"); //hide corridor list
-                document.getElementById("DropdownButton").innerHTML = "Choose a Corridor"; //change dropdown button text back to default
-                let x = document.getElementById(corrName);
-                let corridors = document.getElementsByClassName("hider");
-                for (let i = 0, len = corridors.length; i < len; i++) {
-                    var y = corridors[i];
-                    //get elements of open corridor, then length. Use element#0 for top, element#length-1 for bottom
-                    if (x.style.display !== 'block' && x === y) { //is relevant section collapsed?
-                        //expand section
-                        y.style.display = 'block';
-                        // set directions for streets at top of page
-                        let allDirections = document.querySelectorAll(".direcTog, .direcNoTog");
-                        for (let i = 0, len = allDirections.length; i < len; i++) {
-                            if (allDirections[i].parentNode.parentNode.style.display === 'block') {
-                                document.getElementById('directionDisplay').innerHTML = allDirections[i].innerHTML;
-                            }
-                        }
-                        //then see where to position elements
-                        let interList = y.getElementsByClassName("intGroup"); //get list of intersections in open corridor
-                        let listStyle = window.getComputedStyle(interList[0].parentNode);
-                        listStyle.getPropertyValue('flex-direction');
-                        if (TB === "top") {//send element to top
-                            //if column is normal want first element at top
-                            if (listStyle.flexDirection === 'column') {
-                                var n = 0;
-                            } else {//otherwise want last element at top
-                                var n = interList.length - 1;
-                            }
-                            //move element under time box
-                            let moveY = interList[n].getBoundingClientRect().top - document.getElementById('Time').getBoundingClientRect().bottom;
-                            window.scrollBy(0, moveY);
-                            if (corrName === "corr_Legend") { //is it the legend corridor?
-                                LegendOpen();
-                            }
-                        } else {//send element to bottom
-                            //if column is normal want last element at bottom
-                            if (listStyle.flexDirection === 'column') {
-                                var n = interList.length - 1;
-                            } else {//otherwise want first element at bottom
-                                var n = 0;
-                            }
-                            //move element to bottom of screen
-                            let moveY = interList[n].getBoundingClientRect().bottom - (interList[n].getBoundingClientRect().height * 0.3) - window.innerHeight;
-                            window.scrollBy(0, moveY);
-                        }
-                    } else {
-                        y.style.display = 'none';
+                        return nextPlanTimeStr = "Day+";
                     }
                 }
             }
 
-            //go from one corridor to another (put targeted element in middle of screen)
-            function CorrToCorr(elementID, direction, screenPos) {
-                let el = document.getElementById(elementID).closest("div.intGroup"),
-                        corr = el.closest(".hider").id, //get the corridor
-                        dir = el.closest(".intNames").childNodes[1].innerHTML; //get the direction node text
-                CorridorDisplay(corr, 'bottom');
-                if (direction !== dir) {
-                    FlipIt();
+            //if today's plan times are greater than current time put into array & sort to use first #
+            function TodayPlanTimeCheck(time) {
+                if (time > tx && time < 2400 && !todayPlanTime.includes(time)) {
+                    todayPlanTime.push(time);
                 }
-                if (screenPos === 'top') {
-                    //move element under time box
-                    window.scrollBy(0, 200); //make sure clock is scrolled up
-                    let moveY = el.getBoundingClientRect().top - document.getElementById('Time').getBoundingClientRect().bottom;
-                    window.scrollBy(0, moveY);
-                } else if (screenPos === 'mid') {
-                    let moveY = el.getBoundingClientRect().top - (window.innerHeight * 0.5);
-                    window.scrollBy(0, moveY);
+            }
+
+            //if there's no more plan times today put tomorrow's into array & sort to use first #
+            function TomorrowPlanTimeCheck(time) {
+                if (time > 0 && time < 2400 && !tomorrowPlanTime.includes(time)) {
+                    tomorrowPlanTime.push(time);
+                }
+            }
+
+            //Determine plan Number
+            function PlanTimeCalc() {
+                NextPlanCalc();
+                if (flashTime === 1) {
+                    planNum = "Flash";
+                } else if (freeTime === 1) {
+                    planNum = "Free";
+                } else if (tx >= plan2time[0] && tx < plan2time[0] + transTime[1] && plan2day.includes(d)) { //beginning of plan2
+                    planNum = 2, transition = 1;
+                } else if (tx >= plan2time[0] + transTime[1] && tx < plan2time[1] && plan2day.includes(d)) { //plan2
+                    planNum = 2, transition = 0;
+                } else if (tx >= plan3time[0] && tx < plan3time[0] + transTime[2] && plan3day.includes(d)) { //beginning of plan3
+                    planNum = 3, transition = 1;
+                } else if (tx >= plan3time[0] + transTime[2] && tx < plan3time[1] && plan3day.includes(d)) { //plan3
+                    planNum = 3, transition = 0;
+                } else if (tx >= plan4time[0] && tx < plan4time[0] + transTime[3] && plan4day.includes(d)) { //beginning of plan4
+                    planNum = 4, transition = 1;
+                } else if (tx >= plan4time[0] + transTime[3] && tx < plan4time[1] && plan4day.includes(d)) { //plan4
+                    planNum = 4, transition = 0;
+                } else if (tx >= plan2time[1] && tx < plan2time[1] + transTime[0] && plan2day.includes(d)) { //end of plan2
+                    planNum = 1, transition = 1;
+                } else if (tx >= plan3time[1] && tx < plan3time[1] + transTime[0] && plan3day.includes(d)) { //end of plan3
+                    planNum = 1, transition = 1;
+                } else if (tx >= plan4time[1] && tx < plan4time[1] + transTime[0] && plan4day.includes(d)) { //end of plan4
+                    planNum = 1, transition = 1;
                 } else {
-                    //move element to bottom of screen
-                    let moveY = el.getBoundingClientRect().bottom - (el.getBoundingClientRect().height * 0.3) - window.innerHeight;
-                    window.scrollBy(0, moveY);
+                    planNum = 1, transition = 0;
                 }
-                // set directions for streets at top of page
-                let allDirections = document.querySelectorAll(".direcTog, .direcNoTog");
-                for (let i = 0, len = allDirections.length; i < len; i++) {
-                    if (allDirections[i].parentNode.parentNode.style.display === 'block') {
-                        document.getElementById('directionDisplay').innerHTML = allDirections[i].innerHTML;
+                if (!planNumAll.includes(planNum)) { //puts only unique plan #s into new array
+                    planNumAll.push(planNum);
+                    planNumAll.sort();
+                }
+            }
+
+            //display TSP &-or detectors. "names #", TSP direction#(s), plan#(s) that have TSP, then detector direction#(s). Double check in debugger for list#
+            // Call function with TSPnDET ([direction of tsp], [plans w/TSP], [directions that have detection])
+            function TSPnDET(tspDir, tspPlans, detDir, detPlans) {
+                if (tspDir && tspDir.length) {
+                    for (let i = 0, len = tspDir.length; i < len; i++) {
+                        let tspDom = document.getElementById(tspDir[i]),
+                            tspDomNum = Array.from(tspDom.parentNode.children).indexOf(tspDom),
+                            tspDisp = tspDom.parentNode.previousElementSibling.children[tspDomNum];
+                        if (tspDisp.classList.contains("tsp") && !tspPlans.includes(planNum)) {
+                            tspDisp.classList.remove("tsp");
+                        } else if (!tspDisp.classList.contains("tsp") && tspPlans.includes(planNum)) {
+                            tspDisp.classList.add("tsp");
+                        }
+                    }
+                }
+                if (detDir && detDir.length) {
+                    for (let i = 0, len = detDir.length; i < len; i++) {
+                        let detDom = document.getElementById(detDir[i]),
+                            detDomNum = Array.from(detDom.parentNode.children).indexOf(detDom),
+                            detDisp = detDom.parentNode.previousElementSibling.children[detDomNum];
+                        if (detDisp.classList.contains("detect") && !detPlans.includes(planNum)) {
+                            detDisp.classList.remove("detect");
+                        } else if (!detDisp.classList.contains("detect") && detPlans.includes(planNum)) {
+                            detDisp.classList.add("detect");
+                        }
+                        if (detDisp.classList.contains("detect") && detDisp.classList.contains("tsp")) { //if there's both tsp & detector use gradient
+                            detDisp.classList.add("tspGradient");
+                            if (detDisp.childElementCount) {
+                                detDisp.children[0].classList.add("tspGradient");
+                            }
+                        }
+                        if (detDisp.classList.contains("tspGradient") && !(detDisp.classList.contains("detect") && detDisp.classList.contains("tsp"))) { //if tsp or detector isn't there remove gradient
+                            detDisp.classList.remove("tspGradient");
+                            if (detDisp.childElementCount) {
+                                detDisp.children[0].classList.remove("tspGradient");
+                            }
+                        }
                     }
                 }
             }
 
-            function DoNothing() {
+            //get transition length from cycle lengths
+            function transTimeCalc() {
+                transTime = cycleLength.map(num => transTimeTest(num));
+            }
+
+            function transTimeTest(num) {
+                if (num > 90) {
+                    return parseFloat(Math.floor(num * 4 / 60) + "." + (num * 4) % 60);
+                } else {
+                    return parseFloat(Math.floor(num * 3 / 60) + "." + (num * 3) % 60);
+                }
+            }
+
+            //wait 10 milliseconds and start script over
+            setTimeout(function () {
+                Timing();
+            }, 200);
+        } //end of Timing
+
+        // When the user clicks on the button, lowest completely visible element goes to top
+        function DownPageFunction() {
+            IsViewport();
+            let viewables = document.getElementsByClassName('viewable');
+            if (!viewables[0]) {
                 return;
             }
+            window.scrollBy(0, 200); //make sure time box is scrolled up
+            let timeBox = document.getElementById('Time').getBoundingClientRect().bottom;
+            let firstRect = viewables[0].getBoundingClientRect();
+            let chosenRect = viewables[viewables.length - 1].getBoundingClientRect();
+            if (firstRect.top > chosenRect.top) { //if corridor is reversed the first one in array will be bigger #
+                chosenRect = firstRect;
+            }
+            //move element under time box
+            let moveY = chosenRect.top - timeBox; //clock box
+            window.scrollBy(0, moveY);
+        }
 
-            /* When the user clicks on the button,
-             toggle between hiding and showing the dropdown content */
-            function DropFunction() {
-                NavBarCloser();
-                document.getElementById("myDropdown").classList.toggle("show");
-                if (document.getElementById("myDropdown").classList.contains("show")) {
-                    document.getElementById("DropdownButton").innerHTML = "Close Corridor List"; //change dropdown button text
-                    document.getElementById("myInput").focus();
-                    myInput.select();
+        //Legend corridor special cases
+        function LegendOpen() {
+            document.getElementById("planCycleBoxLegend").classList.remove('noShow');
+            document.getElementById("togglerLegend").classList.remove('noShow');
+            document.getElementById("pageUp").style.height = "40%";
+            document.getElementById("pageDown").style.height = "40%";
+            document.getElementById("closeCorr").style.height = "20%";
+            document.getElementById("clockBox").style.top = "60px";
+            document.getElementById("clockBox").style.zIndex = "101";
+            document.getElementById("pageUp").innerHTML = "&uarr; PAGE";
+            document.getElementById("pageDown").innerHTML = "PAGE &darr;";
+            document.getElementById("closeCorr").innerHTML = "CLOSE";
+            document.getElementById("adjLegend").innerHTML = "<br/>&uarr; Use to match Atomic Time &uarr;<br/>Max Adj: +/-99 Hrs • 99 Min • 99 Sec";
+            window.scrollTo(0, 0); //make sure everything is visible
+        }
+        function LegendClose() {
+            document.getElementById("planCycleBoxLegend").classList.add('noShow');
+            document.getElementById("togglerLegend").classList.add('noShow');
+            document.getElementById("pageUp").style.height = "45%";
+            document.getElementById("pageDown").style.height = "45%";
+            document.getElementById("closeCorr").style.height = "10%";
+            document.getElementById("clockBox").style.top = "20px";
+            document.getElementById("clockBox").style.zIndex = "98";
+            document.getElementById("pageUp").innerHTML = "&#8896;";
+            document.getElementById("pageDown").innerHTML = "&#8897;";
+            document.getElementById("closeCorr").innerHTML = "X";
+            document.getElementById("adjLegend").innerHTML = "";
+        }
+
+        // Hide & display functions
+        function CorridorDisplay(corrName, TB) {
+            window.openCorr = corrName;
+            document.getElementById("clockBox").style.zIndex = "101"; //clock in front of dropdown button
+            document.getElementById("myDropdown").classList.remove("show"); //hide corridor list
+            document.getElementById("DropdownButton").innerHTML = "Choose a Corridor"; //change dropdown button text back to default
+            let x = document.getElementById(corrName);
+            let corridors = document.getElementsByClassName("hider");
+            for (let i = 0, len = corridors.length; i < len; i++) {
+                var y = corridors[i];
+                //get elements of open corridor, then length. Use element#0 for top, element#length-1 for bottom
+                if (x.style.display !== 'block' && x === y) { //is relevant section collapsed?
+                    //expand section
+                    y.style.display = 'block';
+                    // set directions for streets at top of page
+                    let allDirections = document.querySelectorAll(".direcTog, .direcNoTog");
+                    for (let i = 0, len = allDirections.length; i < len; i++) {
+                        if (allDirections[i].parentNode.parentNode.style.display === 'block') {
+                            document.getElementById('directionDisplay').innerHTML = allDirections[i].innerHTML;
+                        }
+                    }
+                    //then see where to position elements
+                    let interList = y.getElementsByClassName("intGroup"); //get list of intersections in open corridor
+                    let listStyle = window.getComputedStyle(interList[0].parentNode);
+                    listStyle.getPropertyValue('flex-direction');
+                    if (TB === "top") {//send element to top
+                        //if column is normal want first element at top
+                        if (listStyle.flexDirection === 'column') {
+                            var n = 0;
+                        } else {//otherwise want last element at top
+                            var n = interList.length - 1;
+                        }
+                        //move element under time box
+                        let moveY = interList[n].getBoundingClientRect().top - document.getElementById('Time').getBoundingClientRect().bottom;
+                        window.scrollBy(0, moveY);
+                        if (corrName === "corr_Legend") { //is it the legend corridor?
+                            LegendOpen();
+                        }
+                    } else {//send element to bottom
+                        //if column is normal want last element at bottom
+                        if (listStyle.flexDirection === 'column') {
+                            var n = interList.length - 1;
+                        } else {//otherwise want first element at bottom
+                            var n = 0;
+                        }
+                        //move element to bottom of screen
+                        let moveY = interList[n].getBoundingClientRect().bottom - (interList[n].getBoundingClientRect().height * 0.3) - window.innerHeight;
+                        window.scrollBy(0, moveY);
+                    }
                 } else {
-                    document.getElementById("DropdownButton").innerHTML = "Choose a Corridor"; //change dropdown button text back to default
-                    document.getElementById("DropdownButton").focus();
+                    y.style.display = 'none';
                 }
             }
+        }
 
-            function keydown(k) { //checking for "enter" inside filter box
-                if (k.keyCode === 13) {
-                    if (document.getElementById('myInput') === document.activeElement) {
-                        document.getElementById('myInput').blur(); //remove focus from search/filter
-                    } else if (document.getElementById('clkAdjHr') === document.activeElement) {
-                        document.getElementById('clkAdjMin').select();
-                    } else if (document.getElementById('clkAdjMin') === document.activeElement) {
-                        document.getElementById('clkAdjSec').select();
-                    } else if (document.getElementById('clkAdjSec') === document.activeElement) {
-                        document.getElementById('clkAdjSec').blur();
-                    }
-                    if (document.getElementById("clkAdjHr").value === "") {
-                        document.getElementById("clkAdjHr").value = "0";
-                    }
-                    if (document.getElementById("clkAdjMin").value === "") {
-                        document.getElementById("clkAdjMin").value = "0";
-                    }
-                    if (document.getElementById("clkAdjSec").value === "") {
-                        document.getElementById("clkAdjSec").value = "0";
-                    }
+        //go from one corridor to another (put targeted element in middle of screen)
+        function CorrToCorr(elementID, direction, screenPos) {
+            let el = document.getElementById(elementID).closest("div.intGroup"),
+                corr = el.closest(".hider").id, //get the corridor
+                dir = el.closest(".intNames").childNodes[1].innerHTML; //get the direction node text
+            CorridorDisplay(corr, 'bottom');
+            if (direction !== dir) {
+                FlipIt();
+            }
+            if (screenPos === 'top') {
+                //move element under time box
+                window.scrollBy(0, 200); //make sure clock is scrolled up
+                let moveY = el.getBoundingClientRect().top - document.getElementById('Time').getBoundingClientRect().bottom;
+                window.scrollBy(0, moveY);
+            } else if (screenPos === 'mid') {
+                let moveY = el.getBoundingClientRect().top - (window.innerHeight * 0.5);
+                window.scrollBy(0, moveY);
+            } else {
+                //move element to bottom of screen
+                let moveY = el.getBoundingClientRect().bottom - (el.getBoundingClientRect().height * 0.3) - window.innerHeight;
+                window.scrollBy(0, moveY);
+            }
+            // set directions for streets at top of page
+            let allDirections = document.querySelectorAll(".direcTog, .direcNoTog");
+            for (let i = 0, len = allDirections.length; i < len; i++) {
+                if (allDirections[i].parentNode.parentNode.style.display === 'block') {
+                    document.getElementById('directionDisplay').innerHTML = allDirections[i].innerHTML;
                 }
             }
+        }
 
-            function filterFunction() { //filter intersection button list
-                let input = document.getElementById("myInput").value,
-//                        filter = input.value.toUpperCase(),
-                        search = new RegExp(input, 'i'),
-                        myDiv = document.getElementById("myDropdown"),
-                        a = myDiv.getElementsByTagName("a");
-//                alert(search);
-                for (let i = 0, len = a.length; i < len; i++) {
-                    let txtValue = a[i].textContent || a[i].innerText;
-//                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//                        a[i].style.display = "";
-//                    } else {
-//                        a[i].style.display = "none";
-//                    }
-                    if (txtValue.match(search)) {
-                        a[i].style.display = "";
-                    } else {
-                        a[i].style.display = "none";
-                    }
-                }
-            }
-            //flip intersection order
-            function FlipIt() {
-                let allDirecTogs = document.getElementsByClassName("direcTog");
-                for (let i = 0, len = allDirecTogs.length; i < len; i++) { //change all the directions
-                    if (allDirecTogs[i].innerHTML === "SB") {
-                        allDirecTogs[i].innerText = "NB";
-                    } else if (allDirecTogs[i].innerHTML === "NB") {
-                        allDirecTogs[i].innerText = "SB";
-                    } else if (allDirecTogs[i].innerHTML === "WB") {
-                        allDirecTogs[i].innerText = "EB";
-                    } else if (allDirecTogs[i].innerHTML === "EB") {
-                        allDirecTogs[i].innerText = "WB";
-                    } else if (allDirecTogs[i].innerHTML === "Direction") {
-                        allDirecTogs[i].innerText = "Opposite Direction";
-                    } else if (allDirecTogs[i].innerHTML === "Opposite Direction") {
-                        allDirecTogs[i].innerText = "Direction";
-                    }
-                }
-                let orderz = document.querySelectorAll(".orderBox:not(.ignoreOrderFlip), .orderBoxReverse:not(.ignoreOrderFlip)"); //only get orderBoxes for 2-way streets
-                IsViewport(); // find elements in viewport
-                var viewables = document.querySelectorAll('div.viewable');
-                if (viewables.length) { //get vertical position for top of first & last element
-                    let firstDom = viewables[0].getBoundingClientRect();
-                    let lastDom = viewables[viewables.length - 1].getBoundingClientRect();
-                    var domAverage = (firstDom.top + (firstDom.height * 0.28) + lastDom.top + (lastDom.height * 0.28)) / 2;
-                }
-                if (document.getElementById('toggler').innerHTML === "NB/EB<br>↶&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>SB/WB") { //see if in standard direction
-                    document.getElementById('toggler').innerHTML = "WB/SB<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↷<br>EB/NB"; //change indicator to reverse
-                    for (let i = 0, len = orderz.length; i < len; i++) { //change relevant boxes to reverse order
-                        if (orderz[i].classList.contains("orderBox")) {
-                            orderz[i].style.flexDirection = "column-reverse";
-                        } else {
-                            orderz[i].style.flexDirection = "column";
-                        }
-                    }
-                    if (viewables.length) {
-                        FlipToTop(viewables, domAverage);
-                    }
-                } else { //if in reversed direction
-                    document.getElementById('toggler').innerHTML = "NB/EB<br>↶&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>SB/WB";
-                    for (let i = 0, len = orderz.length; i < len; i++) { //change relevant boxes to normal order
-                        if (orderz[i].classList.contains("orderBox")) {
-                            orderz[i].style.flexDirection = "column";
-                        } else {
-                            orderz[i].style.flexDirection = "column-reverse";
-                        }
-                    }
-                    if (viewables.length) {
-                        FlipToTop(viewables, domAverage);
-                    }
-                }
-                // set directions for streets at top of page
-                let allDirections = document.querySelectorAll(".direcTog, .direcNoTog");
-                for (let i = 0, len = allDirections.length; i < len; i++) {
-                    if (allDirections[i].parentNode.parentNode.style.display === 'block') {
-                        document.getElementById('directionDisplay').innerHTML = allDirections[i].innerHTML;
-                    }
-                }
-            }
+        function DoNothing() {
+            return;
+        }
 
-            // Check for intersections in viewport and determine where to put element so that a maximum number of intersections are visible after lists have been reversed.
-            function FlipToTop(viewables, domAverage) {
-                if (viewables[0].parentNode.classList.contains('ignoreOrderFlip')) { //1-way corridor check ... don't move anything
-                    return;
-                }
-                window.scrollBy(0, 200); //make sure clock box is up
-                let clockBox = document.getElementById('clockBox').getBoundingClientRect();
-                let firstDom = viewables[0].getBoundingClientRect();
-                let lastDom = viewables[viewables.length - 1].getBoundingClientRect();
-                let chosenDom = firstDom;
-                let x = 0;
-                //if more than 1 showing see if they are predominantly at top or bottom of screen
-                //then check which way corridor is running and send to bottom or top
-                if (viewables.length > 1 && domAverage > window.innerHeight * 0.5) { //bottom half of screen
-                    if (viewables[0].parentNode.style.flexDirection === 'column-reverse') {
-                        x = 0;
-                    } else {
-                        x = viewables.length - 1;
-                        chosenDom = lastDom;
-                    }
-                    //move element to bottom of screen
-                    if (!viewables[x].classList.contains("flipToBottom")) { //not a legend explainer
-                        let moveY = chosenDom.bottom - (chosenDom.height * 0.3) - window.innerHeight;
-                        window.scrollBy(0, moveY);
-                    } else {
-                        let moveY = chosenDom.bottom - window.innerHeight;
-                        window.scrollBy(0, moveY);
-                    }
-                    return;
-                } else if (viewables.length > 1 && domAverage < window.innerHeight * 0.5) {
-                    if (viewables[0].parentNode.style.flexDirection === 'column-reverse') {
-                        x = viewables.length - 1;
-                        chosenDom = lastDom;
-                    } else {
-                        x = 0;
-                    }
-//                    window.scrollBy(0, 200); //make sure clock box is up
-                    let moveY = chosenDom.top - clockBox.bottom;
-                    window.scrollBy(0, moveY);
-                    return;
-                }
-                //if only 1 showing see if it is at top or bottom and send to same after reverse
-                if (viewables.length === 1 && firstDom.top > window.innerHeight / 2) { //bottom half
-                    //put element at bottom
-                    let moveY = firstDom.bottom - window.innerHeight;
-                    window.scrollBy(0, moveY);
-                    return;
-                } else if (viewables.length === 1 && firstDom.top < window.innerHeight / 2) { //top half
-                    //put element at top, under time box
-                    let moveY = firstDom.top - clockBox.bottom;
-                    window.scrollBy(0, moveY);
-                    return;
-                }
-            }
-
-            // Remove all class "viewable" then check for visible elements & assign "viewable".
-            function IsViewport() {
-                let elements = document.querySelectorAll(".viewable");
-                for (let i = 0, len = elements.length; i < len; i++) {
-                    elements[i].classList.remove("viewable");
-                }
-                if (document.getElementById("myDropdown").classList.contains("show")) { //the corridor buttons
-                    let topBoxHt = document.getElementById("DropdownButton").getBoundingClientRect().bottom;
-                    let everything = document.querySelectorAll("div > a");
-                    for (let i = 0, len = everything.length; i < len; i++) {
-                        let rect = everything[i].getBoundingClientRect();
-                        if (rect.top + (rect.height * 0.35) >= topBoxHt && rect.bottom - (rect.height * 0.5) <= window.innerHeight) {
-                            everything[i].classList.add('viewable');
-                        }
-                    }
-                } else { //the intersections
-                    let height = window.innerHeight;
-                    let topBoxHt = document.getElementById('Time').getBoundingClientRect().top;
-                    let everything = document.querySelectorAll("p.numbers"); //looking at the lines with timing numbers
-                    for (let i = 0, len = everything.length; i < len; i++) {
-                        let rect = everything[i].getBoundingClientRect();
-                        if (rect.top + (rect.height * 0.25) >= topBoxHt && rect.top + (rect.height * 0.75) <= height) {
-                            everything[i].parentNode.classList.add('viewable');
-                        }
-                    }
-                }
-            }
-
-            // cycle through all the CORRIDORS & close
-            function NavBarCloser() {
-                LegendClose();
-                window.openCorr = undefined;
-                let corridors = document.getElementsByClassName("hider"); //get all corridors & close em
-                for (let i = 0, len = corridors.length; i < len; i++) {
-                    corridors[i].style.display = 'none';
-                }
-                document.getElementById('directionDisplay').innerHTML = "";
+        /* When the user clicks on the button,
+         toggle between hiding and showing the dropdown content */
+        function DropFunction() {
+            NavBarCloser();
+            document.getElementById("myDropdown").classList.toggle("show");
+            if (document.getElementById("myDropdown").classList.contains("show")) {
+                document.getElementById("DropdownButton").innerHTML = "Close Corridor List"; //change dropdown button text
+                document.getElementById("myInput").focus();
+                myInput.select();
+            } else {
+                document.getElementById("DropdownButton").innerHTML = "Choose a Corridor"; //change dropdown button text back to default
                 document.getElementById("DropdownButton").focus();
             }
+        }
 
-            // add a zero in front of numbers<10
-            function PadTime(i) {
-                if (i < 10) {
-                    i = "0" + i;
+        function keydown(k) { //checking for "enter" inside filter box
+            if (k.keyCode === 13) {
+                if (document.getElementById('myInput') === document.activeElement) {
+                    document.getElementById('myInput').blur(); //remove focus from search/filter
+                } else if (document.getElementById('clkAdjHr') === document.activeElement) {
+                    document.getElementById('clkAdjMin').select();
+                } else if (document.getElementById('clkAdjMin') === document.activeElement) {
+                    document.getElementById('clkAdjSec').select();
+                } else if (document.getElementById('clkAdjSec') === document.activeElement) {
+                    document.getElementById('clkAdjSec').blur();
                 }
-                return i;
+                if (document.getElementById("clkAdjHr").value === "") {
+                    document.getElementById("clkAdjHr").value = "0";
+                }
+                if (document.getElementById("clkAdjMin").value === "") {
+                    document.getElementById("clkAdjMin").value = "0";
+                }
+                if (document.getElementById("clkAdjSec").value === "") {
+                    document.getElementById("clkAdjSec").value = "0";
+                }
             }
+        }
 
-            //function to show/hide change numbers
-            function ShowChange() {
-                let x = document.getElementsByClassName("changes");
-                if (x[0].style.display !== 'block') {
-                    window.dispChange = 1;
-                    document.getElementById("planButt").style.background = "darkgrey";
-                    document.getElementById("planButt").innerHTML = "Hide Plan#/Cycle";
-                    for (let i = 0, len = x.length; i < len; i++) {
-                        x[i].style.display = 'block';
-                    }
+        function filterFunction() { //filter intersection button list
+            let input = document.getElementById("myInput").value,
+                //                        filter = input.value.toUpperCase(),
+                search = new RegExp(input, 'i'),
+                myDiv = document.getElementById("myDropdown"),
+                a = myDiv.getElementsByTagName("a");
+            //                alert(search);
+            for (let i = 0, len = a.length; i < len; i++) {
+                let txtValue = a[i].textContent || a[i].innerText;
+                //                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                //                        a[i].style.display = "";
+                //                    } else {
+                //                        a[i].style.display = "none";
+                //                    }
+                if (txtValue.match(search)) {
+                    a[i].style.display = "";
                 } else {
-                    window.dispChange = 0;
-                    document.getElementById("planButt").style.background = "grey";
-                    document.getElementById("planButt").innerHTML = "Show Plan#/Cycle";
-                    for (let i = 0, len = x.length; i < len; i++) {
-                        x[i].style.display = 'none';
-                    }
+                    a[i].style.display = "none";
                 }
             }
-
-            //Adds last Split & Adj values to create a new offset adjustment
-            function SplitAdd(Adj, spl) {
-                Adj.forEach((num, index) => {
-                    Adj[index] = num + spl[index];
-                });
-                return Adj;
-            }
-
-            //Fullscreen function
-            function ToggleFullScreen() {
-                let doc = window.document;
-                let docEl = doc.documentElement;
-                let requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-                let cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-                if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-                    requestFullScreen.call(docEl);
-                } else {
-                    cancelFullScreen.call(doc);
+        }
+        //flip intersection order
+        function FlipIt() {
+            let allDirecTogs = document.getElementsByClassName("direcTog");
+            for (let i = 0, len = allDirecTogs.length; i < len; i++) { //change all the directions
+                if (allDirecTogs[i].innerHTML === "SB") {
+                    allDirecTogs[i].innerText = "NB";
+                } else if (allDirecTogs[i].innerHTML === "NB") {
+                    allDirecTogs[i].innerText = "SB";
+                } else if (allDirecTogs[i].innerHTML === "WB") {
+                    allDirecTogs[i].innerText = "EB";
+                } else if (allDirecTogs[i].innerHTML === "EB") {
+                    allDirecTogs[i].innerText = "WB";
+                } else if (allDirecTogs[i].innerHTML === "Direction") {
+                    allDirecTogs[i].innerText = "Opposite Direction";
+                } else if (allDirecTogs[i].innerHTML === "Opposite Direction") {
+                    allDirecTogs[i].innerText = "Direction";
                 }
             }
-
-            // When the user clicks on the button, topmost visible element goes to bottom
-            function UpPageFunction() {
-                IsViewport();
-                let viewables = document.getElementsByClassName('viewable'); //get all the visibles
-                if (!viewables[0]) {
-                    return;
-                }
-                let height = window.innerHeight;
-                let chosenDom = viewables[0].getBoundingClientRect();
+            let orderz = document.querySelectorAll(".orderBox:not(.ignoreOrderFlip), .orderBoxReverse:not(.ignoreOrderFlip)"); //only get orderBoxes for 2-way streets
+            IsViewport(); // find elements in viewport
+            var viewables = document.querySelectorAll('div.viewable');
+            if (viewables.length) { //get vertical position for top of first & last element
+                let firstDom = viewables[0].getBoundingClientRect();
                 let lastDom = viewables[viewables.length - 1].getBoundingClientRect();
-                let x = 0;
-                if (lastDom.top < chosenDom.top) { //if corridor is reversed the last one in array will be smaller #
+                var domAverage = (firstDom.top + (firstDom.height * 0.28) + lastDom.top + (lastDom.height * 0.28)) / 2;
+            }
+            if (document.getElementById('toggler').innerHTML === "NB/EB<br>↶&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>SB/WB") { //see if in standard direction
+                document.getElementById('toggler').innerHTML = "WB/SB<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↷<br>EB/NB"; //change indicator to reverse
+                for (let i = 0, len = orderz.length; i < len; i++) { //change relevant boxes to reverse order
+                    if (orderz[i].classList.contains("orderBox")) {
+                        orderz[i].style.flexDirection = "column-reverse";
+                    } else {
+                        orderz[i].style.flexDirection = "column";
+                    }
+                }
+                if (viewables.length) {
+                    FlipToTop(viewables, domAverage);
+                }
+            } else { //if in reversed direction
+                document.getElementById('toggler').innerHTML = "NB/EB<br>↶&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>SB/WB";
+                for (let i = 0, len = orderz.length; i < len; i++) { //change relevant boxes to normal order
+                    if (orderz[i].classList.contains("orderBox")) {
+                        orderz[i].style.flexDirection = "column";
+                    } else {
+                        orderz[i].style.flexDirection = "column-reverse";
+                    }
+                }
+                if (viewables.length) {
+                    FlipToTop(viewables, domAverage);
+                }
+            }
+            // set directions for streets at top of page
+            let allDirections = document.querySelectorAll(".direcTog, .direcNoTog");
+            for (let i = 0, len = allDirections.length; i < len; i++) {
+                if (allDirections[i].parentNode.parentNode.style.display === 'block') {
+                    document.getElementById('directionDisplay').innerHTML = allDirections[i].innerHTML;
+                }
+            }
+        }
+
+        // Check for intersections in viewport and determine where to put element so that a maximum number of intersections are visible after lists have been reversed.
+        function FlipToTop(viewables, domAverage) {
+            if (viewables[0].parentNode.classList.contains('ignoreOrderFlip')) { //1-way corridor check ... don't move anything
+                return;
+            }
+            window.scrollBy(0, 200); //make sure clock box is up
+            let clockBox = document.getElementById('clockBox').getBoundingClientRect();
+            let firstDom = viewables[0].getBoundingClientRect();
+            let lastDom = viewables[viewables.length - 1].getBoundingClientRect();
+            let chosenDom = firstDom;
+            let x = 0;
+            //if more than 1 showing see if they are predominantly at top or bottom of screen
+            //then check which way corridor is running and send to bottom or top
+            if (viewables.length > 1 && domAverage > window.innerHeight * 0.5) { //bottom half of screen
+                if (viewables[0].parentNode.style.flexDirection === 'column-reverse') {
+                    x = 0;
+                } else {
                     x = viewables.length - 1;
                     chosenDom = lastDom;
                 }
                 //move element to bottom of screen
-                if (viewables[x].tagName === "DIV") {
-                    let moveY = chosenDom.bottom - (chosenDom.height * 0.3) - height;
+                if (!viewables[x].classList.contains("flipToBottom")) { //not a legend explainer
+                    let moveY = chosenDom.bottom - (chosenDom.height * 0.3) - window.innerHeight;
                     window.scrollBy(0, moveY);
-                } else if (viewables[x].tagName === "A") {
-                    let moveY = chosenDom.bottom - height;
+                } else {
+                    let moveY = chosenDom.bottom - window.innerHeight;
                     window.scrollBy(0, moveY);
                 }
+                return;
+            } else if (viewables.length > 1 && domAverage < window.innerHeight * 0.5) {
+                if (viewables[0].parentNode.style.flexDirection === 'column-reverse') {
+                    x = viewables.length - 1;
+                    chosenDom = lastDom;
+                } else {
+                    x = 0;
+                }
+                //                    window.scrollBy(0, 200); //make sure clock box is up
+                let moveY = chosenDom.top - clockBox.bottom;
+                window.scrollBy(0, moveY);
+                return;
             }
+            //if only 1 showing see if it is at top or bottom and send to same after reverse
+            if (viewables.length === 1 && firstDom.top > window.innerHeight / 2) { //bottom half
+                //put element at bottom
+                let moveY = firstDom.bottom - window.innerHeight;
+                window.scrollBy(0, moveY);
+                return;
+            } else if (viewables.length === 1 && firstDom.top < window.innerHeight / 2) { //top half
+                //put element at top, under time box
+                let moveY = firstDom.top - clockBox.bottom;
+                window.scrollBy(0, moveY);
+                return;
+            }
+        }
 
-        </script>
-    </body>
+        // Remove all class "viewable" then check for visible elements & assign "viewable".
+        function IsViewport() {
+            let elements = document.querySelectorAll(".viewable");
+            for (let i = 0, len = elements.length; i < len; i++) {
+                elements[i].classList.remove("viewable");
+            }
+            if (document.getElementById("myDropdown").classList.contains("show")) { //the corridor buttons
+                let topBoxHt = document.getElementById("DropdownButton").getBoundingClientRect().bottom;
+                let everything = document.querySelectorAll("div > a");
+                for (let i = 0, len = everything.length; i < len; i++) {
+                    let rect = everything[i].getBoundingClientRect();
+                    if (rect.top + (rect.height * 0.35) >= topBoxHt && rect.bottom - (rect.height * 0.5) <= window.innerHeight) {
+                        everything[i].classList.add('viewable');
+                    }
+                }
+            } else { //the intersections
+                let height = window.innerHeight;
+                let topBoxHt = document.getElementById('Time').getBoundingClientRect().top;
+                let everything = document.querySelectorAll("p.numbers"); //looking at the lines with timing numbers
+                for (let i = 0, len = everything.length; i < len; i++) {
+                    let rect = everything[i].getBoundingClientRect();
+                    if (rect.top + (rect.height * 0.25) >= topBoxHt && rect.top + (rect.height * 0.75) <= height) {
+                        everything[i].parentNode.classList.add('viewable');
+                    }
+                }
+            }
+        }
+
+        // cycle through all the CORRIDORS & close
+        function NavBarCloser() {
+            LegendClose();
+            window.openCorr = undefined;
+            let corridors = document.getElementsByClassName("hider"); //get all corridors & close em
+            for (let i = 0, len = corridors.length; i < len; i++) {
+                corridors[i].style.display = 'none';
+            }
+            document.getElementById('directionDisplay').innerHTML = "";
+            document.getElementById("DropdownButton").focus();
+        }
+
+        // add a zero in front of numbers<10
+        function PadTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        //function to show/hide change numbers
+        function ShowChange() {
+            let x = document.getElementsByClassName("changes");
+            if (x[0].style.display !== 'block') {
+                window.dispChange = 1;
+                document.getElementById("planButt").style.background = "darkgrey";
+                document.getElementById("planButt").innerHTML = "Hide Plan#/Cycle";
+                for (let i = 0, len = x.length; i < len; i++) {
+                    x[i].style.display = 'block';
+                }
+            } else {
+                window.dispChange = 0;
+                document.getElementById("planButt").style.background = "grey";
+                document.getElementById("planButt").innerHTML = "Show Plan#/Cycle";
+                for (let i = 0, len = x.length; i < len; i++) {
+                    x[i].style.display = 'none';
+                }
+            }
+        }
+
+        //Adds last Split & Adj values to create a new offset adjustment
+        function SplitAdd(Adj, spl) {
+            Adj.forEach((num, index) => {
+                Adj[index] = num + spl[index];
+            });
+            return Adj;
+        }
+
+        //Fullscreen function
+        function ToggleFullScreen() {
+            let doc = window.document;
+            let docEl = doc.documentElement;
+            let requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+            let cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+            if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+                requestFullScreen.call(docEl);
+            } else {
+                cancelFullScreen.call(doc);
+            }
+        }
+
+        // When the user clicks on the button, topmost visible element goes to bottom
+        function UpPageFunction() {
+            IsViewport();
+            let viewables = document.getElementsByClassName('viewable'); //get all the visibles
+            if (!viewables[0]) {
+                return;
+            }
+            let height = window.innerHeight;
+            let chosenDom = viewables[0].getBoundingClientRect();
+            let lastDom = viewables[viewables.length - 1].getBoundingClientRect();
+            let x = 0;
+            if (lastDom.top < chosenDom.top) { //if corridor is reversed the last one in array will be smaller #
+                x = viewables.length - 1;
+                chosenDom = lastDom;
+            }
+            //move element to bottom of screen
+            if (viewables[x].tagName === "DIV") {
+                let moveY = chosenDom.bottom - (chosenDom.height * 0.3) - height;
+                window.scrollBy(0, moveY);
+            } else if (viewables[x].tagName === "A") {
+                let moveY = chosenDom.bottom - height;
+                window.scrollBy(0, moveY);
+            }
+        }
+
+    </script>
+</body>
+
 </html>

@@ -577,9 +577,9 @@ See page title for the most recent date of data
         <p class="oneone noShow" id="planCycleBoxLegend"><span>Plan#(s) >Next Transition</span><span>Cycle Length(s)</span></p>
     </div>
     <div id="adjustContainer">
-        +/- Hrs:<input type="number" min="-99" max="99" step="1" value="0" class="adjuster" id="clkAdjHr" onClick="this.select()" onChange="Timing(this.value)">
-        Min:<input type="number" min="-99" max="99" step="1" value="0" class="adjuster" id="clkAdjMin" onClick="this.select()" onChange="Timing(this.value)">
-        Sec:<input type="number" min="-99" max="99" step="0.5" value="0" class="adjuster" id="clkAdjSec" onClick="this.select()" onChange="Timing(this.value)">
+        +/- Hrs:<input type="number" title="Hour" min="-99" max="99" step="1" value="0" class="adjuster" id="clkAdjHr" onClick="this.select()" onChange="Timing(this.value)">
+        Min:<input type="number" title="Minute" min="-99" max="99" step="1" value="0" class="adjuster" id="clkAdjMin" onClick="this.select()" onChange="Timing(this.value)">
+        Sec:<input type="number" title="" min="-99" max="99" step="0.5" value="0" class="adjuster" id="clkAdjSec" onClick="this.select()" onChange="Timing(this.value)">
     </div>
     <span id="adjLegend"></span>
     <div id="clockBox">
@@ -606,6 +606,7 @@ See page title for the most recent date of data
                 <a href="javascript:CorridorDisplay('corr_19thAveN')">19TH AVE (N)<br />&duarr; Wawona - MLK</a>
                 <a href="javascript:CorridorDisplay('corr_19thAveS')">19TH AVE (S)<br />&duarr; J Serra - Sloat</a>
                 <a href="javascript:CorridorDisplay('corr_25thAve')">25TH AVE<br />&duarr; Fulton - Lake</a>
+                <a href="javascript:CorridorDisplay('corr_Alemany')">Alemany<br />&duarr; Brotherhood - Putnam</a> <!--   &duarr;    &lrarr;  -->
                 <a href="javascript:CorridorDisplay('corr_BushE')">BUSH (E)<br />&rarr; Polk - Sansome</a>
                 <a href="javascript:CorridorDisplay('corr_BushW')">BUSH (W)<br />&rarr; Presidio - Octavia</a>
                 <a href="javascript:CorridorDisplay('corr_CaliforniaE')">CALIFORNIA (E)<br />&lrarr; Polk - Davis</a>
@@ -1446,6 +1447,139 @@ See page title for the most recent date of data
                     </div>
                     <div>
                         <p class="oneone links"><a href="javascript:CorrToCorr('ParkPresidioBypass_Crossover_NS_REF', 'NB')">goto Park Presidio</a><a href="javascript:CorrToCorr('Crossover_MLK_SB_REF', 'SB')">goto 19th Ave (N)</a></p>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--***************END OF CORRIDOR SPECIFIC HTML*****************-->
+
+        <!-- a-corridor-->
+
+        <!--***************START OF CORRIDOR SPECIFIC HTML*****************-->
+        <div id="corr_Alemany" class="hider">
+            <div class="corridorName">&lrarr; Alemany</div>
+            <div class="bigWhite intNames">
+                <p class="one direcTog">NB</p>
+                <div class="orderBox ">
+                    <div class="intGroup">
+                        <p class="twotwo names"><span>EB@ Putnam/OffRamp</span><span>WB@ Putnam/OffRamp</span><span>Putnam</span><span>OffRamp</span></p>
+                        <p class="twotwo numbers"><span id="Alemany_CrescentPutnamFreewayOffRamp_EB_REF"></span><span id="Alemany_CrescentPutnamFreewayOffRamp_WB">0</span><span id="Alemany_CrescentPutnamFreewayOffRamp_SB"></span><span id="Alemany_CrescentPutnamFreewayOffRamp_NB"></span></p>
+                        <p class='changes' id="Alemany_CrescentPutnamFreewayOffRamp_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Congdon/Justin</span><span>Congdon/Justin</span></p>
+                        <p class="oneone numbers"><span id="Alemany_CongdonJustin_ES_REF">0</span><span id="Alemany_CongdonJustin_NS"></span></p>
+                        <p class='changes' id="Alemany_CongdonJustin_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Rousseau</span><span>NBLT/PED</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Rousseau_NS_REF">0</span><span id="Alemany_Rousseau_PED"></span></p>
+                        <p class='changes' id="Alemany_Rousseau_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Silver</span><span>Silver</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Silver_NS_REF">0</span><span id="Alemany_Silver_EW"></span></p>
+                        <p class='changes' id="Alemany_Silver_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Theresa</span><span>Theresa</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Theresa_NS_REF">0</span><span id="Alemany_Theresa_EW"></span></p>
+                        <p class='changes' id="Alemany_Theresa_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Santa Rosa</span><span>Santa Rosa</span></p>
+                        <p class="oneone numbers"><span id="Alemany_SantaRosa_NS_REF">0</span><span id="Alemany_SantaRosa_EW"></span></p>
+                        <p class='changes' id="Alemany_SantaRosa_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ San Juan</span><span>San Juan</span></p>
+                        <p class="oneone numbers"><span id="Alemany_SanJuan_NS_REF">0</span><span id="Alemany_SanJuan_EW"></span></p>
+                        <p class='changes' id="Alemany_SanJuan_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Ocean</span><span>Ocean</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Ocean_NS_REF">0</span><span id="Alemany_Ocean_EW"></span></p>
+                        <p class='changes' id="Alemany_Ocean_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Onondaga</span><span>Onondaga</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Onondaga_NS_REF">0</span><span id="Alemany_Onondaga_EW"></span></p>
+                        <p class='changes' id="Alemany_Onondaga_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Seneca</span><span>Seneca</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Seneca_OS">0</span><span id="Alemany_Seneca_UP"></span></p>
+                        <p class='changes' id="Alemany_Seneca_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Geneva</span><span>Geneva</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Geneva_NS_REF">0</span><span id="Alemany_Geneva_EW"></span></p>
+                        <p class='changes' id="Alemany_Geneva_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Niagara</span><span>Niagara</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Niagara_NS_REF">0</span><span id="Alemany_Niagara_EW"></span></p>
+                        <p class='changes' id="Alemany_Niagara_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Mt Vernon</span><span>Mt Vernon</span></p>
+                        <p class="oneone numbers"><span id="Alemany_MtVernon_NS_REF">0</span><span id="Alemany_MtVernon_EW"></span></p>
+                        <p class='changes' id="Alemany_MtVernon_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="onetwo names"><span>@ Ottawa</span><span>Ottawa</span><span>Huron</span></p>
+                        <p class="onetwo numbers"><span id="Alemany_HuronOttawa_NS_REF">0</span><span id="Alemany_HuronOttawa_EW"></span><span id="Alemany_HuronOttawa_NB"></span></p>
+                        <p class='changes' id="Alemany_HuronOttawa_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Foote</span><span>Foote</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Foote_OS">0</span><span id="Alemany_Foote_UP"></span></p>
+                        <p class='changes' id="Alemany_Foote_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Farragut</span><span>Farragut</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Farragut_NS_REF">0</span><span id="Alemany_Farragut_EW"></span></p>
+                        <p class='changes' id="Alemany_Farragut_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Lawrence</span><span>Lawrence</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Lawrence_NS">0</span><span id="Alemany_Lawrence_EW"></span></p>
+                        <p class='changes' id="Alemany_Lawrence_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Sickles</span><span>Sickles</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Sickles_OS">0</span><span id="Alemany_Sickles_EW"></span></p>
+                        <p class='changes' id="Alemany_Sickles_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="twoone names"><span>EB@ San Jose</span><span>WB@ San Jose</span><span>San Jose</span></p>
+                        <p class="twoone numbers"><span id="Alemany_SanJose_OS">0</span><span id="Alemany_SanJose_OOS"></span><span id="Alemany_SanJose_UP"></span></p>
+                        <p class='changes' id="Alemany_SanJose_change">0</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="intGroup">
+                        <p class="oneone names"><span>@ Brotherhood</span><span>Brotherhood</span></p>
+                        <p class="oneone numbers"><span id="Alemany_Brotherhood_OS">0</span><span id="Alemany_Brotherhood_UP"></span></p>
+                        <p class='changes' id="Alemany_Brotherhood_change">0</p>
                         <p>&nbsp;</p>
                     </div>
                 </div>
@@ -3363,8 +3497,8 @@ See page title for the most recent date of data
                     </div>
                     <div class="intGroup">
                         <p class="oneone names"><span>@ Baker</span><span>Baker</span></p>
-                        <p class="oneone numbers"><span id="Haight_Baker_E2W6">0</span><span id="Haight_Baker_S4N8"></span></p>
-                        <p class='changes' id="Haight_Baker_change">0</p>
+                        <p class="oneone numbers"><span id="Haight_BuenaVistaBaker_E2W6">0</span><span id="Haight_BuenaVistaBaker_S4N8"></span></p>
+                        <p class='changes' id="Haight_BuenaVistaBaker_change">0</p>
                         <p>&nbsp;</p>
                     </div>
                     <!--                        <div class="intGroup">
@@ -7536,6 +7670,298 @@ See page title for the most recent date of data
             }
             //**************END OF CORRIDOR SPECIFIC JAVASCRIPT**************
 
+            /* a-corridor*/
+
+            //**************START OF CORRIDOR SPECIFIC JAVASCRIPT**************
+            if (window.openCorr === "corr_Alemany") {
+
+                //Plan, flash times & cycle lengths
+                var plan2time = [700, 900], plan2day = [2, 3, 4, 5, 6], //Mon-Fri
+                    plan3time = [1500, 1900], plan3day = [2, 3, 4, 5, 6], //Mon-Fri
+                    plan4time = [600, 1600], plan4day = [1, 7], //Sun, Sat
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [75, 90, 90, 90];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //Alemany @ CrescentPutnamFreewayOffRamp
+                ChangeDisp('Alemany_CrescentPutnamFreewayOffRamp_change', 22, planNum, cl); // dispChange === 1 && 
+                var offset = [0, 0, 0, 0];
+                var LPI = 0, Yel = 5, Red = 2, Adj = [13, 13, 13, 18], Split = [26, 41, 41, 26]; //Ø 6
+                TimingCalc('Alemany_CrescentPutnamFreewayOffRamp_WB');
+                var LPI = 0, Yel = 5, Red = 2, Adj = [0, 0, 0, 0], Split = [39, 54, 54, 44]; //Ø 2
+                TimingCalc('Alemany_CrescentPutnamFreewayOffRamp_EB_REF');
+                var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [15, 20, 15, 30]; //Ø 4
+                TimingCalc('Alemany_CrescentPutnamFreewayOffRamp_SB');
+                var LPI = 0, Yel = 5, Red = 2, Adj = SplitAdd(Adj, Split), Split = [21, 16, 21, 16]; //Ø 8
+                TimingCalc('Alemany_CrescentPutnamFreewayOffRamp_NB');
+                TSPnDET([], [], ['Alemany_CrescentPutnamFreewayOffRamp_WB'], [1, 2, 3, 4]); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [700, 900], plan2day = [2, 3, 4, 5, 6], //Mon-Fri
+                    plan3time = [1600, 1900], plan4day = [2, 3, 4, 5, 6], //Mon-Fri
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [70, 80, 80];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //Alemany @ CongdonJustin
+                ChangeDisp('Alemany_CongdonJustin_change', 14, planNum, cl); // dispChange === 1 && 
+                var offset = [0, 0, 0];
+                var LPI = 0, Yel = 5, Red = 1, Adj = [0, 0, 0], Split = [34, 44, 38]; //Ø 2 6
+                TimingCalc('Alemany_CongdonJustin_ES_REF');
+                var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [36, 36, 42]; //Ø 4 8
+                TimingCalc('Alemany_CongdonJustin_NS');
+                TSPnDET([], [], ['Alemany_CongdonJustin_NS'], [1, 2, 3]); //tspDir, tspPlans, detDir, detPlans
+
+                //Alemany @ Rousseau
+                ChangeDisp('Alemany_Rousseau_change', 0, planNum, cl); // dispChange === 1 && 
+                var offset = [13, 55, 7];
+                var LPI = 4, Yel = 4.5, Red = 1, Adj = [0, 0, 0], Split = [35, 45, 45]; //Ø 2 6
+                TimingCalc('Alemany_Rousseau_NS_REF');
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [35, 35, 35]; //Ø 8
+                TimingCalc('Alemany_Rousseau_PED');
+                TSPnDET(['Alemany_Rousseau_NS_REF'], [1, 2, 3], ['Alemany_Rousseau_PED'], [1, 2, 3]); //tspDir, tspPlans, detDir, detPlans
+
+                //Alemany @ Silver
+                ChangeDisp('Alemany_Silver_change', 12, planNum, cl); // dispChange === 1 && 
+                var offset = [2, 41, 36];
+                var LPI = 0, Yel = 4.5, Red = 1.5, Adj = [0, 0, 0], Split = [34, 44, 44]; //Ø 2 6
+                TimingCalc('Alemany_Silver_NS_REF');
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [36, 36, 36]; //Ø 4 8
+                TimingCalc('Alemany_Silver_EW');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                //Alemany @ Theresa
+                ChangeDisp('Alemany_Theresa_change', 0, planNum, cl); // dispChange === 1 && 
+                var offset = [69, 30, 40];
+                var LPI = 4, Yel = 4.5, Red = 0.5, Adj = [0, 0, 0], Split = [35, 45, 45]; //Ø 2 6
+                TimingCalc('Alemany_Theresa_NS_REF');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [35, 35, 35]; //Ø 4 8
+                TimingCalc('Alemany_Theresa_EW');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                //Alemany @ SantaRosa
+                ChangeDisp('Alemany_SantaRosa_change', 13, planNum, cl); // dispChange === 1 && 
+                var offset = [66, 16, 69];
+                var LPI = 4, Yel = 5, Red = 1, Adj = [0, 0, 0], Split = [36, 46, 46]; //Ø 2 6
+                TimingCalc('Alemany_SantaRosa_NS_REF');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [34, 34, 34]; //Ø 4 8
+                TimingCalc('Alemany_SantaRosa_EW');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                //Alemany @ SanJuan
+                ChangeDisp('Alemany_SanJuan_change', 2, planNum, cl); // dispChange === 1 && 
+                var offset = [40, 79, 7];
+                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0, 0, 0], Split = [36, 46, 46,]; //Ø 2 6
+                TimingCalc('Alemany_SanJuan_NS_REF');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [34, 34, 34]; //Ø 4 8
+                TimingCalc('Alemany_SanJuan_EW');
+                TSPnDET([], [], ['Alemany_SanJuan_EW'], [1, 2, 3]); //tspDir, tspPlans, detDir, detPlans
+
+                //Alemany @ Ocean
+                ChangeDisp('Alemany_Ocean_change', 17, planNum, cl); // dispChange === 1 && 
+                var offset = [31, 72, 7];
+                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0, 0, 0], Split = [33, 43, 43]; //Ø 2 6
+                TimingCalc('Alemany_Ocean_NS_REF');
+                var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [37, 37, 37]; //Ø 4 8
+                TimingCalc('Alemany_Ocean_EW');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                //Alemany @ Onondaga
+                ChangeDisp('Alemany_Onondaga_change', 13, planNum, cl); // dispChange === 1 && 
+                var offset = [34, 64, 22];
+                var LPI = 0, Yel = 4.5, Red = 0.5, Adj = [0, 0, 0], Split = [37, 47, 47]; //Ø 2 6
+                TimingCalc('Alemany_Onondaga_NS_REF');
+                var LPI = 3, Yel = 4, Red = 2, Adj = Split, Split = [33, 33, 33]; //Ø 4 8
+                TimingCalc('Alemany_Onondaga_EW');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                //Alemany @ Seneca
+                ChangeDisp('Alemany_Seneca_change', 7, planNum, cl); // dispChange === 1 && 
+                var offset = [4, 36, 62];
+                var LPI = 0, Yel = 4.5, Red = 0.5, Adj = [0, 0, 0], Split = [39, 49, 49]; //Ø 2 6
+                TimingCalc('Alemany_Seneca_OS');
+                var LPI = 3, Yel = 4, Red = 2, Adj = Split, Split = [31, 31, 31]; //Ø 4 8
+                TimingCalc('Alemany_Seneca_UP');
+                TSPnDET([], [], ['Alemany_Seneca_UP'], [1, 2, 3]); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [0, 2400, 'free'], flashFree1day = [1, 2, 3, 4, 5, 6, 7],
+                    flashFree2time = [], flashFree2day = [];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //Alemany @ Geneva
+                ChangeDisp('Alemany_Geneva_change', 19, planNum, cl);   //dispChange === 1 && 
+                //                    var offset = ['free'];
+                var LPI = 0, Yel = 0, Red = 0, Adj = [0], Split = [0]; //Ø 2 6
+                TimingCalc('Alemany_Geneva_NS_REF');
+                var LPI = 0, Yel = 0, Red = 0, Adj = [0], Split = [0]; //Ø 4 8
+                TimingCalc('Alemany_Geneva_EW');
+                //                 TSPnDET([], [], [], []);
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [90];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //Alemany @ Niagara
+                ChangeDisp('Alemany_Niagara_change', 0, planNum, cl); // dispChange === 1 && 
+                var offset = [85];
+                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [56]; //Ø 2 6
+                TimingCalc('Alemany_Niagara_NS_REF');
+                var LPI = 6, Yel = 4, Red = 2, Adj = Split, Split = [34]; //Ø 4 8
+                TimingCalc('Alemany_Niagara_EW');
+                TSPnDET([], [], ['Alemany_Niagara_EW'], [1]); //tspDir, tspPlans, detDir, detPlans
+
+                //Alemany @ MtVernon
+                ChangeDisp('Alemany_MtVernon_change', 7, planNum, cl); // dispChange === 1 && 
+                var offset = [85];
+                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0], Split = [53]; //Ø 2 6
+                TimingCalc('Alemany_MtVernon_NS_REF');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [37]; //Ø 4 8
+                TimingCalc('Alemany_MtVernon_EW');
+                TSPnDET([], [], ['Alemany_MtVernon_EW'], [1]); //tspDir, tspPlans, detDir, detPlans
+
+                //Alemany @ HuronOttawa
+                ChangeDisp('Alemany_HuronOttawa_change', 12, planNum, cl); // dispChange === 1 && 
+                var offset = [10];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0], Split = [25]; //Ø 2 6
+                TimingCalc('Alemany_HuronOttawa_NS_REF');
+                var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [52]; //Ø 4 8
+                TimingCalc('Alemany_HuronOttawa_EW');
+                var LPI = 0, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [13]; //Ø 1
+                TimingCalc('Alemany_HuronOttawa_NB');
+                TSPnDET([], [], ['Alemany_HuronOttawa_EW', 'Alemany_HuronOttawa_NB'], [1]); //tspDir, tspPlans, detDir, detPlans
+
+                //Alemany @ Foote
+                ChangeDisp('Alemany_Foote_change', 0, planNum, cl); // dispChange === 1 && 
+                var offset = [10];
+                var LPI = 0, Yel = 4.5, Red = 0.5, Adj = [0], Split = [46]; //Ø 2 6
+                TimingCalc('Alemany_Foote_OS');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [44]; //Ø 4 8
+                TimingCalc('Alemany_Foote_UP');
+                TSPnDET([], [], ['Alemany_Foote_UP'], [1]); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [700, 900], plan2day = [2, 3, 4, 5, 6], //Mon-Fri
+                    plan3time = [1600, 1900], plan4day = [2, 3, 4, 5, 6], //Mon-Fri
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [0, 600], flashFree1day = [1, 2, 3, 4, 5, 6, 7],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [70, 80, 80];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //Alemany @ Farragut
+                ChangeDisp('Alemany_Farragut_change', 6, planNum, cl); // dispChange === 1 && 
+                var offset = [37, 22, 55];
+                var LPI = 0, Yel = 5, Red = 0.5, Adj = [0, 0, 0], Split = [38, 45, 45]; //Ø 2 6
+                TimingCalc('Alemany_Farragut_NS_REF');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [32, 35, 35]; //Ø 4 8
+                TimingCalc('Alemany_Farragut_EW');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [0, 2400, 'free'], flashFree1day = [1, 2, 3, 4, 5, 6, 7],
+                    flashFree2time = [], flashFree2day = [];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                PlanTimeCalc();
+                //Alemany @ Lawrence
+                ChangeDisp('Alemany_Lawrence_change', 0, planNum, cl); // dispChange === 1 && 
+                var offset = [0];
+                var LPI = 0, Yel = 0, Red = 0, Adj = [0], Split = [0]; //Ø 2 6
+                TimingCalc('Alemany_Lawrence_NS');
+                var LPI = 0, Yel = 0, Red = 0, Adj = Split, Split = [0]; //Ø 4 8
+                TimingCalc('Alemany_Lawrence_EW');
+                TSPnDET([], [], ['Alemany_Lawrence_EW'], [1, 2, 3]); //tspDir, tspPlans, detDir, detPlans
+
+                //Alemany @ Sickles
+                ChangeDisp('Alemany_Sickles_change', 10, planNum, cl); // dispChange === 1 && 
+                var offset = [0];
+                var LPI = 0, Yel = 0, Red = 0, Adj = [0], Split = [0]; //Ø 2 6
+                TimingCalc('Alemany_Sickles_OS');
+                var LPI = 0, Yel = 0, Red = 0, Adj = Split, Split = [0]; //Ø 4 8
+                TimingCalc('Alemany_Sickles_EW');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [700, 900], plan2day = [2, 3, 4, 5, 6], //Mon-Fri
+                    plan3time = [1600, 1900], plan4day = [2, 3, 4, 5, 6], //Mon-Fri
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [70, 80, 80];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //Alemany @ SanJose
+                ChangeDisp('Alemany_SanJose_change', 22, planNum, cl); // dispChange === 1 && 
+                var offset = [4, 20, 53];
+                var LPI = 0, Yel = 4.5, Red = 2.5, Adj = [0, 0, 0], Split = [37, 37, 37]; //Ø 2 7
+                TimingCalc('Alemany_SanJose_OS');
+                var LPI = 0, Yel = 4.5, Red = 3.5, Adj = Split, Split = [15, 19, 16]; //Ø 3 6
+                TimingCalc('Alemany_SanJose_OOS');
+                var LPI = 0, Yel = 4.5, Red = 2.5, Adj = SplitAdd(Adj, Split), Split = [18, 24, 27]; //Ø 4 8
+                TimingCalc('Alemany_SanJose_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                var plan2time = [], plan2day = [],
+                    plan3time = [], plan3day = [],
+                    plan4time = [], plan4day = [],
+                    plan5time = [], plan5day = [],
+                    plan6time = [], plan6day = [],
+                    flashFree1time = [], flashFree1day = [],
+                    flashFree2time = [], flashFree2day = [],
+                    cycleLength = [70];
+                transTimeCalc();
+                FlashFreeTimeCalc();
+                PlanTimeCalc();
+                GetCycleLength();
+                //Alemany @ Brotherhood
+                ChangeDisp('Alemany_Brotherhood_change', 9, planNum, cl); // dispChange === 1 && 
+                var offset = [50];
+                var LPI = 0, Yel = 4.5, Red = 1.5, Adj = [0], Split = [32]; //Ø 2 6
+                TimingCalc('Alemany_Brotherhood_OS');
+                var LPI = 0, Yel = 4.5, Red = 1.5, Adj = Split, Split = [38]; //Ø 4 8
+                TimingCalc('Alemany_Brotherhood_UP');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+            }
+            //**************END OF CORRIDOR SPECIFIC JAVASCRIPT**************
+
             /* b-corridor*/
 
             //**************START OF CORRIDOR SPECIFIC JAVASCRIPT**************
@@ -10506,13 +10932,13 @@ See page title for the most recent date of data
                 TSPnDET(['Haight_Broderick_E2W6'], [1, 2, 3], [], []); //tspDir, tspPlans, detDir, detPlans
 
                 //Haight @ Baker
-                ChangeDisp('Haight_Baker_change', 1, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Haight_BuenaVistaBaker_change', 1, planNum, cl);   //dispChange === 1 && 
                 var offset = [0, 0, 0];
                 var LPI = 0, Yel = 4, Red = 2.5, Adj = [0, 0, 0], Split = [35, 35, 35]; //Ø 2 6
-                TimingCalc('Haight_Baker_E2W6');
+                TimingCalc('Haight_BuenaVistaBaker_E2W6');
                 var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [25, 25, 25]; //Ø 4 8
-                TimingCalc('Haight_Baker_S4N8');
-                TSPnDET(['Haight_Baker_E2W6'], [1, 2, 3], [], []); //tspDir, tspPlans, detDir, detPlans
+                TimingCalc('Haight_BuenaVistaBaker_S4N8');
+                TSPnDET(['Haight_BuenaVistaBaker_E2W6'], [1, 2, 3], [], []); //tspDir, tspPlans, detDir, detPlans
 
                 //Haight @ Central
                 ChangeDisp('Haight_Central_change', 0, planNum, cl);   //dispChange === 1 && 
