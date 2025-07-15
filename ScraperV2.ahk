@@ -80,7 +80,7 @@ MyGui.Move(, 10)
 
 StartTime := A_TickCount
 
-loop files, TimingCards "\*.pdf", "R" ; go thru all the pdf filenames
+loop files, TimingCards "\*.pdf", "FR" ; go thru all the pdf filenames
 {
     if !(RegExMatch(A_LoopFileDir, "Time Card")) ; only look at Time Card files
         continue
@@ -92,22 +92,24 @@ loop files, TimingCards "\*.pdf", "R" ; go thru all the pdf filenames
         continue
     RegExMatch(tempName, "i)(.+?[_\s])(Ch[_\s]*)(\d+).*(\.?pdf)", &tempName) ; current filename
     if cardNames.Length = 0
-    {
-        cardNames.push(tempName[]) ; AHK v2 needs [] or [0] as the entire match. could pick individual matches if wanted
-        continue
-    }
-    RegExMatch(cardNames[cardNames.Length], "i)(.+?[_\s])(Ch[_\s]*)(\d+).*(\.pdf)", &lastName) ;last name that's already in array
-    ;had to use .* instead of \s* after "ch ##" because of non-standard naming in files
-    if (tempName[1] = lastName[1] && tempName[3] > lastName[3]) ; same name later change#
-    {
-        cardNames.pop() ; get rid of earlier change#
-        cardNames.push(tempName[]) ; put in later change#
-        cardFileLength++
-    }
-    else if (tempName[1] = lastName[1] && tempName[3] < lastName[3]) ; same name earlier change#...ignore
-        continue
-    else ; must not have the same name as the last one
-    {
+        {
+            cardNames.push(tempName[]) ; AHK v2 needs [] or [0] as the entire match. could pick individual matches if wanted
+            continue
+        }
+        RegExMatch(cardNames[cardNames.Length], "i)(.+?[_\s])(Ch[_\s]*)(\d+).*(\.pdf)", &lastName) ;last name that's already in array
+        ;had to use .* instead of \s* after "ch ##" because of non-standard naming in files
+        if (tempName[1] = lastName[1] && tempName[3] > lastName[3]) ; same name later change#
+            {
+                cardNames.pop() ; get rid of earlier change#
+                cardNames.push(tempName[]) ; put in later change#
+                cardFileLength++
+            }
+            else if (tempName[1] = lastName[1] && tempName[3] < lastName[3]) ; same name earlier change#...ignore
+                continue
+            else if InStr(tempName[], "Alemany Brotherhood Sagamore") ; special case for Alemany Brotherhood Sagamore which is an RRFB
+                continue
+            else ; must not have the same name as the last one
+                {
         cardNames.push(tempName[])
         cardFileLength++
     }

@@ -1464,8 +1464,8 @@ See page title for the most recent date of data
                 <div class="orderBox ">
                     <div class="intGroup">
                         <p class="twotwo names"><span>EB@ Putnam/OffRamp</span><span>WB@ Putnam/OffRamp</span><span>Putnam</span><span>OffRamp</span></p>
-                        <p class="twotwo numbers"><span id="Alemany_CrescentPutnamFreewayOffRamp_EB_REF"></span><span id="Alemany_CrescentPutnamFreewayOffRamp_WB">0</span><span id="Alemany_CrescentPutnamFreewayOffRamp_SB"></span><span id="Alemany_CrescentPutnamFreewayOffRamp_NB"></span></p>
-                        <p class='changes' id="Alemany_CrescentPutnamFreewayOffRamp_change">0</p>
+                        <p class="twotwo numbers"><span id="Alemany_CrescentPutnamFreeway_EB_REF"></span><span id="Alemany_CrescentPutnamFreeway_WB">0</span><span id="Alemany_CrescentPutnamFreeway_SB"></span><span id="Alemany_CrescentPutnamFreeway_NB"></span></p>
+                        <p class='changes' id="Alemany_CrescentPutnamFreeway_change">0</p>
                         <p>&nbsp;</p>
                     </div>
                     <div class="intGroup">
@@ -7689,17 +7689,17 @@ See page title for the most recent date of data
                 PlanTimeCalc();
                 GetCycleLength();
                 //Alemany @ CrescentPutnamFreewayOffRamp
-                ChangeDisp('Alemany_CrescentPutnamFreewayOffRamp_change', 22, planNum, cl); // dispChange === 1 && 
+                ChangeDisp('Alemany_CrescentPutnamFreeway_change', 22, planNum, cl); // dispChange === 1 && 
                 var offset = [0, 0, 0, 0];
                 var LPI = 0, Yel = 5, Red = 2, Adj = [13, 13, 13, 18], Split = [26, 41, 41, 26]; //Ø 6
-                TimingCalc('Alemany_CrescentPutnamFreewayOffRamp_WB');
+                TimingCalc('Alemany_CrescentPutnamFreeway_WB');
                 var LPI = 0, Yel = 5, Red = 2, Adj = [0, 0, 0, 0], Split = [39, 54, 54, 44]; //Ø 2
-                TimingCalc('Alemany_CrescentPutnamFreewayOffRamp_EB_REF');
+                TimingCalc('Alemany_CrescentPutnamFreeway_EB_REF');
                 var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [15, 20, 15, 30]; //Ø 4
-                TimingCalc('Alemany_CrescentPutnamFreewayOffRamp_SB');
+                TimingCalc('Alemany_CrescentPutnamFreeway_SB');
                 var LPI = 0, Yel = 5, Red = 2, Adj = SplitAdd(Adj, Split), Split = [21, 16, 21, 16]; //Ø 8
-                TimingCalc('Alemany_CrescentPutnamFreewayOffRamp_NB');
-                TSPnDET([], [], ['Alemany_CrescentPutnamFreewayOffRamp_WB'], [1, 2, 3, 4]); //tspDir, tspPlans, detDir, detPlans
+                TimingCalc('Alemany_CrescentPutnamFreeway_NB');
+                TSPnDET([], [], ['Alemany_CrescentPutnamFreeway_WB'], [1, 2, 3, 4]); //tspDir, tspPlans, detDir, detPlans
 
                 var plan2time = [700, 900], plan2day = [2, 3, 4, 5, 6], //Mon-Fri
                     plan3time = [1600, 1900], plan4day = [2, 3, 4, 5, 6], //Mon-Fri
