@@ -2802,7 +2802,7 @@ See page title for the most recent date of data
                     </div>
                     <div class="intGroup">
                         <p class="oneone names"><span>@ 10th</span><span>10th Ave</span></p>
-                        <p class="oneone numbers"><span id="Fulton_10thAve_EB_REF">0</span><span id="Fulton_10thAve_NS"></span></p>
+                        <p class="oneone numbers"><span id="Fulton_10thAve_EW_REF">0</span><span id="Fulton_10thAve_NS"></span></p>
                         <p class="changes" id="Fulton_10thAve_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -9858,13 +9858,13 @@ See page title for the most recent date of data
                 TSPnDET(['Fulton_8thAve_EW_REF'], [1, 2, 3, 4], [], []);
 
                 //Fulton @ 10th
-                ChangeDisp('Fulton_10thAve_change', 20, planNum, cl);   //dispChange === 1 && 
-                var offset = [27, 35, 35, 27];
-                var LPI = 0, Yel = 4.5, Red = 1, Adj = [0, 0, 0, 0], Split = [44, 52, 52, 44]; //Ø 2
-                TimingCalc('Fulton_10thAve_EB_REF');
-                var LPI = 6, Yel = 4, Red = 1.5, Adj = Split, Split = [28, 28, 28, 28]; //Ø 4 8
+                ChangeDisp('Fulton_10thAve_change', 21, planNum, cl);   //dispChange === 1 && 
+                var offset = [27, 35, 38, 27];
+                var LPI = 0, Yel = 4.5, Red = 1.5, Adj = [0, 0, 0, 0], Split = [46, 54, 54, 46]; //Ø 2
+                TimingCalc('Fulton_10thAve_EW_REF');
+                var LPI = 6, Yel = 4.5, Red = 1.5, Adj = Split, Split = [26, 26, 26, 26]; //Ø 4 8
                 TimingCalc('Fulton_10thAve_NS');
-                //                 TSPnDET([], [], [], []);
+                TSPnDET(['Fulton_10thAve_EW_REF'], [], [], []);
 
                 //different cycle lengths
                 var plan2time = [600, 1400], plan2day = [2, 3, 4, 5, 6],

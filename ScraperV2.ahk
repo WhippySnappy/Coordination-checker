@@ -283,7 +283,7 @@ Sleep(100)
 WinWait("Find", , 1.5)
 notepadEl := UIA.ElementFromHandle("Find ahk_exe notepad++.exe")
 ; Send("{text}---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R")
-notepadEl.WaitElement({ AutomationId: "1001" }, 5000).Value := "---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R" ; wait for the Find what: edit box
+notepadEl.WaitElement({ AutomationId: "1001" }, 5000).Value := "---MAYBE.+?\R---DIFF.+?\R.+?\R.+?\R|---DIFFERENT.+?\R.+?\R.+?\R|---MAYBE.+?\R.+?\R.+?\R" ; wait for the Find what: edit box
 ;Type: 50004 (Edit) Name: "Find what:" Value: "---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R" LocalizedType: "edit" AutomationId: "1001" ClassName: "Edit"
 ; Sleep(200)
 ; ControlSetChecked(1, "Button19", "Find") ;regular expression radio button
