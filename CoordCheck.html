@@ -2922,8 +2922,8 @@ See page title for the most recent date of data
                         <p>&nbsp;</p>
                     </div>
                     <div class="intGroup">
-                        <p class="twoone names"><span>EB@ Prague</span><span>WBLT@ Prague</span><span>Prague</span></p>
-                        <p class="twoone numbers"><span id="Geneva_Prague_EB">0</span><span id="Geneva_Prague_WBLT_REF"></span><span id="Geneva_Prague_NB"></span></p>
+                        <p class="oneone names"><span>WB@ Prague</span><span>Prague</span></p>
+                        <p class="oneone numbers"><span id="Geneva_Prague_WB_REF">0</span><span id="Geneva_Prague_NB"></span></p>
                         <p class="changes" id="Geneva_Prague_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -6644,33 +6644,6 @@ See page title for the most recent date of data
             if (window.openCorr === "corr_6thSt") {
 
                 //Plan, flash times & cycle lengths
-                var plan2time = [615, 1000], plan2day = [2, 3, 4, 5, 6],
-                    plan3time = [1500, 1900], plan3day = [2, 3, 4, 5, 6],
-                    plan4time = [], plan4day = [],
-                    plan5time = [], plan5day = [],
-                    plan6time = [], plan6day = [],
-                    flashFree1time = [], flashFree1day = [],
-                    flashFree2time = [], flashFree2day = [],
-                    cycleLength = [75, 90, 90];
-                PlanTimeCalc();
-                //Taylor @ Turk
-                ChangeDisp('Taylor_Turk_change', 20, planNum, cl);   //dispChange === 1 && 
-                var offset = [74, 21, 21];
-                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [26, 28, 28]; //Ø 6
-                TimingCalc('Taylor_Turk_WB_REF');
-                var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [49, 62, 62]; //Ø 8
-                TimingCalc('Taylor_Turk_NB');
-                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
-                //6TH ST @ Market
-                ChangeDisp('_6thSt_GoldenGateMarketTaylor_change', 28, planNum, cl);   //dispChange === 1 && 
-                var offset = [48, 73, 40];
-                var LPI = 0, Yel = 4, Red = 4, Adj = [0, 0, 0], Split = [36, 45, 45]; //Ø 2 6
-                TimingCalc('_6thSt_GoldenGateMarketTaylor_EW_REF');
-                var LPI = 0, Yel = 4, Red = 3.5, Adj = Split, Split = [39, 45, 45]; //Ø 4 8
-                TimingCalc('_6thSt_GoldenGateMarketTaylor_NS');
-                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
-
                 var plan2time = [600, 1400], plan2day = [2, 3, 4, 5, 6],
                     plan3time = [1400, 2000], plan3day = [2, 3, 4, 5, 6],
                     plan4time = [], plan4day = [],
@@ -6680,9 +6653,27 @@ See page title for the most recent date of data
                     flashFree2time = [], flashFree2day = [],
                     cycleLength = [90, 90, 90];
                 PlanTimeCalc();
+                //Taylor @ Turk
+                ChangeDisp('Taylor_Turk_change', 21, planNum, cl);   //dispChange === 1 && 
+                var offset = [66, 9, 30];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [28, 28, 28]; //Ø 6
+                TimingCalc('Taylor_Turk_WB_REF');
+                var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [62, 62, 62]; //Ø 8
+                TimingCalc('Taylor_Turk_NB');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
+                //6TH ST @ Market
+                ChangeDisp('_6thSt_GoldenGateMarketTaylor_change', 30, planNum, cl);   //dispChange === 1 && 
+                var offset = [60, 89, 27];
+                var LPI = 0, Yel = 4, Red = 4, Adj = [0, 0, 0], Split = [45, 45, 45]; //Ø 2 6
+                TimingCalc('_6thSt_GoldenGateMarketTaylor_EW_REF');
+                var LPI = 0, Yel = 4, Red = 3.5, Adj = Split, Split = [45, 45, 45]; //Ø 4 8
+                TimingCalc('_6thSt_GoldenGateMarketTaylor_NS');
+                //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
+
                 //6TH ST @ Jessie
-                ChangeDisp('_6thSt_Jessie_change', 4, planNum, cl);   //dispChange === 1 && 
-                var offset = [20, 18, 85];
+                ChangeDisp('_6thSt_Jessie_change', 5, planNum, cl);   //dispChange === 1 && 
+                var offset = [23, 36, 84];
                 var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0], Split = [54, 54, 54,]; //Ø 2 6
                 TimingCalc('_6thSt_Jessie_NS_REF');
                 var LPI = 4, Yel = 4, Red = 3, Adj = Split, Split = [36, 36, 36]; //Ø 4
@@ -6699,8 +6690,8 @@ See page title for the most recent date of data
                 TSPnDET(['_6thSt_Mission_EW_REF'], [1, 2, 3], [], []); //tspDir, tspPlans, detDir, detPlans
 
                 //6TH ST @ Minna
-                ChangeDisp('_6thSt_Minna_change', 4, planNum, cl);   //dispChange === 1 && 
-                var offset = [33, 18, 4];
+                ChangeDisp('_6thSt_Minna_change', 5, planNum, cl);   //dispChange === 1 && 
+                var offset = [26, 17, 4];
                 var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0], Split = [54, 54, 54]; //Ø 2 6
                 TimingCalc('_6thSt_Minna_NS_REF');
                 var LPI = 4, Yel = 4, Red = 3, Adj = Split, Split = [36, 36, 36]; //Ø 8
@@ -6708,8 +6699,8 @@ See page title for the most recent date of data
                 TSPnDET([], [], ['_6thSt_Minna_WB'], [1, 2, 3]); //tspDir, tspPlans, detDir, detPlans
 
                 //6TH ST @ Howard
-                ChangeDisp('_6thSt_Howard_change', 32, planNum, cl);   //dispChange === 1 && 
-                var offset = [25, 53, 25];
+                ChangeDisp('_6thSt_Howard_change', 33, planNum, cl);   //dispChange === 1 && 
+                var offset = [43, 49, 54];
                 var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [51, 51, 51]; //Ø 6
                 TimingCalc('_6thSt_Howard_WB_REF');
                 var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [39, 39, 39]; //Ø 4 8
@@ -6717,11 +6708,11 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
 
                 //6TH ST @ Folsom
-                ChangeDisp('_6thSt_Folsom_change', 38, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('_6thSt_Folsom_change', 39, planNum, cl);   //dispChange === 1 && 
                 var offset = [53, 53, 53];
                 var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [32, 33, 32]; //Ø 2
                 TimingCalc('_6thSt_Folsom_EB_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [45, 44, 45]; //Ø 8
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [45, 44, 45]; //Ø 8
                 TimingCalc('_6thSt_Folsom_NB');
                 var LPI = 4, Yel = 4, Red = 2, Adj = Adj, Split = [58, 57, 58]; //Ø 4
                 TimingCalc('_6thSt_Folsom_SB');
@@ -9146,7 +9137,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Fell @ Shrader
-                ChangeDisp('Fell_Shrader_change', 21, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Fell_Shrader_change', 22, planNum, cl);   //dispChange === 1 && 
                 var offset = [34, 48, 61];
                 var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0], Split = [58, 58, 58]; //Ø 6
                 TimingCalc('Fell_Shrader_WB_REF');
@@ -9155,7 +9146,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Fell @ Cole
-                ChangeDisp('Fell_Cole_change', 20, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Fell_Cole_change', 21, planNum, cl);   //dispChange === 1 && 
                 var offset = [17, 13, 44];
                 var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0], Split = [57, 63, 63]; //Ø 6
                 TimingCalc('Fell_Cole_WB_REF');
@@ -9164,16 +9155,16 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Fell @ Clayton
-                ChangeDisp('Fell_Clayton_change', 23, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Fell_Clayton_change', 24, planNum, cl);   //dispChange === 1 && 
                 var offset = [0, 86, 27];
-                var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0], Split = [43, 64, 64]; //Ø 6
+                var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0], Split = [57, 63, 63]; //Ø 6
                 TimingCalc('Fell_Clayton_WB_REF');
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [32, 26, 26]; //Ø 4
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [32, 27, 27]; //Ø 4
                 TimingCalc('Fell_Clayton_SB');
                 //                 TSPnDET([], [], [], []);
 
                 //Fell @ Ashbury
-                ChangeDisp('Fell_Ashbury_change', 22, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Fell_Ashbury_change', 23, planNum, cl);   //dispChange === 1 && 
                 var offset = [73, 69, 10];
                 var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0], Split = [57, 63, 63]; //Ø 6
                 TimingCalc('Fell_Ashbury_WB_REF');
@@ -9182,7 +9173,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Fell @ Masonic xcross Masonic_Fell_change
-                ChangeDisp('Fell_Masonic_change', 29, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Fell_Masonic_change', 30, planNum, cl);   //dispChange === 1 && 
                 var offset = [56, 52, 83];
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [44, 41, 47]; //Ø 6
                 TimingCalc('Fell_Masonic_WB_REF');
@@ -9191,7 +9182,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Fell @ Central
-                ChangeDisp('Fell_Central_change', 21, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Fell_Central_change', 22, planNum, cl);   //dispChange === 1 && 
                 var offset = [39, 35, 66];
                 var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0], Split = [57, 63, 63]; //Ø 6
                 TimingCalc('Fell_Central_WB_REF');
@@ -9200,7 +9191,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Fell @ Lyon
-                ChangeDisp('Fell_Lyon_change', 26, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Fell_Lyon_change', 27, planNum, cl);   //dispChange === 1 && 
                 var offset = [22, 18, 49];
                 var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0, 0], Split = [57, 63, 63]; //Ø 6
                 TimingCalc('Fell_Lyon_WB_REF');
@@ -9209,7 +9200,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Fell @ Baker
-                ChangeDisp('Fell_Baker_change', 26, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Fell_Baker_change', 27, planNum, cl);   //dispChange === 1 && 
                 var offset = [1, 87, 28];
                 var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [49, 46, 54]; //Ø 6
                 TimingCalc('Fell_Baker_WB_REF');
@@ -10054,27 +10045,25 @@ See page title for the most recent date of data
                 TSPnDET(['Geneva_Stoneridge_EW_REF'], [1, 2, 3], ['Geneva_Stoneridge_PED'], [1, 2, 3]);
                 
                 //Geneva & Prague always remains in plan 1
-                var plan2time = [], plan2day = [],
-                    plan3time = [], plan3day = [],
+                var plan2time = [700, 1000], plan2day = [2, 3, 4, 5, 6],
+                    plan3time = [1400, 2100], plan3day = [2, 3, 4, 5, 6],
                     plan4time = [], plan4day = [],
                     plan5time = [], plan5day = [],
                     plan6time = [], plan6day = [],
                     flashFree1time = [0, 600, 'flash'], flashFree1day = [1, 2, 3, 4, 5, 6, 7], //only Prague has PROG FLASH
                     flashFree2time = [2300, 2400, 'flash'], flashFree2day = [1, 2, 3, 4, 5, 6, 7],
-                    cycleLength = [70];
+                    cycleLength = [80, 90, 90];
                 PlanTimeCalc();
 
                 //GENEVA @ Prague
-                ChangeDisp('Geneva_Prague_change', 16, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Geneva_Prague_change', 17, planNum, cl);   //dispChange === 1 && 
                 //FLASH from 2300-0600
-                var offset = [64];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0], Split = [13]; //Ø 1
-                TimingCalc('Geneva_Prague_WBLT_REF');
-                var LPI = 0, Yel = 4.5, Red = 2, Adj = Split, Split = [24]; //Ø 2
-                TimingCalc('Geneva_Prague_EB');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = SplitAdd(Adj, Split), Split = [33]; //Ø 8
+                var offset = [14, 10, 8];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [48, 58, 58]; //Ø 1
+                TimingCalc('Geneva_Prague_WB_REF');
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [32, 32, 32]; //Ø 8
                 TimingCalc('Geneva_Prague_NB');
-                TSPnDET([], [], ['Geneva_Prague_WBLT_REF', 'Geneva_Prague_NB'], [1]);
+                TSPnDET(['Geneva_Prague_WB_REF'], [1, 2, 3], ['Geneva_Prague_NB'], [1, 2, 3]);
 
                 //no FLASH for Moscow<->Cayuga & Geneva
                 var plan2time = [700, 1000], plan2day = [2, 3, 4, 5, 6],
@@ -12104,7 +12093,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //masonic @ fell xcross Fell_Masonic_change
-                ChangeDisp('Masonic_Fell_change', 29, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Masonic_Fell_change', 30, planNum, cl);   //dispChange === 1 && 
                 var offset = [56, 52, 83];
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [44, 41, 47]; //Ø 6
                 TimingCalc('Masonic_Fell_WB_REF');
@@ -14753,8 +14742,8 @@ See page title for the most recent date of data
                 TSPnDET(['VanNess_Green_NS_REF'], [1, 2, 3], [], []);
 
                 //Van Ness @ Vallejo
-                ChangeDisp('VanNess_Vallejo_change', 26, planNum, cl);   //dispChange === 1 && 
-                var offset = [20, 84, 6];
+                ChangeDisp('VanNess_Vallejo_change', 27, planNum, cl);   //dispChange === 1 && 
+                var offset = [79, 17, 82];
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [51, 51, 51]; //Ø 2 6
                 TimingCalc('VanNess_Vallejo_NS_REF');
                 var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [39, 39, 39]; //Ø 4 8
