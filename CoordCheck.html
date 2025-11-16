@@ -8789,13 +8789,13 @@ See page title for the most recent date of data
                 //                 TSPnDET([tspDir], [tspPlans], [detDir], [detPlans]);
 
                 //Divisadero @ GoldenGate
-                ChangeDisp('Divisadero_GoldenGate_change', 19, planNum, cl);   //dispChange === 1 && 
-                var offset = [0, 0, 0];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [28, 34, 28]; //Ø 2 6
+                ChangeDisp('Divisadero_GoldenGate_change', 20, planNum, cl);   //dispChange === 1 && 
+                var offset = [66, 66, 66];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [28, 32, 28]; //Ø 2 6
                 TimingCalc('Divisadero_GoldenGate_EB_REF');
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [42, 36, 42]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [42, 38, 42]; //Ø 4 8
                 TimingCalc('Divisadero_GoldenGate_NS');
-                //DISABLED FOR CONSTRUCTION TSPnDET(['Divisadero_GoldenGate_NS'], [1, 2, 3], [], []);
+                TSPnDET(['Divisadero_GoldenGate_NS'], [1, 2, 3], [], []);
 
                 //Divisadero @ McAllister
                 ChangeDisp('Divisadero_Mcallister_change', 20, planNum, cl);   //dispChange === 1 && 
@@ -10357,13 +10357,13 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //goldenGate @ divisadero
-                ChangeDisp('GoldenGate_Divisadero_change', 19, planNum, cl);   //dispChange === 1 && 
-                var offset = [0, 0, 0];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [28, 34, 28]; //Ø 2
+                ChangeDisp('GoldenGate_Divisadero_change', 20, planNum, cl);   //dispChange === 1 && 
+                var offset = [66, 66, 66];
+                var LPI = 4, Yel = 4, Red = 25, Adj = [0, 0, 0], Split = [28, 32, 28]; //Ø 2
                 TimingCalc('GoldenGate_Divisadero_EB_REF');
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [42, 36, 42]; //Ø 4 8
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [42, 38, 42]; //Ø 4 8
                 TimingCalc('GoldenGate_Divisadero_NS');
-                //DISABLED FOR CONSTRUCTION TSPnDET(['GoldenGate_Divisadero_NS'], [1, 2, 3], [], []);
+                TSPnDET(['GoldenGate_Divisadero_NS'], [1, 2, 3], [], []);
             }
             //**************END OF CORRIDOR SPECIFIC JAVASCRIPT**************
 
