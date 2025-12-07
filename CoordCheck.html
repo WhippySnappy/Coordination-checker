@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 11-21-25</title>
+    <title>Corridors 12-3-25</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -12368,22 +12368,12 @@ See page title for the most recent date of data
                 TimingCalc('Oak_Broderick_NS');
                 //                 TSPnDET([], [], [], []);
 
-                //Plan, flash times & cycle lengths - temporary change for Oak @ Baker due to construction 10-24-25
-                var plan2time = [600, 1000], plan2day = [2, 3, 4, 5, 6],
-                    plan3time = [1430, 2000], plan3day = [2, 3, 4, 5, 6],
-                    plan4time = [1000, 1430], plan4day = [2, 3, 4, 5, 6],
-                    plan5time = [], plan5day = [],
-                    plan6time = [], plan6day = [],
-                    flashFree1time = [], flashFree1day = [],
-                    flashFree2time = [], flashFree2day = [],
-                    cycleLength = [90, 180, 90, 180];
-                PlanTimeCalc();
                 //Oak @ Baker
-                ChangeDisp('Oak_Baker_change', 26, planNum, cl);   //dispChange === 1 && 
-                var offset = [32, 4, 58, 32];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0, 0], Split = [50, 131, 50, 131]; //Ø 2
+                ChangeDisp('Oak_Baker_change', 27, planNum, cl);   //dispChange === 1 && 
+                var offset = [32, 4, 58];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [50, 50, 50]; //Ø 2
                 TimingCalc('Oak_Baker_EB_REF');
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [40, 49, 40, 49]; //Ø 4
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [40, 40, 40]; //Ø 4
                 TimingCalc('Oak_Baker_SB');
                 //                 TSPnDET([], [], [], []);
 
