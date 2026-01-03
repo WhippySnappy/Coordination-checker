@@ -11,6 +11,7 @@ SetWorkingDir(A_ScriptDir)  ; Ensures a consistent starting directory.
 ; NOTE... might want to try Sift search to see if there are better results...although, this one is pretty decent
 ; ******************************************************************************************************************
 #Include <UIA> ; UI Automation library for AHK v2
+#Include <ToolTipOptions>
 VarList := "", IntList := "", cardList := "", finalList := "Format of this list is that program variables are on first line & timing cards are on 2nd`n`n"
 varVarFile := "Variable from Coord List.txt", varNameFile := "Name from Coord List.txt", cardNameFile := "Name from Card List.txt", finalFile := "Variable to Card tester.txt"
 zeroMatch := "***************ZERO MATCHES***************`n", oneMatch := "***************ONE MATCH***************`n", multMatch := "***************TWO PLUS MATCHES***************`n"
@@ -92,24 +93,24 @@ loop files, TimingCards "\*.pdf", "FR" ; go thru all the pdf filenames
         continue
     RegExMatch(tempName, "i)(.+?[_\s])(Ch[_\s]*)(\d+).*(\.?pdf)", &tempName) ; current filename
     if cardNames.Length = 0
-        {
-            cardNames.push(tempName[]) ; AHK v2 needs [] or [0] as the entire match. could pick individual matches if wanted
-            continue
-        }
-        RegExMatch(cardNames[cardNames.Length], "i)(.+?[_\s])(Ch[_\s]*)(\d+).*(\.pdf)", &lastName) ;last name that's already in array
-        ;had to use .* instead of \s* after "ch ##" because of non-standard naming in files
-        if (tempName[1] = lastName[1] && tempName[3] > lastName[3]) ; same name later change#
-            {
-                cardNames.pop() ; get rid of earlier change#
-                cardNames.push(tempName[]) ; put in later change#
-                cardFileLength++
-            }
-            else if (tempName[1] = lastName[1] && tempName[3] < lastName[3]) ; same name earlier change#...ignore
-                continue
-            else if InStr(tempName[], "Alemany Brotherhood Sagamore") ; special case for Alemany Brotherhood Sagamore which is an RRFB
-                continue
-            else ; must not have the same name as the last one
-                {
+    {
+        cardNames.push(tempName[]) ; AHK v2 needs [] or [0] as the entire match. could pick individual matches if wanted
+        continue
+    }
+    RegExMatch(cardNames[cardNames.Length], "i)(.+?[_\s])(Ch[_\s]*)(\d+).*(\.pdf)", &lastName) ;last name that's already in array
+    ;had to use .* instead of \s* after "ch ##" because of non-standard naming in files
+    if (tempName[1] = lastName[1] && tempName[3] > lastName[3]) ; same name later change#
+    {
+        cardNames.pop() ; get rid of earlier change#
+        cardNames.push(tempName[]) ; put in later change#
+        cardFileLength++
+    }
+    else if (tempName[1] = lastName[1] && tempName[3] < lastName[3]) ; same name earlier change#...ignore
+        continue
+    else if InStr(tempName[], "Alemany Brotherhood Sagamore") ; special case for Alemany Brotherhood Sagamore which is an RRFB
+        continue
+    else ; must not have the same name as the last one
+    {
         cardNames.push(tempName[])
         cardFileLength++
     }
@@ -303,10 +304,22 @@ notepadEl.WaitElement({ AutomationId: "1614" }, 5000).Invoke() ; Count button
 ;Type: 50000 (Button) Name: "Find All in Current Document" LocalizedType: "button" AutomationId: "1641" ClassName: "Button"
 ;Invoke()
 
-MsgBox "********************`nComparison took...`n" ElapsedTime " milliseconds.`n********************`n" Round(ElapsedTime / 1000, 2) " seconds.`n********************", , "T5"
+; MsgBox "********************`nComparison took...`n" ElapsedTime " milliseconds.`n********************`n" Round(ElapsedTime / 1000, 2) " seconds.`n********************", , "T5"
 
+CoordMode("ToolTip", "Screen")
+WinGetPos(&x, &y, &w, &h, "ahk_exe notepad++.exe")
+BigRedTT()
+ToolTip("*********************`nComparison took`n   " Round(ElapsedTime / 1000, 2) " seconds.`n*********************", x + w * 0.25, y + h * 0.25)
+Sleep(4000) ;tooltip disappears when app exits
 ExitApp()
 
+BigRedTT()
+{
+    ToolTipOptions.Init()
+    ToolTipOptions.SetFont("s14")
+    ToolTipOptions.SetMargins(20, 10, 20, 10)
+    ToolTipOptions.SetColors("Red")
+}
 ProgressBar(*)
 {
     global
