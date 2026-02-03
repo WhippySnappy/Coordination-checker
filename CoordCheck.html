@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 1-24-26</title>
+    <title>Corridors 1-28-26</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -1216,8 +1216,8 @@ See page title for the most recent date of data
                     <p class="oneone links"><a href="javascript:CorrToCorr('_25thAve_CrossoverFulton_NB_REF', 'NB')">goto 25th Ave</a><a href="javascript:CorrToCorr('ParkPresidioBypass_Crossover_NS_REF', 'NB')">goto Park Presidio</a></p>
                     <p>&nbsp;</p>
                     <div class="intGroup">
-                        <p class="twotwo names"><span>Crossover NB@ MLK</span><span>Crossover SB@ MLK</span><span>WB MLK</span><span>EB MLK</span></p>
-                        <p class="twotwo numbers"><span id="Crossover_MLK_NB_REF">0</span><span id="Crossover_MLK_SB_REF"></span><span id="Crossover_MLK_WB"></span><span id="Crossover_MLK_EB"></span></p>
+                        <p class="twotwo names"><span>Crossover NB@ MLK</span><span>Crossover SB@ MLK</span><span>E/W LTs MLK</span><span>E/W MLK</span></p>
+                        <p class="twotwo numbers"><span id="Crossover_MLK_NB_REF">0</span><span id="Crossover_MLK_SB_REF"></span><span id="Crossover_MLK_EWLT"></span><span id="Crossover_MLK_EW"></span></p>
                         <p class="changes" id="Crossover_MLK_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -7281,17 +7281,17 @@ See page title for the most recent date of data
                 PlanTimeCalc();
 
                 //Crossover @ MLK
-                ChangeDisp('Crossover_MLK_change', 24, planNum, cl);   //dispChange === 1 && 
-                var offset = [70, 70, 70, 70];
+                ChangeDisp('Crossover_MLK_change', 25, planNum, cl);   //dispChange === 1 && 
+                var offset = [82, 82, 82, 82];
                 var LPI = 0, Yel = 4.5, Red = 1, Adj = [0, 0, 0, 0], Split = [64, 64, 64, 62]; //Ø 2
                 TimingCalc('Crossover_MLK_NB_REF');
                 var LPI = 0, Yel = 4.5, Red = 5.5, Adj = [0, 0, 0, 0], Split = [64, 64, 64, 62]; //Ø 6
                 TimingCalc('Crossover_MLK_SB_REF');
-                var LPI = 0, Yel = 4, Red = 1, Adj = Split, Split = [21, 21, 21, 21]; //Ø 8
-                TimingCalc('Crossover_MLK_WB');
-                var LPI = 0, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [23, 23, 23, 25]; //Ø 4
-                TimingCalc('Crossover_MLK_EB');
-                //                 TSPnDET([], [], [], []);
+                var LPI = 0, Yel = 3.5, Red = 2, Adj = Split, Split = [16, 16, 16, 16]; //Ø 3 7
+                TimingCalc('Crossover_MLK_EWLT');
+                var LPI = 0, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [28, 28, 28, 28]; //Ø 4 8
+                TimingCalc('Crossover_MLK_EW');
+                TSPnDET([], [], ['Crossover_MLK_EWLT', 'Crossover_MLK_EW'], [1, 2, 3, 4]);
 
                 //19th Ave @ Lincoln
                 ChangeDisp('_19thAve_CrossoverLincolnWay_change', 27, planNum, cl);   //dispChange === 1 && 
