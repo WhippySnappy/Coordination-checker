@@ -281,7 +281,7 @@ Send("^{Home}")
 Sleep(100)
 Send("^f")
 Sleep(100)
-WinWait("Find", , 1.5)
+WinWait("Find", , 5)
 notepadEl := UIA.ElementFromHandle("Find ahk_exe notepad++.exe")
 ; Send("{text}---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R")
 notepadEl.WaitElement({ AutomationId: "1001" }, 5000).Value := "---MAYBE.+?\R---DIFF.+?\R.+?\R.+?\R|---DIFFERENT.+?\R.+?\R.+?\R|---MAYBE.+?\R.+?\R.+?\R" ; wait for the Find what: edit box
