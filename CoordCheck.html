@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 1-28-26</title>
+    <title>Corridors 2-13-26</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -2653,9 +2653,9 @@ See page title for the most recent date of data
                     <p class="one links"><a href="javascript:CorrToCorr('Franklin_Sacramento_NB_REF', 'NB', 'bottom')">goto Franklin (N)</a></p>
                     <p>&nbsp;</p>
                     <div class="intGroup">
-                        <p class="oneone names"><span>@ California</span><a href="javascript:CorrToCorr('California_Polk_EW_REF', 'EB', 'bottom')">EB California</a>
+                        <p class="onetwo names"><span>@ California</span><a href="javascript:CorrToCorr('California_Polk_EW_REF', 'EB', 'bottom')">EB California</a><a href="javascript:CorrToCorr('California_Octavia_EW_REF', 'WB', 'bottom')">WB California</a>
                         </p>
-                        <p class="oneone numbers"><span id="Franklin_California_NB_REF">0</span><span id="Franklin_California_EB"></span></p>
+                        <p class="onetwo numbers"><span id="Franklin_California_NB_REF">0</span><span id="Franklin_California_EB"></span><span id="Franklin_California_WB"></span></p>
                         <p class="changes" id="Franklin_California_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -7323,8 +7323,8 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //19th Ave @ Kirkham
-                ChangeDisp('_19thAve_Kirkham_change', 18, planNum, cl);   //dispChange === 1 && 
-                var offset = [16, 70, 70, 70];
+                ChangeDisp('_19thAve_Kirkham_change', 19, planNum, cl);   //dispChange === 1 && 
+                var offset = [82, 82, 82, 82];
                 var LPI = 0, Yel = 4.5, Red = 1, Adj = [0, 0, 0, 0], Split = [69, 69, 69, 69]; //Ø 2 6
                 TimingCalc('_19thAve_Kirkham_NS_REF');
                 var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [39, 39, 39, 39]; //Ø 4 8
@@ -9617,6 +9617,8 @@ See page title for the most recent date of data
                 TimingCalc('Franklin_California_NB_REF');
                 var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [35, 35, 35]; //Ø 4
                 TimingCalc('Franklin_California_EB');
+                var LPI = 4, Yel = 4, Red = 2, Adj = Adj, Split = [25, 25, 25]; //Ø 8
+                TimingCalc('Franklin_California_WB');
                 //                 TSPnDET([], [], [], []);
 
                 //Franklin @ Pine
