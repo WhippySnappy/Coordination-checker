@@ -108,14 +108,14 @@ Name, Count
 18th St_Valencia,4
 19th Ave_California,0
 19th Ave_Crespi,3
-19th Ave_Crossover_Lincoln Way,6
+19th Ave_Crossover_Lincoln Way,8
 19th Ave_Eucalyptus,3
 19th Ave_Geary,3
 19th Ave_Holloway,0
-19th Ave_Irving,6
-19th Ave_Judah,7
+19th Ave_Irving,7
+19th Ave_Judah,8
 19th Ave_Junipero Serra,5
-19th Ave_Kirkham,5
+19th Ave_Kirkham,6
 19th Ave_Lawton,4
 19th Ave_Moraga,3
 19th Ave_Noriega,4
@@ -329,6 +329,8 @@ Name, Count
 3rd St_Mariposa,5
 3rd St_McKinnon,3
 3rd St_Mendell_Palou,2
+3rd St_Midblock_Howard_Mission,2
+3rd St_Midblock_Mission Creek_Toni Stone,5
 3rd St_Mission,8
 3rd St_Mission Bay North_South,4
 3rd St_Mission Rock,4
@@ -346,6 +348,7 @@ Name, Count
 3rd St_Wallace,3
 3rd St_Warriors,6
 41st Ave_Chain of Lakes_Lincoln,5
+41st Ave_Midblock_Ortega_Pacheco,0
 41st Ave_Taraval,1
 43rd Ave_Fulton,2
 43rd Ave_Lincoln EB,1
@@ -474,6 +477,8 @@ Alemany_Geneva,2
 Alemany_Huron_Ottawa,3
 Alemany_Lawrence,1
 Alemany_Lyell,0
+Alemany_Midblock_Putnam_San Bruno,0
+Alemany_Midblock_Ramsell_Victoria,2
 Alemany_Mount Vernon,2
 Alemany_Niagara,1
 Alemany_Ocean,2
@@ -545,7 +550,9 @@ Bayshore_Cortland,3
 Bayshore_Hester,4
 Bayshore_Jerrold_US-101 N Off Ramp,3
 Bayshore_Leland,6
+Bayshore_Midblock_Cesar Chavez_Marin,3
 Bayshore_Midblock_Cesar Chavez_US-101 S Off Ramp,0
+Bayshore_Midblock_Cortland_Flower (Lowe's),3
 Bayshore_Oakdale,4
 Bayshore_Paul,4
 Bayshore_Silver,6
@@ -600,7 +607,7 @@ Brazil Ave_Mansell St,2
 Brazil_Mission_Norton,6
 Brighton_Ocean,4
 Bright_Randolph,1
-Broadway Tunnel_Midblock_Hyde_Larkin,0
+Broadway Tunnel_Midblock_Hyde_Larkin,2
 Broadway_Columbus_Grant,2
 Broadway_Davis,3
 Broadway_Embarcadero,4
@@ -631,6 +638,8 @@ Brotherhood_Chumasero_Thomas More,2
 Brotherhood_Church Access (999),2
 Brotherhood_Church Parking Lot (655),3
 Brotherhood_Lake Merced,2
+Brotherhood_Midblock_Church Access (800-898) WB,1
+Brotherhood_Midblock_Church Access (801-849) EB,1
 Brotherhood_Saint Charles,2
 Brotherhood_Summit,2
 Bryant_Cesar Chavez,4
@@ -768,6 +777,7 @@ Claremont_Portola,2
 Clarendon_Dellbrook,1
 Clarendon_Galewood,1
 Clarendon_Laguna Honda,3
+Clarendon_Midblock_Oak Park_Panorama,2
 Clarendon_Oak Park,0
 Clarendon_Panorama,3
 Clayton_Fell,5
@@ -817,6 +827,7 @@ Cyril Magnin_Eddy,3
 Cyril Magnin_Ellis,3
 Cyril Magnin_O'Farrell,3
 Danvers_Market,3
+Davis_Midblock_Clay_Sacramento,4
 Davis_Sacramento,2
 Davis_Washington,2
 Del Vale_O'Shaughnessy,2
@@ -826,6 +837,7 @@ Detroit_Monterey,0
 Dewey_Laguna Honda_Woodside,3
 Diamond Heights_Duncan,1
 Diamond Heights_Elk_Sussex,1
+Diamond Heights_Midblock_Duncan_Gold Mine,1
 Diamond_Market,3
 Diamond_Monterey_San Jose Off Ramp,3
 Divisadero_Eddy,3
@@ -853,6 +865,7 @@ Don Chee_Embarcadero,5
 Dorado_Jules_Ocean,3
 Douglass_Market,3
 Drumm_Main_Market,3
+Drumm_Midblock_Clay_Sacramento,3
 Drumm_Sacramento,3
 Drumm_Washington,2
 Duboce_Guerrero,3
@@ -893,6 +906,12 @@ Embarcadero_Howard,3
 Embarcadero_Jefferson_Powell,3
 Embarcadero_Kearny_North Point,3
 Embarcadero_King_Pier 40_Townsend,2
+Embarcadero_Midblock_Brannan_Townsend,2
+Embarcadero_Midblock_Broadway_Washington,4
+Embarcadero_Midblock_Ferry Building_North Bound,5
+Embarcadero_Midblock_Ferry Building_South Bound,3
+Embarcadero_Midblock_Ferry Building_Washington,5
+Embarcadero_Midblock_Folsom_Harrison,0
 Embarcadero_Mission,6
 Embarcadero_Pier 23,3
 Embarcadero_Stockton_Pier 39,4
@@ -904,6 +923,7 @@ Eucalyptus_Junipero Serra_Ocean,6
 Euclid_Masonic,5
 Eureka_Market,3
 Evans_Mendell,3
+Evans_Midblock_Keith_Mendell (Post Office),3
 Evans_Napoleon_Toland,4
 Evans_Phelps,2
 Evans_Rankin,3
@@ -955,6 +975,8 @@ Folsom_Fremont,4
 Folsom_Hawthorne,3
 Folsom_Mabini,3
 Folsom_Main,4
+Folsom_Midblock_4th St_5th St,0
+Folsom_Midblock_Langton_Hallam,1
 Folsom_Rausch,0
 Folsom_Russ,5
 Folsom_Spear,4
@@ -965,6 +987,7 @@ Forest View_Sloat,0
 Fowler_Portola_Sydney,2
 France_Mission,4
 Francisco_Laguna,1
+Francisco_Midblock_Powell_Warden,2
 Francisco_Richardson,6
 Francisco_Van Ness,4
 Franklin_Fulton,2
@@ -998,6 +1021,8 @@ Fremont_Natoma_Transbay Terminal,3
 Frida Kahlo_City College Terminal,4
 Frida Kahlo_Geneva_Ocean,3
 Frida Kahlo_Lee Extension,3
+Frida Kahlo_Midblock_Cloud Circle,5
+Front_Midblock_Clay_Sacramento,4
 Front_Pine,3
 Front_Sacramento,2
 Fulton_Gough,2
@@ -1007,6 +1032,10 @@ Fulton_Laguna,3
 Fulton_LaPlaya,6
 Fulton_Larkin,2
 Fulton_Masonic,3
+Fulton_Midblock_16th Ave_17th Ave,2
+Fulton_Midblock_38th Ave_39th Ave,1
+Fulton_Midblock_Buchanan_Laguna,1
+Fulton_Midblock_Fulton_Webster,1
 Fulton_Park Presidio,3
 Fulton_Parker_Shrader,3
 Fulton_Stanyan,3
@@ -1023,6 +1052,7 @@ Geary_Larkin,2
 Geary_Leavenworth,3
 Geary_Mason,2
 Geary_Masonic,5
+Geary_Midblock_Collins_Wood,0
 Geary_Palm,3
 Geary_Park Presidio,5
 Geary_Parker,3
@@ -1062,6 +1092,7 @@ Golden Gate_Laguna,2
 Golden Gate_Larkin,2
 Golden Gate_Leavenworth,2
 Golden Gate_Masonic,3
+Golden Gate_Midblock_Gough_Laguna,1
 Golden Gate_Octavia,2
 Golden Gate_Pierce,3
 Golden Gate_Polk,2
@@ -1069,7 +1100,7 @@ Golden Gate_Scott,3
 Golden Gate_Steiner,3
 Golden Gate_Van Ness,7
 Golden Gate_Webster,2
-Goodlett_Midblock_Grove_McAllister,0
+Goodlett_Midblock_Grove_McAllister,3
 Gorgas_Lyon_Richardson,4
 Gough_Grove,2
 Gough_Haight_Market,4
@@ -1147,6 +1178,9 @@ Higuera_Lake Merced,3
 Holloway_Junipero Serra,4
 Howard_Main,3
 Howard_Mary,0
+Howard_Midblock_1st St_Malden,0
+Howard_Midblock_3rd St_4th St,3
+Howard_Midblock_4th St_5th St,0
 Howard_New Montgomery,3
 Howard_Rausch,0
 Howard_Russ,3
@@ -1166,6 +1200,7 @@ Hyde_Turk,2
 Hyde_Union,2
 Hyde_Vallejo,2
 Hyde_Washington,3
+I-280_Midblock_20th St_Indiana,0
 Idora_Woodside,3
 Illinois_Marin,2
 Illinois_Mariposa_Terry Francois,2
@@ -1202,7 +1237,11 @@ Kearny_Sacramento,2
 Kearny_Sutter,3
 Kearny_Washington,3
 Kezar_Lincoln,2
+Kezar_Midblock_JFK_Waller,3
 Kezar_MLK Dr,4
+King_Midblock_2nd St_3rd St,2
+King_Midblock_3rd St_4th St,4
+King_Midblock_4th St_5th St,3
 Kirkham_Sunset,3
 Laguna Honda_Portola,2
 Laguna_Lombard,5
@@ -1237,6 +1276,7 @@ Leavenworth_Sutter,2
 Leavenworth_Turk,2
 Leavenworth_Washington,2
 Lee_Ocean,3
+Lincoln Way_Midblock_33rd Ave_34th Ave,2
 Lombard_Octavia,8
 Lombard_Scott,4
 Lombard_Steiner,4
@@ -1261,6 +1301,12 @@ Mariposa_Owens_I-280 On,2
 Mariposa_Pennsylvania,1
 Mariposa_Potrero,3
 Market_Mason_Turk,3
+Market_Midblock_Argent_Glendale,1
+Market_Midblock_Argent_Portola,1
+Market_Midblock_Argent_Romain,1
+Market_Midblock_Douglass_Eureka,1
+Market_Midblock_Powell,3
+Market_Midblock_UN Plaza,4
 Market_Montgomery_New Montgomery_Post,2
 Market_Octavia Blvd_US-101 On,3
 Market_Romain,2
@@ -1269,6 +1315,8 @@ Market_South Van Ness__Van Ness,5
 Market_Spear,5
 Market_Valencia,3
 Mary_Mint_Mission,0
+Masonic_Midblock_Fulton_McAllister,0
+Masonic_Midblock_Golden Gate_Mcallister,0
 Masonic_Oak,4
 Masonic_Page,4
 Masonic_Pine_Presidio,2
@@ -1281,6 +1329,7 @@ Mason_Post,2
 Mason_Sutter,2
 Mason_Union,3
 Mason_Washington,0
+McAllister_Midblock_Gough_Laguna,0
 McAllister_Polk,2
 McAllister_Scott,3
 McAllister_Van Ness,6
@@ -1290,6 +1339,9 @@ Medical Center_Parnassus,1
 Minna_New Montgomery,0
 Miraloma_Portola,3
 Miramar_Ocean,3
+Mission_Midblock_3rd St_4th St,2
+Mission_Midblock_4th St_5th St,2
+Mission_Midblock_Leo_Russia,2
 Mission_New Montgomery,8
 Mission_Niagara_Pope_Rolph,3
 Mission_Ocean,5
@@ -1309,6 +1361,7 @@ Mission_US-101 N Off Ramp,0
 Mission_Virginia,3
 Mission_Whipple,1
 Mission_Whittier,4
+Monterey_Midblock_Acadia_Baden,1
 Monterey_Valdez,1
 Montgomery_Pine,2
 Montgomery_Sacramento,2
@@ -1327,6 +1380,7 @@ O'Farrell_Taylor,3
 O'Farrell_Van Ness,4
 O'Farrell_Webster,2
 O'Shaughnessy_Portola_Woodside,4
+Oak_Midblock_Franklin_Gough,3
 Oak_Octavia,5
 Oak_Pierce,4
 Oak_Scott,3
@@ -1344,16 +1398,22 @@ Ocean_Sunset,6
 Ocean_Victoria,4
 Octavia_Page,4
 Octavia_Pine,2
+Olympia_Midblock_Clarendon,1
+Olympia_Midblock_Dellbrook (N)_Dellbrook (S),1
 Ortega_Sunset,3
+Owens_Midblock_16th St_Mariposa (UCSF Garage),2
 Pacheco_Sunset,3
 Pacific_Polk,2
 Pacific_Powell,3
 Pacific_Sansome,2
 Pacific_Stockton,3
 Pacific_Van Ness,4
-Page_Midblock_Ashbury_Masonic,0
+Page_Midblock_Ashbury_Masonic,3
+Page_Midblock_Ashbury_Masonic-Central,0
 Page_Stanyan,2
+Panorama_Midblock_Olympia_Starview,1
 Parker_Turk,4
+Parnassus_Midblock_3rd Ave_Hillway (UCSF Hospital),0
 Parnassus_Stanyan,3
 Paulding_San Jose,0
 Persia Ave_Sunnydale Ave,3
@@ -1375,8 +1435,11 @@ Polk_Sutter,2
 Polk_Turk,3
 Polk_Union,3
 Polk_Washington,2
+Portola_Midblock_Burnett_Glenview,1
+Portola_Midblock_Glenview_Twin Peaks,1
 Portola_Santa Clara_Vicente,3
 Portola_Twin Peaks,3
+Post_Midblock_Gough_Laguna,2
 Post_Powell,3
 Post_Scott,3
 Post_Steiner,2
@@ -1384,6 +1447,7 @@ Post_Stockton,2
 Post_Taylor,2
 Post_Van Ness,6
 Post_Webster,2
+Potrero_Midblock_22nd St_23rd St,4
 Powell_Sacramento,2
 Powell_Sutter,3
 Powell_Washington,2
@@ -1401,12 +1465,19 @@ San Bruno_Silliman_US-101 S Off Ramp,0
 San Bruno_Silver,4
 San Bruno_Wayland,1
 San Bruno_Woolsey,1
+San Jose_Midblock_Geneva_Niagra,0
+San Jose_Midblock_Ocean_Seneca,0
 San Jose_San Juan,0
 San Jose_Santa Rosa,3
 Sansome_Washington,2
 Santiago_Sunset,3
 Scott_Turk,2
 Seven Seas_Trade Winds,1
+Silver_Midblock_Elmira_Ledyard,0
+Silver_Midblock_Revere_Thomas,2
+Skyline_Midblock_Great Highway_John Muir,2
+Sloat_Midblock_Middlefield_Riverton,2
+South Gate_Midblock_Hillcrest_I-80 E Off Ramp_Macalla,2
 Stanyan_Turk,4
 Stanyan_Waller,2
 Steiner_Turk,3
@@ -1425,6 +1496,9 @@ Tamalpais_Turk,3
 Taylor_Turk,4
 Terry Francois_Warriors,2
 Trade Winds_Treasure Island,1
+Treasure Island_Midblock_Waterfront Plaza,1
+Turk_Midblock_Buchanan_Laguna,1
+Turk_Midblock_Gough_Laguna,0
 Turk_Van Ness,7
 Turk_Webster,2
 Turk_Willard North,1
@@ -1433,9 +1507,9 @@ Union_Van Ness,8
 Vallejo_Van Ness,5
 Van Ness_Washington,5
 Vicente_West Portal,3
-Z_Template_RRFB,0
-Z_Template_RSS_Beacon, Flasher,0
-Z_Template_TRAFFIC SIGNAL,0
-_Template_RRFB,0
-_Template_RSS_Beacon, Flasher,0
+Visitacion_Midblock_Hahn_Mansell,1
+West Portal_Midblock_14th Ave_Vicente,1
+Woodside_Midblock_Balceta_Valquez,2
+_Template_RADAR SPEED SIGN,0
+_Template_RECTANGULAR RAPID FLASHING BEACON,0
 _Template_TRAFFIC SIGNAL - 0
