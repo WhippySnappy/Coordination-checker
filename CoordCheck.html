@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 2-18-26</title>
+    <title>Corridors 3-10-26</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -6591,7 +6591,7 @@ See page title for the most recent date of data
                 TSPnDET(['_5thSt_Howard_SB'], [1, 2, 3], [], []); //tspDir, tspPlans, detDir, detPlans
 
                 //5TH ST @ Folsom
-                ChangeDisp('_5thSt_Folsom_change', 29, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('_5thSt_Folsom_change', 30, planNum, cl);   //dispChange === 1 && 
                 var offset = [79, 79, 79];
                 var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [29, 27, 37]; //Ø 2
                 TimingCalc('_5thSt_Folsom_EB_REF');
@@ -7064,13 +7064,13 @@ See page title for the most recent date of data
                 //                    TSPnDET([], [], [], []);
 
                 //9th @ Folsom
-                ChangeDisp('_9thSt_Folsom_change', 35, planNum, cl);   //dispChange === 1 && 
-                var offset = [32, 32, 32];
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [40, 42, 40]; //Ø 2
+                ChangeDisp('_9thSt_Folsom_change', 36, planNum, cl);   //dispChange === 1 && 
+                var offset = [32, 41, 41];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [40, 36, 40]; //Ø 2 13 15
                 TimingCalc('_9thSt_Folsom_EB_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [50, 48, 50]; //Ø 8
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [50, 54, 50]; //Ø 8
                 TimingCalc('_9thSt_Folsom_NB');
-                // TSPnDET(['_9thSt_Folsom_EB_REF'], [1, 2, 3], [], []);
+                TSPnDET(['_9thSt_Folsom_EB_REF'], [1, 2, 3], [], []);
 
                 //9th @ Harrison
                 ChangeDisp('_9thSt_Harrison_change', 36, planNum, cl);   //dispChange === 1 && 
