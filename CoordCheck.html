@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 3-10-26</title>
+    <title>Corridors 3-23-26</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -1185,8 +1185,8 @@ See page title for the most recent date of data
                         <p>&nbsp;</p>
                     </div>
                     <div class="intGroup">
-                        <p class="oneone names"><span>@ Folsom</span><span>Folsom</span></p>
-                        <p class="oneone numbers"><span id="_11thSt_Folsom_NS"></span><span id="_11thSt_Folsom_EW">0</span></p>
+                        <p class="three names"><span>@ Folsom</span><span>N/E/S turns</span><span>Folsom</span></p>
+                        <p class="three numbers"><span id="_11thSt_Folsom_NS"></span><span id="_11thSt_Folsom_Turns"></span><span id="_11thSt_Folsom_EW">0</span></p>
                         <p class='changes' id="_11thSt_Folsom_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -6929,14 +6929,14 @@ See page title for the most recent date of data
                 PlanTimeCalc();
 
                 //_8thSt @ Folsom
-                ChangeDisp('_8thSt_Folsom_change', 30, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('_8thSt_Folsom_change', 31, planNum, cl);   //dispChange === 1 && 
                 var offset = [6, 6, 6];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [50, 50, 50]; //Ø 2
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [44, 44, 44]; //Ø 2
                 TimingCalc('_8thSt_Folsom_EB_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [40, 40, 40]; //Ø 4
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [46, 46, 46]; //Ø 4
                 TimingCalc('_8thSt_Folsom_SB');
-                // TSPnDET(['_8thSt_Folsom_EB_REF'], [1, 2], [], []);
-                // TSPnDET(['_8thSt_Folsom_SB'], [1, 2, 3], [], []);
+                TSPnDET(['_8thSt_Folsom_EB_REF'], [1, 2], [], []);
+                TSPnDET(['_8thSt_Folsom_SB'], [1, 2, 3], [], []);
 
                 //_8thSt @ Howard
                 ChangeDisp('_8thSt_Howard_change', 30, planNum, cl);   //dispChange === 1 && 
@@ -7208,38 +7208,40 @@ See page title for the most recent date of data
                 TSPnDET(['_11thSt_Mission_EW'], [2, 3], [], []); //tspDir, tspPlans, detDir, detPlans
 
                 var plan2time = [600, 1000], plan2day = [2, 3, 4, 5, 6],
-                    plan3time = [1500, 1900], plan3day = [2, 3, 4, 5, 6],
+                    plan3time = [1430, 2000], plan3day = [2, 3, 4, 5, 6],
                     plan4time = [], plan4day = [],
                     plan5time = [], plan5day = [],
                     plan6time = [], plan6day = [],
                     flashFree1time = [], flashFree1day = [],
                     flashFree2time = [], flashFree2day = [],
-                    cycleLength = [60, 60, 60];
+                    cycleLength = [75, 90, 90];
                 PlanTimeCalc();
                 //11thSt @ Howard
-                ChangeDisp('_11thSt_Howard_change', 31, planNum, cl);   //dispChange === 1 && 
-                var offset = [19, 12, 16];
-                var LPI = 3, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [26, 26, 26]; //Ø 2 6
+                ChangeDisp('_11thSt_Howard_change', 32, planNum, cl);   //dispChange === 1 && 
+                var offset = [60, 31, 52];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [32, 40, 45]; //Ø 2 6
                 TimingCalc('_11thSt_Howard_EW');
-                var LPI = 3, Yel = 4, Red = 2, Adj = Split, Split = [34, 34, 34]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [43, 50, 45]; //Ø 4 8
                 TimingCalc('_11thSt_Howard_NS');
                 TSPnDET(['_11thSt_Howard_NS'], [1, 2, 3], [], []); //tspDir, tspPlans, detDir, detPlans
 
                 //11thSt @ Folsom
-                ChangeDisp('_11thSt_Folsom_change', 35, planNum, cl);   //dispChange === 1 && 
-                var offset = [49, 42, 45];
-                var LPI = 3, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [26, 26, 26]; //Ø 2 6
+                ChangeDisp('_11thSt_Folsom_change', 36, planNum, cl);   //dispChange === 1 && 
+                var offset = [20, 0, 83];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [27, 31, 31]; //Ø 2 6 13 15
                 TimingCalc('_11thSt_Folsom_EW');
-                var LPI = 3, Yel = 4, Red = 1.5, Adj = Split, Split = [34, 34, 34]; //Ø 4 8
+                var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [11, 13, 13]; //Ø 3 5 7
+                TimingCalc('_11thSt_Folsom_Turns');
+                var LPI = 4, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [37, 46, 46]; //Ø 4 8 12
                 TimingCalc('_11thSt_Folsom_NS');
-                // TSPnDET(['_11thSt_Folsom_NS'], [1, 2, 3], [], []); //tspDir, tspPlans, detDir, detPlans
+                TSPnDET(['_11thSt_Folsom_NS'], [1, 2, 3], [], []); //tspDir, tspPlans, detDir, detPlans
 
                 //11thSt @ Harrison
-                ChangeDisp('_11thSt_Harrison_change', 28, planNum, cl);   //dispChange === 1 && 
-                var offset = [19, 13, 17];
-                var LPI = 3, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [25, 25, 25]; //Ø 2 6
+                ChangeDisp('_11thSt_Harrison_change', 29, planNum, cl);   //dispChange === 1 && 
+                var offset = [60, 55, 28];
+                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [32, 40, 40]; //Ø 2 6
                 TimingCalc('_11thSt_Harrison_EW');
-                var LPI = 3, Yel = 4, Red = 2, Adj = Split, Split = [35, 35, 35]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [43, 50, 50]; //Ø 4 8
                 TimingCalc('_11thSt_Harrison_NS');
                 TSPnDET(['_11thSt_Harrison_NS'], [1, 2, 3], [], []); //tspDir, tspPlans, detDir, detPlans
 
@@ -8256,8 +8258,8 @@ See page title for the most recent date of data
                     cycleLength = [75, 75, 75];
                 PlanTimeCalc();
                 //California @ Davis
-                ChangeDisp('California_Davis_change', 20, planNum, cl);   //dispChange === 1 && 
-                var offset = [54, 12, 0];
+                ChangeDisp('California_Davis_change', 21, planNum, cl);   //dispChange === 1 && 
+                var offset = [25, 69, 8];
                 var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [47, 46, 43]; //Ø 2 6
                 TimingCalc('California_Davis_EW_REF');
                 var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [28, 29, 32]; //Ø 4
@@ -12511,7 +12513,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //OCEAN @ Brighton
-                ChangeDisp('Ocean_Brighton_change', 7, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Ocean_Brighton_change', 8, planNum, cl);   //dispChange === 1 && 
                 var offset = [22, 57, 18];
                 var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [47, 57, 57]; //Ø 2 6
                 TimingCalc('Ocean_Brighton_EW_REF');
