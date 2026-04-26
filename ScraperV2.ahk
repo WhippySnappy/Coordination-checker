@@ -24,6 +24,7 @@ card.full := []
 card.names := []
 card.change := []
 card.midblockTest := []
+newerCards := "", newCards := []
 
 if FileExist(A_ScriptDir "..\CoordCheck.html") ;if scraper is in subfolder of CoordCheck
 {
@@ -241,7 +242,11 @@ for coordK, value in coord.names ; each intersection in coordCheck
             if (coord.change[coordK] = card.change[cardK])
                 matchList .= coord.full[coordK] . "`n" . card.full[cardK] . "`n`n"
             else
+            {
                 matchList .= "---DIFFERENT CHANGE #---`n" . coord.full[coordK] . "`n" . card.full[cardK] . "`n`n"
+                newerCards .= card.full[cardK] . "`n" ; keep track of which cards are newer than coord list for updating purposes
+                newCards.push(card.full[cardK]) ; also put in array in case want to open them up or something
+            }
             totalMatch += 1, counter := 0
         }
         else
@@ -266,7 +271,7 @@ for coordK, value in coord.names ; each intersection in coordCheck
 MyGui.Destroy
 if (FileExist(finalFile))
     FileDelete(finalFile)
-finalList .= zeroMatch . "`n`n" . oneMatch . "`n`n" . multMatch
+finalList .= zeroMatch . "`n`n" . oneMatch . "`n`n" . multMatch . "----NEWER CHANGE # IN CARD THAN COORD CHECK---`n" . newerCards . "`n`n"
 FileAppend(finalList, finalFile)
 
 ElapsedTime := (A_TickCount - StartTime)
@@ -283,26 +288,9 @@ Send("^f")
 Sleep(100)
 WinWait("Find", , 5)
 notepadEl := UIA.ElementFromHandle("Find ahk_exe notepad++.exe")
-; Send("{text}---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R")
 notepadEl.WaitElement({ AutomationId: "1001" }, 5000).Value := "---MAYBE.+?\R---DIFF.+?\R.+?\R.+?\R|---DIFFERENT.+?\R.+?\R.+?\R|---MAYBE.+?\R.+?\R.+?\R" ; wait for the Find what: edit box
-;Type: 50004 (Edit) Name: "Find what:" Value: "---MAYBE.+\R---DIFF.+\R.+\R.+\R|---DIFFERENT.+\R.+\R.+\R|---MAYBE.+\R.+\R.+\R" LocalizedType: "edit" AutomationId: "1001" ClassName: "Edit"
-; Sleep(200)
-; ControlSetChecked(1, "Button19", "Find") ;regular expression radio button
 notepadEl.WaitElement({ AutomationId: "1605" }, 5000).Select() ; Regular expression radio button
-;Type: 50013 (RadioButton) Name: "Regular expression" LocalizedType: "radio button" AutomationId: "1605" ClassName: "Button"
-;can Invoke() or Select()
-; Sleep(200)
-; ControlClick("Button23", "Find") ;Find Next button
-; notepadEl.WaitElement({AutomationId: "1723"}, 5000).Invoke() ; Find Next button
-;Type: 50000 (Button) Name: "▼ Find Next" LocalizedType: "button" AutomationId: "1723" ClassName: "Button"
-;Invoke()
-; Sleep(200)
-; ControlClick("Button26", "Find") ;Count button
 notepadEl.WaitElement({ AutomationId: "1614" }, 5000).Invoke() ; Count button
-;Type: 50000 (Button) Name: "Count" LocalizedType: "button" AutomationId: "1614" ClassName: "Button"
-; notepadEl.WaitElement({ AutomationId: "1641" }, 5000).Invoke() ; Find All in Current Document
-;Type: 50000 (Button) Name: "Find All in Current Document" LocalizedType: "button" AutomationId: "1641" ClassName: "Button"
-;Invoke()
 
 ; MsgBox "********************`nComparison took...`n" ElapsedTime " milliseconds.`n********************`n" Round(ElapsedTime / 1000, 2) " seconds.`n********************", , "T5"
 
@@ -311,6 +299,7 @@ WinGetPos(&x, &y, &w, &h, "ahk_exe notepad++.exe")
 BigRedTT()
 ToolTip("*********************`nComparison took`n   " Round(ElapsedTime / 1000, 2) " seconds.`n*********************", x + w * 0.25, y + h * 0.25)
 Sleep(4000) ;tooltip disappears when app exits
+NewCardOpener()
 ExitApp()
 
 BigRedTT()
@@ -324,4 +313,39 @@ ProgressBar(*)
 {
     global
     MyProgress.Value := progression
+}
+
+NewCardOpener(*) ;go through list of newer cards and find the appropriate file to open based on name matching... then open it if user wants to
+{
+    global newCards
+    if (newCards.Length < 1)
+        return
+    test := MsgBox("There are " newCards.Length " newer change #s in the timing cards than in the coord list. Do you want to open those cards?", "Newer Change #s Detected", "Y/N")
+    if (test = "N")
+        return
+    loop newCards.Length ;number of newer cards
+    {
+        newCardsIndex := A_Index
+        loop files, TimingCards "\*.pdf", "FR" ; go thru all the pdf filenames
+        {
+            if !(RegExMatch(A_LoopFileDir, "Time Card")) || !(RegExMatch(A_LoopFileDir, "Sunset")) ; only look at Time Card files
+                continue
+            filePath := A_LoopFileFullPath
+            fileName := A_LoopFileName
+            count := 0
+            newCardName := StrSplit(newCards[newCardsIndex], A_Space) ; split the name into words for matching purposes
+            loop newCardName.Length ;number of words in the newer card name
+            {
+                if InStr(fileName, newCardName[A_Index]) ;
+                    count++
+                ; MsgBox(fileName "`n" newCardName[A_Index] "`n" count) ;DEBUG
+            }
+            if (count = newCardName.Length) ; if all the words in the new card name are in the file name, open it
+            {
+                MsgBox("New card: " newCards[newCardsIndex] "`nCount: " count "`nOpening file: " fileName)
+                Run(filePath)
+                break
+            }
+        }
+    }
 }
