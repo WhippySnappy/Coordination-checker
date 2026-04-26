@@ -298,7 +298,8 @@ CoordMode("ToolTip", "Screen")
 WinGetPos(&x, &y, &w, &h, "ahk_exe notepad++.exe")
 BigRedTT()
 ToolTip("*********************`nComparison took`n   " Round(ElapsedTime / 1000, 2) " seconds.`n*********************", x + w * 0.25, y + h * 0.25)
-Sleep(4000) ;tooltip disappears when app exits
+Sleep(4000)
+ToolTip()
 NewCardOpener()
 ExitApp()
 

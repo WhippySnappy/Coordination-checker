@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 3-29-26</title>
+    <title>Corridors 4-19-26</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -13928,183 +13928,171 @@ See page title for the most recent date of data
             if (window.openCorr === "corr_Sunset") {
 
                 //Plan, flash times & cycle lengths
-                var plan2time = [], plan2day = [],
+                var plan2time = [700, 1900], plan2day = [1, 2, 3, 4, 5, 6, 7],
                     plan3time = [], plan3day = [],
                     plan4time = [], plan4day = [],
                     plan5time = [], plan5day = [],
                     plan6time = [], plan6day = [],
                     flashFree1time = [], flashFree1day = [],
                     flashFree2time = [], flashFree2day = [],
-                    cycleLength = [80];
+                    cycleLength = [80, 88];
+                    
+                if (todaysDate === "4-24" || todaysDate === "4-25" || todaysDate === "4-26" || todaysDate === "5-8" || todaysDate === "5-9" || todaysDate === "5-10" || todaysDate === "5-22" || todaysDate === "5-23" || todaysDate === "5-24" || todaysDate === "5-25" || todaysDate === "6-5" || todaysDate === "6-6" || todaysDate === "6-7") {
+                    var plan2time = [700, 2200], plan2day = [1, 2, 6, 7];
+                }
                 PlanTimeCalc();
 
                 //Sunset @ Irving
-                ChangeDisp('Sunset_Irving_change', 12, planNum, cl);   //dispChange === 1 && 
-                var offset = [40];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [39]; //Ø 2 6
+                ChangeDisp('Sunset_Irving_change', 13, planNum, cl);   //dispChange === 1 && 
+                var offset = [40, 44];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [39, 47]; //Ø 2 6
                 TimingCalc('Sunset_Irving_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [41]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [41, 41]; //Ø 4 8
                 TimingCalc('Sunset_Irving_EW');
-
                 TSPnDET([], [], ['Sunset_Irving_EW'], [1]);
 
                 //Sunset @ Judah
-                ChangeDisp('Sunset_Judah_change', 14, planNum, cl);   //dispChange === 1 && 
-                var offset = [40];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [43]; //Ø 2 6
+                ChangeDisp('Sunset_Judah_change', 15, planNum, cl);   //dispChange === 1 && 
+                var offset = [40, 44];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [43, 51]; //Ø 2 6
                 TimingCalc('Sunset_Judah_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [37]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [37, 37]; //Ø 4 8
                 TimingCalc('Sunset_Judah_EW');
                 //TSPnDET(['Sunset_Judah_EW'], [1], [], []);
 
                 //Sunset @ Kirkham
-                ChangeDisp('Sunset_Kirkham_change', 2, planNum, cl);   //dispChange === 1 && 
-                var offset = [0];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [44]; //Ø 2 6
+                ChangeDisp('Sunset_Kirkham_change', 3, planNum, cl);   //dispChange === 1 && 
+                var offset = [0, 0];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [44, 52]; //Ø 2 6
                 TimingCalc('Sunset_Kirkham_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [36]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [36, 36]; //Ø 4 8
                 TimingCalc('Sunset_Kirkham_EW');
-
                 TSPnDET([], [], ['Sunset_Kirkham_EW'], [1]);
 
                 //Sunset @ Lawton
-                ChangeDisp('Sunset_Lawton_change', 10, planNum, cl);   //dispChange === 1 && 
-                var offset = [0];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [43]; //Ø 2 6
+                ChangeDisp('Sunset_Lawton_change', 11, planNum, cl);   //dispChange === 1 && 
+                var offset = [0, 0];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [43, 51]; //Ø 2 6
                 TimingCalc('Sunset_Lawton_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [37]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [37, 37]; //Ø 4 8
                 TimingCalc('Sunset_Lawton_EW');
-
                 //                 TSPnDET([], [], [], []);
 
                 //Sunset @ Moraga
-                ChangeDisp('Sunset_Moraga_change', 2, planNum, cl);   //dispChange === 1 && 
-                var offset = [40];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [44]; //Ø 2 6
+                ChangeDisp('Sunset_Moraga_change', 3, planNum, cl);   //dispChange === 1 && 
+                var offset = [40, 44];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [44, 52]; //Ø 2 6
                 TimingCalc('Sunset_Moraga_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [36]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [36, 36]; //Ø 4 8
                 TimingCalc('Sunset_Moraga_EW');
-
                 TSPnDET([], [], ['Sunset_Moraga_EW'], [1]);
 
                 //Sunset @ Noriega
-                ChangeDisp('Sunset_Noriega_change', 15, planNum, cl);   //dispChange === 1 && 
-                var offset = [40];
-                var LPI = 0, Yel = 4, Red = 2, Adj = [0], Split = [45]; //Ø 2 6
+                ChangeDisp('Sunset_Noriega_change', 16, planNum, cl);   //dispChange === 1 && 
+                var offset = [40, 44];
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0], Split = [45, 53]; //Ø 2 6
                 TimingCalc('Sunset_Noriega_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [35]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [35, 35]; //Ø 4 8
                 TimingCalc('Sunset_Noriega_EW');
-
                 //                 TSPnDET([], [], [], []);
 
                 //Sunset @ Ortega
-                ChangeDisp('Sunset_Ortega_change', 13, planNum, cl);   //dispChange === 1 && 
-                var offset = [0];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [45]; //Ø 2 6
+                ChangeDisp('Sunset_Ortega_change', 14, planNum, cl);   //dispChange === 1 && 
+                var offset = [0, 0];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [45, 53]; //Ø 2 6
                 TimingCalc('Sunset_Ortega_NS_REF');
                 var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [35]; //Ø 4 8
                 TimingCalc('Sunset_Ortega_EW');
-
                 //                 TSPnDET([], [], [], []);
 
                 //Sunset @ Pacheco
-                ChangeDisp('Sunset_Pacheco_change', 11, planNum, cl);   //dispChange === 1 && 
-                var offset = [0];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [42]; //Ø 2 6
+                ChangeDisp('Sunset_Pacheco_change', 12, planNum, cl);   //dispChange === 1 && 
+                var offset = [0, 0];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [42, 50]; //Ø 2 6
                 TimingCalc('Sunset_Pacheco_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [38]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [38, 38]; //Ø 4 8
                 TimingCalc('Sunset_Pacheco_EW');
-
                 //                 TSPnDET([], [], [], []);
 
                 //Sunset @ Quintara
-                ChangeDisp('Sunset_Quintara_change', 5, planNum, cl);   //dispChange === 1 && 
-                var offset = [40];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [42]; //Ø 2 6
+                ChangeDisp('Sunset_Quintara_change', 6, planNum, cl);   //dispChange === 1 && 
+                var offset = [40, 44];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [42, 50]; //Ø 2 6
                 TimingCalc('Sunset_Quintara_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [38]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [38, 38]; //Ø 4 8
                 TimingCalc('Sunset_Quintara_EW');
-
                 TSPnDET([], [], ['Sunset_Quintara_EW'], [1]);
 
                 //Sunset @ Rivera
-                ChangeDisp('Sunset_Rivera_change', 12, planNum, cl);   //dispChange === 1 && 
-                var offset = [40];
-                var LPI = 0, Yel = 4, Red = 1, Adj = [0], Split = [43]; //Ø 2 6
+                ChangeDisp('Sunset_Rivera_change', 13, planNum, cl);   //dispChange === 1 && 
+                var offset = [40, 44];
+                var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0], Split = [43, 51]; //Ø 2 6
                 TimingCalc('Sunset_Rivera_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [37]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [37, 37]; //Ø 4 8
                 TimingCalc('Sunset_Rivera_EW');
-
                 //                 TSPnDET([], [], [], []);
 
                 //Sunset @ Santiago
-                ChangeDisp('Sunset_Santiago_change', 2, planNum, cl);   //dispChange === 1 && 
-                var offset = [0];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [44]; //Ø 2 6
+                ChangeDisp('Sunset_Santiago_change', 3, planNum, cl);   //dispChange === 1 && 
+                var offset = [0, 0];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [44, 52]; //Ø 2 6
                 TimingCalc('Sunset_Santiago_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [36]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [36, 36]; //Ø 4 8
                 TimingCalc('Sunset_Santiago_EW');
-
                 TSPnDET([], [], ['Sunset_Santiago_EW'], [1]);
 
                 //Sunset @ Taraval
-                ChangeDisp('Sunset_Taraval_change', 15, planNum, cl);   //dispChange === 1 && 
-                var offset = [0];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [42]; //Ø 2 6
+                ChangeDisp('Sunset_Taraval_change', 16, planNum, cl);   //dispChange === 1 && 
+                var offset = [0, 0];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [42, 50]; //Ø 2 6
                 TimingCalc('Sunset_Taraval_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [38]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [38, 38]; //Ø 4 8
                 TimingCalc('Sunset_Taraval_EW');
-
                 TSPnDET(['Sunset_Taraval_EW'], [1], [], []);
 
                 //Sunset @ Ulloa
-                ChangeDisp('Sunset_Ulloa_change', 4, planNum, cl);   //dispChange === 1 && 
-                var offset = [40];
-                var LPI = 0, Yel = 4, Red = 1, Adj = [0], Split = [44]; //Ø 2 6
+                ChangeDisp('Sunset_Ulloa_change', 5, planNum, cl);   //dispChange === 1 && 
+                var offset = [40, 44];
+                var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0], Split = [44, 52]; //Ø 2 6
                 TimingCalc('Sunset_Ulloa_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [36]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [36, 36]; //Ø 4 8
                 TimingCalc('Sunset_Ulloa_EW');
-
                 TSPnDET([], [], ['Sunset_Ulloa_EW'], [1]);
 
                 //Sunset @ Vicente
-                ChangeDisp('Sunset_Vicente_change', 13, planNum, cl);   //dispChange === 1 && 
-                var offset = [40];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [43]; //Ø 2 6
+                ChangeDisp('Sunset_Vicente_change', 14, planNum, cl);   //dispChange === 1 && 
+                var offset = [40, 44];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [43, 51]; //Ø 2 6
                 TimingCalc('Sunset_Vicente_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [37]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [37, 37]; //Ø 4 8
                 TimingCalc('Sunset_Vicente_EW');
-
                 //                 TSPnDET([], [], [], []);
 
                 //Sunset @ Wawona
-                ChangeDisp('Sunset_Wawona_change', 1, planNum, cl);   //dispChange === 1 && 
-                var offset = [0];
-                var LPI = 0, Yel = 4, Red = 1, Adj = [0], Split = [41]; //Ø 2 6
+                ChangeDisp('Sunset_Wawona_change', 2, planNum, cl);   //dispChange === 1 && 
+                var offset = [0, 0];
+                var LPI = 0, Yel = 4, Red = 1, Adj = [0, 0], Split = [41, 49]; //Ø 2 6
                 TimingCalc('Sunset_Wawona_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [39]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [39, 39]; //Ø 4 8
                 TimingCalc('Sunset_Wawona_EW');
-
                 TSPnDET([], [], ['Sunset_Wawona_EW'], [1]);
 
                 //Sunset @ Yorba
-                ChangeDisp('Sunset_Yorba_change', 1, planNum, cl);   //dispChange === 1 && 
-                var offset = [0];
-                var LPI = 0, Yel = 4.5, Red = 1.5, Adj = [0], Split = [46]; //Ø 2 6
+                ChangeDisp('Sunset_Yorba_change', 2, planNum, cl);   //dispChange === 1 && 
+                var offset = [0, 0];
+                var LPI = 0, Yel = 4.5, Red = 1.5, Adj = [0, 0], Split = [45, 53]; //Ø 2 6
                 TimingCalc('Sunset_Yorba_NS_REF');
-                var LPI = 4, Yel = 4, Red = 1, Adj = Split, Split = [34]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 1, Adj = Split, Split = [35, 35]; //Ø 4 8
                 TimingCalc('Sunset_Yorba_EW');
-
                 TSPnDET([], [], ['Sunset_Yorba_EW'], [1]);
 
                 //Sunset @ Ocean
-                ChangeDisp('Sunset_Ocean_change', 18, planNum, cl);   //dispChange === 1 && 
-                var offset = [40];
-                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [44]; //Ø 2 6
+                ChangeDisp('Sunset_Ocean_change', 19, planNum, cl);   //dispChange === 1 && 
+                var offset = [40, 44];
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0], Split = [44, 52]; //Ø 2 6
                 TimingCalc('Sunset_Ocean_NS_REF');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [36]; //Ø 4 8
+                var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [36, 36]; //Ø 4 8
                 TimingCalc('Sunset_Ocean_EW');
-
                 TSPnDET([], [], ['Sunset_Ocean_EW'], [1]); //DET on Ocean
             }
             //**************END OF CORRIDOR SPECIFIC JAVASCRIPT**************
