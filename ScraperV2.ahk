@@ -271,7 +271,7 @@ for coordK, value in coord.names ; each intersection in coordCheck
 MyGui.Destroy
 if (FileExist(finalFile))
     FileDelete(finalFile)
-finalList .= zeroMatch . "`n`n" . oneMatch . "`n`n" . multMatch . "----NEWER CHANGE # IN CARD THAN COORD CHECK---`n" . newerCards . "`n`n"
+finalList .= "----NEWER CHANGE # IN CARD THAN COORD CHECK---`n" . newerCards . "`n`n" . zeroMatch . "`n`n" . oneMatch . "`n`n" . multMatch
 FileAppend(finalList, finalFile)
 
 ElapsedTime := (A_TickCount - StartTime)
@@ -322,14 +322,14 @@ NewCardOpener(*) ;go through list of newer cards and find the appropriate file t
     if (newCards.Length < 1)
         return
     test := MsgBox("There are " newCards.Length " newer change #s in the timing cards than in the coord list. Do you want to open those cards?", "Newer Change #s Detected", "Y/N")
-    if (test = "N")
+    if (test = "No")
         return
     loop newCards.Length ;number of newer cards
     {
         newCardsIndex := A_Index
         loop files, TimingCards "\*.pdf", "FR" ; go thru all the pdf filenames
         {
-            if !(RegExMatch(A_LoopFileDir, "Time Card")) || !(RegExMatch(A_LoopFileDir, "Sunset")) ; only look at Time Card files
+            if !(RegExMatch(A_LoopFileDir, "Time Card")) ; only look at Time Card files
                 continue
             filePath := A_LoopFileFullPath
             fileName := A_LoopFileName
