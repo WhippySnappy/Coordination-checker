@@ -7869,7 +7869,7 @@ See page title for the most recent date of data
                 PlanTimeCalc();
                 GetCycleLength();
                 //Alemany @ Farragut
-                ChangeDisp('Alemany_Farragut_change', 6, planNum, cl); // dispChange === 1 && 
+                ChangeDisp('Alemany_Farragut_change', 7, planNum, cl); // dispChange === 1 && 
                 var offset = [37, 22, 55];
                 var LPI = 0, Yel = 5, Red = 0.5, Adj = [0, 0, 0], Split = [38, 45, 45]; //Ø 2 6
                 TimingCalc('Alemany_Farragut_NS_REF');
@@ -13481,7 +13481,7 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //Portola @ Miraloma
-                ChangeDisp('Portola_Miraloma_change', 16, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Portola_Miraloma_change', 17, planNum, cl);   //dispChange === 1 && 
                 var offset = [36, 16, 77];
                 var LPI = 0, Yel = 4, Red = 3, Adj = [0, 0, 0], Split = [20, 20, 20]; //Ø 1
                 TimingCalc('Portola_Miraloma_WBLT_REF');
@@ -13489,7 +13489,8 @@ See page title for the most recent date of data
                 TimingCalc('Portola_Miraloma_EB');
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = SplitAdd(Adj, Split), Split = [16, 17, 16]; //Ø 8
                 TimingCalc('Portola_Miraloma_NB');
-                TSPnDET([], [], ['Portola_Miraloma_WBLT_REF', 'Portola_Miraloma_NB'], [1, 2, 3]);
+                // TSPnDET([], [], ['Portola_Miraloma_WBLT_REF', 'Portola_Miraloma_NB'], [1, 2, 3]);
+                TSPnDET([], [], ['Portola_Miraloma_NB'], [1, 2, 3]); //construction
 
                 //Portola @ Claremont
                 ChangeDisp('Portola_Claremont_change', 8, planNum, cl);   //dispChange === 1 && 
