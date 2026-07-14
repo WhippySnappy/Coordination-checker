@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 6-23-26</title>
+    <title>Corridors 7-12-26</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -3204,7 +3204,7 @@ See page title for the most recent date of data
                         <p>&nbsp;</p>
                     </div>
                     <div class="intGroup">
-                        <p class="oneone names"><span>@ Post</span><a href="javascript:CorrToCorr('Post_Laguna_EW', 'WB', 'bottom')">Post</a></p>
+                        <p class="oneone names"><span>@ Post</span><a href="javascript:CorrToCorr('Post_Laguna_EW_REF', 'WB', 'bottom')">Post</a></p>
                         <p class="oneone numbers"><span id="Gough_Post_SB_REF">0</span><span id="Gough_Post_EW"></span>
                         </p>
                         <p class="changes" id="Gough_Post_change">0</p>
@@ -5278,7 +5278,7 @@ See page title for the most recent date of data
                         <p class="changes" id="Post_Polk_change">0</p>
                         <p>&nbsp;</p>
                     </div>
-                    <p class="one links"><a href="javascript:CorrToCorr('Post_Laguna_EW', 'WB', 'bottom')">goto Post (W)</a></p>
+                    <p class="one links"><a href="javascript:CorrToCorr('Post_Laguna_EW_REF', 'WB', 'bottom')">goto Post (W)</a></p>
                     <p>&nbsp;</p>
                 </div>
             </div>
@@ -5295,7 +5295,7 @@ See page title for the most recent date of data
                     <p>&nbsp;</p>
                     <div class="intGroup">
                         <p class="oneone names"><span>@ Laguna</span><span>Laguna</span></p>
-                        <p class="oneone numbers"><span id="Post_Laguna_EW">0</span><span id="Post_Laguna_NS_REF"></span></p>
+                        <p class="oneone numbers"><span id="Post_Laguna_EW_REF">0</span><span id="Post_Laguna_NS"></span></p>
                         <p class="changes" id="Post_Laguna_change">0</p>
                         <p>&nbsp;</p>
                     </div>
@@ -8581,7 +8581,7 @@ See page title for the most recent date of data
                     cycleLength = [80, 80, 80];
                 PlanTimeCalc();
                 //California @ Walnut
-                ChangeDisp('California_Walnut_change', 14, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('California_Walnut_change', 15, planNum, cl);   //dispChange === 1 && 
                 var offset = [19, 66, 2];
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [50, 50, 50]; //Ø 2 6
                 TimingCalc('California_Walnut_EW_REF');
@@ -10146,13 +10146,13 @@ See page title for the most recent date of data
                 PlanTimeCalc();
 
                 //GENEVA @ Mission
-                ChangeDisp('Geneva_Mission_change', 24, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Geneva_Mission_change', 25, planNum, cl);   //dispChange === 1 && 
                 var offset = [33, 17, 19];
-                var LPI = 4, Yel = 4, Red = 3, Adj = [0, 0, 0], Split = [36, 38, 42]; //Ø 2 6
+                var LPI = 3, Yel = 4, Red = 2.5, Adj = [0, 0, 0], Split = [36, 38, 42]; //Ø 2 6
                 TimingCalc('Geneva_Mission_NS_REF');
                 var LPI = 4, Yel = 4, Red = 2.5, Adj = Split, Split = [30, 36, 32]; //Ø 4 8
                 TimingCalc('Geneva_Mission_EW');
-                var LPI = 4, Yel = 4, Red = 2.5, Adj = SplitAdd(Adj, Split), Split = [14, 16, 16]; //Ø 1 5
+                var LPI = 0, Yel = 4, Red = 3, Adj = SplitAdd(Adj, Split), Split = [14, 16, 16]; //Ø 1 5
                 TimingCalc('Geneva_Mission_LTs');
                 TSPnDET([], [], ['Geneva_Mission_LTs'], [1, 2, 3]);
 
@@ -12728,13 +12728,13 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [detDir], [detPlans]);
 
                 //O'Farrell @ Powell
-                ChangeDisp('Ofarrell_Powell_change', 30, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Ofarrell_Powell_change', 31, planNum, cl);   //dispChange === 1 && 
                 var offset = [39, 50, 50];
                 var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [39, 39, 39]; //Ø 2
                 TimingCalc('Ofarrell_Powell_EB_REF');
                 var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [36, 36, 36]; //Ø 4 8
                 TimingCalc('Ofarrell_Powell_NS');
-                //                 TSPnDET([tspDir], [tspPlans], [detDir], [detPlans]);
+                                TSPnDET(['Ofarrell_Powell_EB_REF'], [1, 2, 3], [], []);
 
                 //O'Farrell @ Cyril Magnin
                 ChangeDisp('Ofarrell_CyrilMagnin_change', 13, planNum, cl);   //dispChange === 1 && 
@@ -13671,21 +13671,21 @@ See page title for the most recent date of data
                 //Plan, flash times & cycle lengths
                 var plan2time = [600, 1400], plan2day = [2, 3, 4, 5, 6],
                     plan3time = [1400, 2100], plan3day = [2, 3, 4, 5, 6],
-                    plan4time = [800, 2100], plan4day = [1, 7],
-                    plan5time = [], plan5day = [],
+                    plan4time = [800, 1230], plan4day = [1, 7],
+                    plan5time = [1230, 2100], plan5day = [1, 7],
                     plan6time = [], plan6day = [],
                     flashFree1time = [200, 600, 'flash'], flashFree1day = [2, 3, 4, 5, 6],
                     flashFree2time = [300, 600, 'flash'], flashFree2day = [1, 7],
-                    cycleLength = [54, 54, 54, 54];
+                    cycleLength = [54, 54, 54, 54, 54];
                 PlanTimeCalc();
                 //Post @ Laguna
-                ChangeDisp('Post_Laguna_change', 19, planNum, cl);   //dispChange === 1 && 
-                var offset = [14, 37, 53, 34];
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [29, 29, 29, 29]; //Ø 4 8
-                TimingCalc('Post_Laguna_NS_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [25, 25, 25, 25]; //Ø 2 6
-                TimingCalc('Post_Laguna_EW');
-                TSPnDET(['Post_Laguna_NS_REF'], [1, 2, 3, 4], [], []);
+                ChangeDisp('Post_Laguna_change', 20, planNum, cl);   //dispChange === 1 && 
+                var offset = [42, 10, 35, 5, 13];
+                var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0, 0, 0], Split = [25, 25, 25, 25, 25]; //Ø 2 6
+                TimingCalc('Post_Laguna_EW_REF');
+                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [29, 29, 29, 29, 29]; //Ø 4 8
+                TimingCalc('Post_Laguna_NS');
+                TSPnDET(['Post_Laguna_NS'], [1, 2, 3, 4, 5], [], []);
 
                 var plan2time = [600, 1300], plan2day = [2, 3, 4, 5, 6],
                     plan3time = [1300, 2100], plan3day = [2, 3, 4, 5, 6],
