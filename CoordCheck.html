@@ -6707,15 +6707,15 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
 
                 //6TH ST @ Folsom
-                ChangeDisp('_6thSt_Folsom_change', 39, planNum, cl);   //dispChange === 1 && 
-                var offset = [53, 53, 53];
-                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [32, 33, 32]; //Ø 2
+                ChangeDisp('_6thSt_Folsom_change', 40, planNum, cl);   //dispChange === 1 && 
+                var offset = [65, 65, 65];
+                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [36, 36, 38]; //Ø 2
                 TimingCalc('_6thSt_Folsom_EB_REF');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [45, 44, 45]; //Ø 8
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [42, 42, 40]; //Ø 8
                 TimingCalc('_6thSt_Folsom_NB');
-                var LPI = 4, Yel = 4, Red = 2, Adj = Adj, Split = [58, 57, 58]; //Ø 4
+                var LPI = 4, Yel = 4, Red = 2, Adj = Adj, Split = [54, 54, 52]; //Ø 4
                 TimingCalc('_6thSt_Folsom_SB');
-                TSPnDET(['_6thSt_Folsom_NB'], [1, 2, 3], [], []); //tspDir, tspPlans, detDir, detPlans
+                TSPnDET([], [], [], []); //tspDir, tspPlans, detDir, detPlans
 
                 //6TH ST @ Harrison
                 ChangeDisp('_6thSt_Harrison_change', 38, planNum, cl);   //dispChange === 1 && 
