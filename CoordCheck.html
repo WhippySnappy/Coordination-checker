@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 7-22-26</title>
+    <title>Corridors 9-8-26</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -10059,7 +10059,7 @@ See page title for the most recent date of data
                 PlanTimeCalc();
 
                 //GENEVA @ Prague
-                ChangeDisp('Geneva_Prague_change', 17, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Geneva_Prague_change', 18, planNum, cl);   //dispChange === 1 && 
                 //FLASH from 2300-0600
                 var offset = [14, 10, 8];
                 var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [48, 58, 58]; //Ø 1
@@ -10484,11 +10484,11 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //GOUGH @ Geary
-                ChangeDisp('Gough_Geary_change', 30, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Gough_Geary_change', 31, planNum, cl);   //dispChange === 1 && 
                 var offset = [78, 85, 78];
                 var LPI = 0, Yel = 4, Red = 3, Adj = [0, 0, 0], Split = [49, 49, 49]; //Ø 6
                 TimingCalc('Gough_Geary_SB_REF');
-                var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [41, 41, 41]; //Ø 4 8 LPI only EBØ4
+                var LPI = 0, Yel = 4, Red = 1.5, Adj = Split, Split = [41, 41, 41]; //Ø 4 8 LPI only EBØ4
                 TimingCalc('Gough_Geary_EW');
                 TSPnDET(['Gough_Geary_EW'], [1, 2, 3], [], []);
 
@@ -11461,7 +11461,7 @@ See page title for the most recent date of data
                 TSPnDET(['Larkin_Geary_WB_REF'], [1, 2, 3], [], []);
 
                 //LARKIN @ O'Farrell
-                ChangeDisp('Larkin_Ofarrell_change', 30, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Larkin_Ofarrell_change', 31, planNum, cl);   //dispChange === 1 && 
                 var offset = [34, 29, 44];
                 var LPI = 3, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [47, 43, 38]; //Ø 2
                 TimingCalc('Larkin_Ofarrell_EB_REF');
@@ -12616,8 +12616,8 @@ See page title for the most recent date of data
                 PlanTimeCalc();
 
                 //OCEAN @ San Leandro
-                ChangeDisp('Ocean_SanLeandro_change', 7, planNum, cl);   //dispChange === 1 && 
-                var offset = [4];
+                ChangeDisp('Ocean_SanLeandro_change', 8, planNum, cl);   //dispChange === 1 && 
+                var offset = [45];
                 var LPI = 0, Yel = 4, Red = 1, Adj = [0], Split = [28]; //Ø 2 6
                 TimingCalc('Ocean_SanLeandro_EW_REF');
                 var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [27]; //Ø 4
@@ -12625,13 +12625,13 @@ See page title for the most recent date of data
                 //                 TSPnDET([], [], [], []);
 
                 //OCEAN @ San Fernando
-                ChangeDisp('Ocean_SanFernando_change', 8, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Ocean_SanFernando_change', 9, planNum, cl);   //dispChange === 1 && 
                 var offset = [52];
                 var LPI = 0, Yel = 4, Red = 1.5, Adj = [0], Split = [28]; //Ø 2 6
                 TimingCalc('Ocean_SanFernando_EW_REF');
                 var LPI = 4, Yel = 4, Red = 1.5, Adj = Split, Split = [27]; //Ø 4
                 TimingCalc('Ocean_SanFernando_SB');
-                //                 TSPnDET([], [], [], []);
+                TSPnDET([], [], ['Ocean_SanFernando_SB'], [1]);
             }
             //**************END OF CORRIDOR SPECIFIC JAVASCRIPT**************
 
@@ -12791,7 +12791,7 @@ See page title for the most recent date of data
                 TSPnDET(['Ofarrell_Hyde_EB_REF'], [1, 2, 3], [], []);
 
                 //O'Farrell @ Larkin
-                ChangeDisp('Ofarrell_Larkin_change', 30, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('Ofarrell_Larkin_change', 31, planNum, cl);   //dispChange === 1 && 
                 var offset = [34, 29, 44];
                 var LPI = 4, Yel = 4, Red = 1.5, Adj = [0, 0, 0], Split = [47, 43, 38]; //Ø 2
                 TimingCalc('Ofarrell_Larkin_EB_REF');
