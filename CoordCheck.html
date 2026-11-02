@@ -7,7 +7,7 @@ See page title for the most recent date of data
 <html lang="en-US">
 
 <head>
-    <title>Corridors 9-8-26</title>
+    <title>Corridors 10-28-26</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -6842,14 +6842,14 @@ See page title for the most recent date of data
                 //                 TSPnDET([tspDir], [tspPlanNum], [detDir], [detPlans]);
 
                 //7TH ST @ Brannan
-                ChangeDisp('_7thSt_Brannan_change', 29, planNum, cl);   //dispChange === 1 && 
+                ChangeDisp('_7thSt_Brannan_change', 30, planNum, cl);   //dispChange === 1 && 
                 var offset = [65, 65, 65];
-                var LPI = 4, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [42, 42, 42]; //Ø 8
-                TimingCalc('_7thSt_Brannan_NB');
-                var LPI = 0, Yel = 4, Red = 2, Adj = Split, Split = [14, 14, 14]; //Ø 1 5
+                var LPI = 0, Yel = 4, Red = 2, Adj = [0, 0, 0], Split = [14, 14, 14]; //Ø 1 5
                 TimingCalc('_7thSt_Brannan_EWLTs');
-                var LPI = 4, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [34, 34, 34]; //Ø 2 6
+                var LPI = 4, Yel = 4, Red = 2, Adj = Split, Split = [34, 34, 34]; //Ø 2 6
                 TimingCalc('_7thSt_Brannan_EW');
+                var LPI = 4, Yel = 4, Red = 2, Adj = SplitAdd(Adj, Split), Split = [42, 42, 42]; //Ø 8
+                TimingCalc('_7thSt_Brannan_NB');
                 TSPnDET(['_7thSt_Brannan_NB'], [1, 2, 3], ['_7thSt_Brannan_EWLTs'], [1, 2, 3]);
 
                 //7TH ST @ Townsend
